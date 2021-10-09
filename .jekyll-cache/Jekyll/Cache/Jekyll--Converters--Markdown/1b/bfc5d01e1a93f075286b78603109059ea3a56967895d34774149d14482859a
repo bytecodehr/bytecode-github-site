@@ -1,0 +1,17 @@
+I"�<h3 id="ruby-on-rails-postgresql-nokogiri">Ruby On Rails, PostgreSQL, Nokogiri</h3>
+<h2 id="about-the-project">About the project</h2>
+<p>Two Margins wants to change the way financial information is analyzed. It uses the wisdom of the crowd to help users gain financial insight and advantage. It allows financial experts to annotate and comment U.S. Securities and Exchange Commission issued reports and other financial/ political documents. The original idea was simple in theory: upload financial documents and allow users to annotate and discuss them.</p>
+
+<h2 id="how-we-do-it">How we do it</h2>
+<p>We were responsible for developing the entire application and deploying the back-end and setting up the servers.</p>
+<ul>
+  <li>Gathered data from SEC’s Electronic Data Gathering, Analysis, and Retrieval systems.</li>
+  <li>Built a complex Nokogiri powered HTML parsing system that allowed us to annotate heavy financial documents made of deeply and irregularly nested HTML.</li>
+  <li>Supported product owners during peak traffic times and important document releases, for example during U.S. presidential elections.</li>
+  <li>Integrated TwoMargins annotating interface into multiple external partner platforms.</li>
+  <li>Onboarded and trained new hires once the project matured.</li>
+</ul>
+
+<p>Check out the <a href="http://blogs.wsj.com/moneybeat/2014/08/01/using-the-wisdom-of-the-crowd-to-democratize-markets">http://blogs.wsj.com/moneybeat/2014/08/01/using-the-wisdom-of-the-crowd-to-democratize-markets</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+
+:ET
