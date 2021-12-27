@@ -1,21 +1,31 @@
+{% if paginator.total_pages > 1 %}
+<!-- begin pagination -->
 <div class="container">
-  <nav class="pagination" role="pagination">
-    <ul>
-      {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-        <p><a class="newer-posts" href="{{ site.baseurl }}/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a></p>
-        {% else %}
-        <p><a class="newer-posts" href="{{ site.baseurl }}/page/{{ paginator.previous_page }}/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a></p>
-        {% endif %}
-      {% endif %}
+  <div class="row">
+    <div class="col col-12">
+      <nav class="pagination">
+        <div class="pagination__inner">
 
-      {% if paginator.total_pages > 1 %}
-      <p><span class="page-number">Page {{paginator.page}} of {{paginator.total_pages}}</span></p>
-      {% endif %}
+          <div class="pagination__list">
+            {% if paginator.previous_page %}
+              <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__prev pagination__item"><i class="ion ion-ios-arrow-back"></i> Prev</a>
+            {% else %}
+              <span class="pagination__prev pagination__item disabled"><i class="ion ion-ios-arrow-back"></i> Prev</span>
+            {% endif %}
       
-      {% if paginator.next_page %}
-      <p><a class="older-posts" href="{{ site.baseurl }}/page/{{ paginator.next_page }}/"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
-      {% endif %}
-    </ul>
-  </nav>
+            <div class="pagination__count pagination__item">Page {{ paginator.page }} of {{paginator.total_pages}}</div>
+      
+            {% if paginator.next_page %}
+              <a href="{{ paginator.next_page_path | relative_url }}" class="pagination__next pagination__item">Next <i class="ion ion-ios-arrow-forward"></i></a>
+            {% else %}
+              <span class="pagination__next pagination__item disabled">Next <i class="ion ion-ios-arrow-forward"></i></span>
+            {% endif %}
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </div>
 </div>
+<!-- end pagination -->
+{% endif %}

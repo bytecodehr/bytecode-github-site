@@ -1,34 +1,42 @@
-title: Bytecode
-description: > # this means to ignore newlines until "baseurl:"
-  High-grade web consultancy specialized in mapping out, designing, and delivering complex custom-built web applications on time.
-permalink: ':title/'
+#-------------------------------
+# General Site Settings
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "bytecode.hr" # the base hostname & protocol for your site, e.g. http://example.com
-site-twitter: #if your site has a twitter account, enter it here
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-# Author Settings
-author: Bytecode # add your name
-about-author: Bytecode is a high-grade web consultancy specialized in mapping out, designing, and delivering complex custom-built web applications on time.
-social-twitter: # add your Twitter handle
-social-facebook: # add your Facebook handle
-social-github: #artemsheludko # add your Github handle
-social-linkedin: # add your Linkedin handle
-social-email: # add your Email address
 
-# Disqus
-discus-identifier: # add your discus identifier
-
-# Tracker
-analytics: # Google Analytics
-
+#-------------------------------
 # Build Settings
 markdown: kramdown
+permalink: /:title
 plugins:
-  - jekyll-sitemap
   - jekyll-paginate
-  - jemoji
+  - jekyll-sitemap
 
-paginate: 8
-paginate_path: "/page/:num"
+paginate: 9
+paginate_path: "/blog/page/:num"
 
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+collections:
+  projects:
+    output: true
+
+# Pages Path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
+  - scope:
+      path: '_posts'
+    values:
+      permalink: /blog/:slug
+  - scope:
+      path: '_projects'
+    values:
+      permalink: /projects/:slug
+
+include:
+  - _pages
+
+sass:
+  sass_dir: _sass
+  style: compressed

@@ -1,0 +1,28 @@
+<!-- begin projects -->
+<section class="blog section">
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="section__info">
+          <div class="section__head">
+            <h2 class="section__title">Success stories</h2>
+<!--            <a class="section__link" href="{{ '/projects' | relative_url }}">View all projects</a>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      {% if site.projects.size > 0 %}
+        {% for project in site.projects %}
+          {% include project_card.html %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+</section>
+<!-- end projects -->
