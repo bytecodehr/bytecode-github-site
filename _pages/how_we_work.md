@@ -60,3 +60,18 @@ Finally, after implementing the changes, we can set up A/B tests to confirm that
 
 The main takeaway is that you should never be afraid to show your product to users, even in its early stages. It is the best way to get valuable feedback and determine what works and what needs to be improved.
 
+# Which tech do we use?
+
+<p class="hero__description">
+    We use Ruby <span class="iconify" data-icon="mdi:language-ruby" style="color: #c00;"></span> (on Rails) and JAVA <span class="iconify" data-icon="logos:java"></span>
+    for backend, and JavaScript <span class="iconify" data-icon="logos:javascript" style="color: #4f5b93;"></span>
+    and React <span class="iconify" data-icon="logos:react"></span> for frontend and mobile.
+    We store data in PostgreSQL <span class="iconify" data-icon="logos:postgresql"></span> and Redis <span class="iconify" data-icon="logos:redis"></span>.
+</p>
+<p class="hero__description">
+    We host most of our sites on Heroku <span class="iconify" data-icon="logos:heroku-icon"></span>,
+    <span class="iconify" data-icon="logos:aws"></span>
+    and Digital Ocean <span class="iconify" data-icon="simple-icons:digitalocean" style="color: #008bcf;"></span>,
+    using Kubernetes <span class="iconify" data-icon="logos:kubernetes"></span> and
+    Docker <span class="iconify" data-icon="logos:docker-icon"></span>.
+</p>
