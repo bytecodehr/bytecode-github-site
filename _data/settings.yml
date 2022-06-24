@@ -78,7 +78,8 @@ mailchimp:
 #-------------------------------
 # Footer Settings
 social:
-#- {icon: "ion-logo-twitter", color: "#55acee", label: Twitter, link: "https://twitter.com"}
+- {icon: "ion-logo-github", color: "#24292e", label: Github, link: "https://github.com/bytecodehr"}
+- {icon: "ion-logo-linkedin", color: "#0072b1", label: Linkedin, link: "https://www.linkedin.com/company/bytecodehr/"}
 #- {icon: "ion-logo-facebook", color: "#3b5999", label: Facebook, link: "https://facebook.com"}
 #- {icon: "ion-logo-pinterest", color: "#bd081c", label: Pinterest, link: "https://pinterest.com"}
 #- {icon: "ion-logo-dribbble", color: "#ea4c89", label: Dribbble, link: "https://dribbble.com"}
@@ -107,4 +108,4 @@ contact:
 
 #-------------------------------
 # Google Analytics
-google-analytics: # Add your identifier. For example UA-99631805-1.
+google-analytics: G-N2M3542KGY
