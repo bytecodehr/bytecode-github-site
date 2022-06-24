@@ -3,7 +3,7 @@ layout: project
 title: Wordpress Projects
 card_description: 3x Business Increase
 description: Wordpress sites we built
-image: '/images/projects/wordpress/invento.jpg'
+image: '/images/projects/wordpress/invento.webp'
 tags: [Wordpress, PHP, DigitalOcean, Woocommerce, Elementor]
 ---
 ## How we kickoff projects

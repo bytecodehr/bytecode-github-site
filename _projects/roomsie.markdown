@@ -3,7 +3,7 @@ layout: project
 title: Roomsie
 card_description: 8 months to MVP
 description: Roomsie is an online marketplace that connects hosts with interns, students, and recent graduates looking for medium-term housing in Washington, D.C. A complex product built from the ground up.
-image: '/images/projects/roomsie/roomsie.jpeg'
+image: '/images/projects/roomsie/roomsie.webp'
 tags: [Ruby On Rails, React, PostgreSQL, Redis, Heroku]
 ---
 ## First contact
@@ -36,7 +36,7 @@ We held daily stand up meetings to make sure everyone was informed and knew what
 
 After a couple more months of work, we were ready to stealth-launch the first version of Roomsie and start testing with early users.
 
-![Roomsie Property Bytecode]({{site.baseurl}}/images/projects/roomsie/property.jpeg)
+![Roomsie Property Bytecode]({{site.baseurl}}/images/projects/roomsie/property.webp)
 
 ## Validating the product market fit
 

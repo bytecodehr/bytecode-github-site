@@ -3,7 +3,7 @@ layout: project
 title: Racechip
 card_description: 500,000+ Chips sold 
 description: RaceChip manufactures and sells high-performance engine tuning chips for all car makes and models, resulting in less fuel consumption and up to 30% more horsepower. The company is growing rapidly and has sold over half a million chips worldwide as of early 2016.
-image: '/images/projects/racechip/racechip-hero.jpeg'
+image: '/images/projects/racechip/racechip-hero.webp'
 tags: [Java, Play, PostgreSQL, Redis, AWS]
 ---
 ## About the project
@@ -16,4 +16,4 @@ The chip tuning market is extremely competitive. This meant that the system we b
 ## The path forward
 We are involved with the project and we are developing new features day by day.
 
-![Racechip Bytecode]({{site.baseurl}}/images/projects/racechip/racechip.jpeg)
+![Racechip Bytecode]({{site.baseurl}}/images/projects/racechip/racechip.webp)

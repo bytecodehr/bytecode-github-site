@@ -3,7 +3,7 @@ layout: project
 title:  TwoMargins
 card_description: Crowdsourcing Wall Street
 description: Two Margins wants to change the way financial information is analyzed. They use the wisdom of the crowd to help users gain financial insight and advantage.
-image: '/images/projects/twomargins/twomargins-hero.jpeg'
+image: '/images/projects/twomargins/twomargins-hero.webp'
 tags: [Ruby On Rails, PostgreSQL, Nokogiri]
 ---
 > The coolest, most constructive best-yet crowdsourcing effort to hit Wall Street
