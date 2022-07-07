@@ -22,8 +22,9 @@ On that path, we encountered several challenges that we had to overcome:
 
 Ticket implementation is essentially a QR code with the possibility of basic customization. One of the more challenging tasks was that the application contained a QR code reader for scanning tickets without installing an additional application. For that, we used the existing JS library, Html5-QRcode. We created a simple statistics tool for easier event management.
 
-[//]: # (## The path forward)
+## In conclusion
+Clean Fellas will continue to use the Shinding as their go-to ticketing app
 
-[//]: # (Clean Fellas will have more events and the app will be used)
+[//]: # (<iframe width="560" height="315" src="https://www.youtube.com/embed/RHy33FWfZ0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)
 
 ![Shindig CleanFellas Bytecode]({{site.baseurl}}/images/projects/shindig/flyover.webp)
