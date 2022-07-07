@@ -2,7 +2,7 @@
 layout: project
 title: Shindig
 card_description: Increased Check-in Speed
-project_url: https://shindig-bytecode.herokuapp.com/
+project_url: https://shindig.bytecode.hr/
 description: Shindig is a small ticketing app for exclusive events, battle-tested at a Clean Fellas, Fly Over event in Northern Croatia.
 image: '/images/projects/shindig/shindig.webp'
 tags: [Java, Play, PostgreSQL, Redis, AWS]
