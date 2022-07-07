@@ -1,6 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
-  'use strict';
-
+//document.addEventListener("DOMContentLoaded", function() {
+if(document.readyState){
   var html = document.querySelector('html'),
     menuOpenIcon = document.querySelector(".nav__icon-menu"),
     menuCloseIcon = document.querySelector(".nav__icon-close"),
@@ -8,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleTheme = document.querySelector(".toggle-theme"),
     portfolioViewButton = document.querySelector('.portfolio__toggle'),
     btnScrollToTop = document.querySelector(".top");
-
 
   /* =======================================================
   // Menu + Theme Switcher + Toggle list view
@@ -143,5 +141,5 @@ document.addEventListener("DOMContentLoaded", function() {
       })
     }
   });
-
-});
+}
+//});

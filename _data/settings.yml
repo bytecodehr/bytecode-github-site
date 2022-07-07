@@ -3,7 +3,7 @@
 title: Bytecode
 logo: '/images/logo/logo-crop.webp'
 author: Vedran Marčetić
-description: Bytecode is a high-grade web consultancy.
+description: Helping companies develop their most valuable product ideas from concept to market.
 
 
 #-------------------------------
@@ -19,9 +19,10 @@ menu__settings:
 
 #-------------------------------
 # Hero Settings
+# Helping companies develop their most valuable product ideas from concept to market.
 hero:
-  hero__title: Bytecode is a high-grade web consultancy
-  hero__description: Specialized in mapping out, designing, and delivering complex custom-built web applications on time.
+  hero__title: Helping companies develop product ideas from concept to market.
+  hero__description: Bytecode is a high-grade Ruby and React web consultancy specialized in mapping out, designing, and delivering complex web and mobile applications on time.
 
 
 #-------------------------------

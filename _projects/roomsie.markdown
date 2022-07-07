@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Roomsie
+project_url: https://roomsie.com/
 card_description: 8 months to MVP
 description: Roomsie is an online marketplace that connects hosts with interns, students, and recent graduates looking for medium-term housing in Washington, D.C. A complex product built from the ground up.
 image: '/images/projects/roomsie/roomsie.webp'
