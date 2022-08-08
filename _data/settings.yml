@@ -12,6 +12,8 @@ menu__settings:
   menu__items:
     - title: 'Home'
       url: '/'
+    - title: 'Playbook'
+      url: 'https://augmetahq.com/playbook/vedran-managing-outsourced-software-development-risks'
     - title: 'How we work'
       url: '/how-we-work/'
     - title: 'Contact'
