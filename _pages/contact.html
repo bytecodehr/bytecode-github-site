@@ -39,10 +39,20 @@ permalink: /contact/
       <textarea class="form__input" id="form-text" name="text" rows="10" placeholder="Message" required></textarea>
     </div>
     <div class="form__group">
+      <div class="g-recaptcha" data-sitekey="6LdtSZAiAAAAABzmPDH36sowu9BqPmKB6f4S-RGN"></div>
+    </div>
+    <div class="form__group">
       <button class="button" type="submit">Send Message</button>
     </div>
   </form>
   <script async defer>
+    window.onload = function() {
+      var el = document.getElementById('g-recaptcha-response');
+      if (el) {
+        el.setAttribute('required', 'required');
+      }
+    }
+
     var form = document.getElementById("contact-form");
 
     async function handleSubmit(event) {
