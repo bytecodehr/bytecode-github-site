@@ -13,8 +13,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-minifier
 
-paginate: 9
-paginate_path: "/blog/page/:num"
+#paginate: 9
+#paginate_path: "/blog/page/:num"
 
 collections:
   projects:
@@ -27,13 +27,13 @@ defaults:
     values:
       permalink: /:basename:output_ext
   - scope:
-      path: '_posts'
-    values:
-      permalink: /blog/:slug
-  - scope:
       path: '_projects'
     values:
       permalink: /projects/:slug
+#  - scope:
+#      path: '_posts'
+#    values:
+#      permalink: /blog/:slug
 
 include:
   - _pages
