@@ -1,5 +1,6 @@
 ---
 layout: default
+heading: Projects
 title: Projects - Products we helped clients develop from concept to market.
 description: Products we helped clients develop from concept to market.
 ---
@@ -10,8 +11,8 @@ description: Products we helped clients develop from concept to market.
     <div class="row">
       <div class="col col-10 col-d-12">
         <div class="hero__inner">
-          {% if page.title %}
-            <h1 class="hero__title">{{ page.title }}</h1>
+          {% if page.heading %}
+            <h1 class="hero__title">{{ page.heading }}</h1>
           {% endif %}
           {% if page.description %}
             <p class="hero__description">{{ page.description }}</p>

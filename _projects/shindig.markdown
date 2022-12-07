@@ -1,5 +1,6 @@
 ---
 layout: project
+name: Shindig
 title: Shindig - Increased Check-in Speed - Empower your event ticketing
 card_description: Increased Check-in Speed
 project_url: https://shindig.bytecode.hr/

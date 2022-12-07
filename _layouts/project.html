@@ -15,12 +15,12 @@ layout: default
           </div>
         {% endif %}
 
-        <h1 class="post__title">{{ page.title | escape }}</h1>
+        <h1 class="post__title">{{ page.name | escape }}</h1>
         {% if page.project_url %}
           <div style="padding: 0px 20px 20px 20px">
             <a href={{ page.project_url | escape }}>
               <i class="ion ion-ios-link" size="large" target="_blank" style="color: rgb(204, 0, 0);"></i>
-              Click here to visit {{ page.title | escape }}
+              Click here to visit {{ page.name | escape }}
             </a>
           </div>
         {% endif %}

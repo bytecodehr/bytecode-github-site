@@ -2,6 +2,8 @@
 
 layout: project
 
+name: Fanjolt
+
 title: Fanjolt - 1000+ Happy fans - interact with favourite celebrities
 
 project_url: https://www.fanjolt.com/

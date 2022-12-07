@@ -1,5 +1,6 @@
 ---
 layout: project
+name: TwoMargins
 title: TwoMargins - Crowdsourcing Wall Street - Discuss financial documents
 card_description: Crowdsourcing Wall Street
 project_url: https://www.twomargins.com/
