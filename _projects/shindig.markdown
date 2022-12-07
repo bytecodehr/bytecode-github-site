@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Shindig
+title: Shindig - Increased Check-in Speed - Empower your event ticketing
 card_description: Increased Check-in Speed
 project_url: https://shindig.bytecode.hr/
 description: Shindig is a small ticketing app for exclusive events, battle-tested at a Clean Fellas, Fly Over event in Northern Croatia.

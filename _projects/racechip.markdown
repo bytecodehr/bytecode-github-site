@@ -1,6 +1,6 @@
 ---
 layout: project
-title: RaceChip
+title: RaceChip - 500,000+ Chips sold - unleash your car’s potential 
 project_url: https://www.racechip.com/
 card_description: 500,000+ Chips sold 
 description: RaceChip manufactures and sells high-performance engine tuning chips for all car makes and models, resulting in less fuel consumption and up to 30% more horsepower. The company is growing rapidly and has sold over half a million chips worldwide as of early 2016.

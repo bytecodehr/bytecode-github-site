@@ -2,7 +2,7 @@
 
 layout: project
 
-title: Movieo
+title: Movieo - 100,000 monthly visitors - Discover over 250,000 movies.
 
 project_url: https://www.movieo.me/
 

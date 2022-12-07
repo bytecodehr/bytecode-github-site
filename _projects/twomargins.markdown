@@ -1,6 +1,6 @@
 ---
 layout: project
-title:  TwoMargins
+title: TwoMargins - Crowdsourcing Wall Street - Discuss financial documents
 card_description: Crowdsourcing Wall Street
 project_url: https://www.twomargins.com/
 description: Two Margins wants to change the way financial information is analyzed. They use the wisdom of the crowd to help users gain financial insight and advantage.
