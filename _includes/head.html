@@ -51,30 +51,95 @@
 
   <script type="application/ld+json">
     {
-      "@context": "http://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Bytecode",
-      "image": "https://bytecode.hr/images/byte.png",
-      "email": "vmarcetic@bytecode.hr",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Zagreb",
-        "addressCountry": "Croatia",
-        "postalCode": "10000"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "url": "https://bytecode.hr/"
+      "@context":"https://schema.org",
+      "@graph":[
+        {
+          "@type":"WebPage",
+          "@id":"https://bytecode.hr/",
+          "url":"https://bytecode.hr/",
+          "name":"Bytecode | Helping companies develop product ideas from concept to market.",
+          "isPartOf":{
+            "@id":"https://bytecode.hr/#website"
+          },
+          "about":{
+            "@id":"https://bytecode.hr/#organization"
+          },
+          "primaryImageOfPage":{
+            "@id":"https://bytecode.hr/#primaryimage"
+          },
+          "image":{
+            "@id":"https://bytecode.hr/#primaryimage"
+          },
+          "thumbnailUrl":"https://bytecode.hr/images/byte.png",
+          "description":"Bytecode is a high-grade Ruby and React web consultancy specialized in mapping out, designing, and delivering complex web and mobile applications on time.",
+          "breadcrumb":{
+            "@id":"https://bytecode.hr/#breadcrumb"
+          },
+          "inLanguage":"en-US",
+          "potentialAction":[
+            {
+              "@type":"ReadAction",
+              "target":[
+                "https://bytecode.hr/"
+              ]
+            }
+          ]
+        },
+        {
+          "@type":"ImageObject",
+          "inLanguage":"en-US",
+          "@id":"https://bytecode.hr/#primaryimage",
+          "url":"https://bytecode.hr/images/byte.png",
+          "contentUrl":"https://bytecode.hr/images/byte.png",
+          "width":1200,
+          "height":1200
+        },
+        {
+          "@type":"BreadcrumbList",
+          "@id":"https://bytecode.hr/#breadcrumb",
+          "itemListElement":[
+            {
+              "@type":"ListItem",
+              "position":1,
+              "name":"Home"
+            }
+          ]
+        },
+        {
+          "@type":"WebSite",
+          "@id":"https://bytecode.hr/#website",
+          "url":"https://bytecode.hr/",
+          "name":"Bytecode",
+          "description":"Helping companies develop product ideas from concept to market.",
+          "publisher":{
+            "@id":"https://bytecode.hr/#organization"
+          },
+          "inLanguage":"en-US"
+        },
+        {
+          "@type":"Organization",
+          "@id":"https://bytecode.hr/#organization",
+          "name":"Bytecode",
+          "url":"https://bytecode.hr/",
+          "sameAs":[
+            "https://www.linkedin.com/company/bytecodehr/",
+            "https://github.com/bytecodehr/"
+          ],
+          "logo":{
+            "@type":"ImageObject",
+            "inLanguage":"en-US",
+            "@id":"https://bytecode.hr/#/schema/logo/image/",
+            "url":"https://bytecode.hr/images/byte.png",
+            "contentUrl":"https://bytecode.hr/images/byte.png",
+            "width":1200,
+            "height":1200,
+            "caption":"Bytecode"
+          },
+          "image":{
+            "@id":"https://bytecode.hr/#/schema/logo/image/"
+          }
+        }
+      ]
     }
   </script>
 
