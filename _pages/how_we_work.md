@@ -1,7 +1,7 @@
 ---
 layout: page
 title: How we work
-permalink: /how-we-work/
+permalink: /how-we-work
 ---
 
 ### Finding the right people to shape your idea can be daunting.
