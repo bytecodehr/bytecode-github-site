@@ -12,8 +12,6 @@ menu__settings:
   menu__items:
     - title: 'Home'
       url: '/'
-    - title: 'Blog'
-      url: '/blog'
     - title: 'How we work'
       url: '/how-we-work'
     - title: 'Contact'
