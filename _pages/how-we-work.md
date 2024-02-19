@@ -1,7 +1,7 @@
 ---
 layout: page
-heading: How we work
-title: How we work - Developing complex products from concept to market.
+title: How we work
+description: Developing complex products from concept to market.
 permalink: /how-we-work
 ---
 
