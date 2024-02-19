@@ -14,28 +14,63 @@
           </a>
         </div>
 
-        <nav class="main-nav">
+        <div class="hamburger">
+          <div></div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main menu">
           <div class="main-nav__box">
-            <div class="nav__icon-close">
-              <i class="ion ion-md-close"></i>
-            </div>
-            <div class="nav__title">Menu</div>
             <ul class="nav__list list-reset">
-              {% for item in site.data.settings.menu__settings.menu__items %}
-                <li class="nav__item">
-                  <a href="{{ item.url | relative_url }}" class="nav__link{% if page.url == item.url %} nav__link--current{% endif %}">{{ item.title }}</a>
+
+              {% for item in site.data.settings.menu_settings.menu_items %}
+                {% if item.submenu %}
+                <li class="nav__item dropdown">
+                  <span class="nav__link dropdown-toggle">{{ item.title }} <i class="arrow-down fa-solid fa-chevron-down"></i></span>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-inner">
+                    {% for submenu-item in item.submenu %}
+                      {% assign page_var = site.pages | where: "url", submenu-item.url | first %}
+                      {% capture image_path %}{{ page_var.image }}{% endcapture %}
+                      {% capture page_description %}{{ page_var.description }}{% endcapture %}
+                      {% capture page_content %}{{ page_var.content }}{% endcapture %}
+                      <a href="{{ submenu-item.url }}" class="dropdown-item{% if page.url == submenu-item.url %} active{% endif %}">
+                        {% if page_var.image %}
+                          <img class="dropdown-item__image lazy" data-src="{{ image_path }}" alt="{{ submenu-item.title }}">
+                        {% endif %}
+                        <div class="dropdown-item__content">
+                          <div class="dropdown-item__title">{{ submenu-item.title }} <i class="fa-solid fa-arrow-right-long"></i></div>
+                          <div class="dropdown-item__text">{% if page_var.description %}{{ page_var.description }}{% else %}{{ page_content | strip_html }}{% endif %}</div>
+                        </div>
+                      </a>
+                    {% endfor %}
+                    </div>
+                  </div>
                 </li>
+                {% else %}
+                <li class="nav__item">
+                  <a href="{{ item.url | relative_url }}" class="nav__link{% if page.url == item.url %} active-link{% endif %}">{{ item.title }}</a>
+                </li>
+                {% endif %}
               {% endfor %}
+
             </ul>
           </div>
-        </nav>
 
-        <div class="nav-button">
-          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
-        </div>
+          <div class="nav-button">
+            <div class="nav-search-button">
+              <i class="search-button__icon fa-solid fa-magnifying-glass"></i>
+              <span class="search-button__text">Search</span>
+            </div>
+            {% if site.data.settings.cta_button.enable == true %}
+              <a href="{% if site.data.settings.cta_button.cta_button_link %}{{ site.data.settings.cta_button.cta_button_link }}{% else %}#{% endif %}" class="nav-cta-button button">{{ site.data.settings.cta_button.cta_button_text }}</a>
+            {% endif %}
+          </div>
+        </nav>
 
       </div>
     </div>
   </div>
 </header>
 <!-- end header -->
+
+{% include search.html %}

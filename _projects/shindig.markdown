@@ -7,6 +7,7 @@ project_url: https://shindig.bytecode.hr/
 description: Shindig is a small ticketing app for exclusive events, battle-tested at a Clean Fellas, Fly Over event in Northern Croatia.
 image: '/images/projects/shindig/shindig.webp'
 tags: [Java, Play, PostgreSQL, Redis, AWS]
+label: Development
 ---
 ## About the client
 Clean Fellas is a European artisanal manufacturer of car cleaning products that helps car enthusiasts keep their vehicles in top shape. To boost the Croatian automotive scene, Clean Fellas reached out to other car enthusiasts all over Europe to create an international event, Fly Over. Fly Over promotes the beauty of Croatia, the Croatian automotive industry, and its community.

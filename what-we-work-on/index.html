@@ -1,0 +1,55 @@
+---
+layout: default
+title: What We Work On
+description: I shows only the best websites and portfolios built completely with passion, simplicity & creativity!
+---
+
+<!-- begin page-section -->
+<section class="page-section">
+  <div class="container">
+    {% if page.title %}
+      <div class="row">
+        <div class="col col-12">
+          <h1 class="page-section__title">{{ page.title }}</h1>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  {% for project in site.projects reversed %}
+    <article class="project">
+      <div class="project__content">
+        <div class="project__info">
+          <div class="container">
+            <div class="row">
+              <div class="project__info__left col col-6 col-d-12">
+                <div class="project__meta">
+                  {% if project.label %}
+                    <span class="project__label">{{ project.label }}</span>
+                  {% endif %}
+                  <h3 class="project__title"><a href="{{ project.url }}">{{ project.title }}</a></h3>
+                  <p class="project__description">
+                    {% if project.description %}{{ project.description }}{% else %}{{ project.content | strip_html }}{% endif %}
+                  </p>
+                  <a href="{{ project.url }}" class="project__button">See Project <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+              {% if project.image %}
+              <div class="project__info__right col col-6 col-d-12">
+                <div class="project__image">
+                  <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</section>
+<!-- end page-section -->
+
+{% include section-author.html %}
+
+{% include section-gallery.html %}

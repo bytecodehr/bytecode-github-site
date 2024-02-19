@@ -1,19 +1,84 @@
+{% if site.data.settings.hero.enable == true %}
 <!-- begin hero -->
 <section class="hero">
   <div class="container">
-    <div class="row">
-      <div class="col col-10 col-d-12">
-        <div class="hero__inner">
-          <h1 class="hero__title">{{ site.data.settings.hero.hero__title }}</h1>
-          <p class="hero__description">
-            {{ site.data.settings.hero.hero__description }}
-          </p>
-          <p class="hero__description">
-            Check out <a href="/how-we-work">How We Work</a>, <a href="/how-we-work#which-tech-do-we-use">Which tech do we use</a> or <a href="/contact">Send us a message</a>.
-          </p>
+    <div class="hero__inner row">
+
+      <div class="col col-6 col-d-12">
+        <div class="hero__left">
+          {% if site.data.settings.hero.hero_intro %}
+            <span class="hero__intro shuffle">{{ site.data.settings.hero.hero_intro }}</span>
+          {% endif %}
+          {% if site.data.settings.hero.hero_title %}
+            <h1 class="hero__title">{{ site.data.settings.hero.hero_title }}</h1>
+          {% endif %}
+          {% if site.data.settings.hero.hero_description %}
+            <p class="hero__description">{{ site.data.settings.hero.hero_description }}</p>
+          {% endif %}
+          {% if site.data.settings.mailchimp == "enable" %}
+          <div class="hero__subscribe">
+            <form class="subscribe-form validate" action="{% if site.data.settings.mailchimp__identifier %}//{{site.data.settings.mailchimp__identifier}}{% else %}#{% endif %}"
+              method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+              <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+              <input class="subscribe-email required email" id="mce-EMAIL" type="text" name="EMAIL"
+                placeholder="{% if site.data.settings.mailchimp__input__text %}{{ site.data.settings.mailchimp__input__text }}{% else %}Email address{% endif %}">
+              <button class="button button--primary subscribe-button" id="membedded-subscribe" type="submit"
+                name="subscribe">{{ site.data.settings.mailchimp__button__text }}</button>
+            </form>
+          </div>
+          {% endif %}
         </div>
       </div>
+
+      <div class="col col-6 col-d-12">
+        <div class="hero__right">
+          <div class="hero__images">
+            <div class="row">
+
+              {% if site.data.settings.hero.hero_images[0] %}
+              <div class="col col-4">
+                <div class="hero__column__one">
+                  <div class="hero__images__box">
+                    <img class="lazy" data-src="{{ site.baseurl }}{{ site.data.settings.hero.hero_images[0].url }}" alt="{{ site.data.settings.hero.hero_images[0].alt }}">
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+
+              {% if site.data.settings.hero.hero_images[1] or site.data.settings.hero.hero_images[2] %}
+              <div class="col col-4">
+                <div class="hero__column__two">
+                  {% if site.data.settings.hero.hero_images[1] %}
+                    <div class="hero__images__box">
+                      <img class="lazy" data-src="{{ site.baseurl }}{{ site.data.settings.hero.hero_images[1].url }}" alt="{{ site.data.settings.hero.hero_images[1].alt }}">
+                    </div>
+                  {% endif %}
+                  {% if site.data.settings.hero.hero_images[2] %}
+                    <div class="hero__images__box">
+                      <img class="lazy" data-src="{{ site.baseurl }}{{ site.data.settings.hero.hero_images[2].url }}" alt="{{ site.data.settings.hero.hero_images[2].alt }}">
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+
+              {% if site.data.settings.hero.hero_images[3] %}
+              <div class="col col-4">
+                <div class="hero__column__three">
+                  <div class="hero__images__box">
+                    <img class="lazy" data-src="{{ site.baseurl }}{{ site.data.settings.hero.hero_images[3].url }}" alt="{{ site.data.settings.hero.hero_images[3].alt }}">
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 <!-- end hero -->
+{% endif %}

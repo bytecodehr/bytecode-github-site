@@ -15,7 +15,7 @@ description: Finding great movies to watch is a hassle. We had been searching fo
 image: '/images/projects/movieo/movieo.webp'
 
 tags: [Ruby On Rails, PostgreSQL, Redis, Nokogiri]
-
+label: Development
 ---
 
 ## The beginning

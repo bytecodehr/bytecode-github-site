@@ -1,0 +1,61 @@
+{% if site.data.settings.testimonials.enable == true %}
+<!-- begin testimonials -->
+<section class="section testimonials">
+  <div class="testimonials__wrap">
+    <div class="container">
+  
+      {% if site.data.settings.testimonials.testimonials_title %}
+      <div class="row">
+        <div class="col col-12">
+          <h2 class="section__title">{{ site.data.settings.testimonials.testimonials_title }}</h2>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="row">
+        {% for testimonial_item in site.data.settings.testimonials_items %}
+        <div class="col col-4 col-d-6 col-t-12">
+          <div class="testimonial__item">
+            <div class="testimonial__inner">
+              {% if testimonial_item.content %}
+                <p class="testimonial__text">“{{ testimonial_item.content }}”</p>
+              {% endif %}
+              <div class="testimonial__info">
+                <div class="testimonial__meta">
+                  {% if testimonial_item.image %}
+                    <div class="testimonial__image">
+                      <img class="testimonial__avatar lazy" data-src="{{ testimonial_item.image | relative_url }}" alt="{{ testimonial_item.name }}">
+                    </div>
+                  {% endif %}
+                  <div class="testimonial__content">
+                    {% if testimonial_item.name %}
+                      <h3 class="testimonial__name">
+                        {% if testimonial_item.link %}
+                          <a href="{{testimonial_item.link}}" target="_blank" rel="noopener">{{ testimonial_item.name }}</a>
+                        {% else %}
+                          {{ testimonial_item.name }}
+                        {% endif %}
+                      </h3>
+                    {% endif %}
+                    {% if testimonial_item.designation %}
+                      <p class="testimonial__designation">{{ testimonial_item.designation }}</p>
+                    {% endif %}
+                  </div>
+                </div>
+                {% if testimonial_item.icon %}
+                  <div class="testimonial__icon">
+                    <i class="{{ testimonial_item.icon }}" style="color: {{ testimonial_item.icon_color }};"></i>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  
+    </div>
+  </div>
+</section>
+<!-- end testimonials -->
+{% endif %}

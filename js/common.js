@@ -1,95 +1,104 @@
-//document.addEventListener("DOMContentLoaded", function() {
-if(document.readyState){
-  var html = document.querySelector('html'),
-    menuOpenIcon = document.querySelector(".nav__icon-menu"),
-    menuCloseIcon = document.querySelector(".nav__icon-close"),
+document.addEventListener("DOMContentLoaded", function() {
+  'use strict';
+
+  var body = document.querySelector('body'),
+    globalWrap = document.querySelector('.global-wrap'),
     menuList = document.querySelector(".main-nav"),
-    toggleTheme = document.querySelector(".toggle-theme"),
-    portfolioViewButton = document.querySelector('.portfolio__toggle'),
+    menuToggle = document.querySelector(".hamburger"),
+    search = document.querySelector(".search"),
+    searchOpenButton = document.querySelector(".nav-search-button"),
+    searchCloseIcon = document.querySelector(".search__button__close"),
+    searchOverlay = document.querySelector(".search__overlay"),
+    searchInput = document.querySelector(".search__text"),
     btnScrollToTop = document.querySelector(".top");
 
-  /* =======================================================
-  // Menu + Theme Switcher + Toggle list view
-  ======================================================= */
-  menuOpenIcon.addEventListener("click", () => {
-    menuOpen();
+
+  /* =======================
+  // Menu + Search
+  ======================= */
+  menuToggle.addEventListener("click", () => {
+    menu();
   });
 
-  menuCloseIcon.addEventListener("click", () => {
-    menuClose();
+  searchOpenButton.addEventListener("click", () => {
+    searchOpen();
   });
 
-  // TURNED OFF FOR NOW
-  // toggleTheme.addEventListener("click", () => {
-  //   darkMode();
-  // });
+  searchCloseIcon.addEventListener("click", () => {
+    searchClose();
+  });
 
-  if (portfolioViewButton) {
-    portfolioViewButton.addEventListener("click", () => {
-      viewToggle();
-    });
-  }
+  searchOverlay.addEventListener("click", () => {
+    searchClose();
+  });
 
-  function menuOpen() {
-    menuList.classList.add("is-open");
-  }
 
-  function menuClose() {
-    menuList.classList.remove("is-open");
+  // Menu
+  function menu() {
+    menuToggle.classList.toggle("is-open");
+    menuList.classList.toggle("is-visible");
   }
 
 
-  // Theme Switcher
-  function darkMode() {
-    if (html.classList.contains('dark-mode')) {
-      html.classList.remove('dark-mode');
-      localStorage.removeItem("theme");
-      document.documentElement.removeAttribute("dark");
-    } else {
-      html.classList.add('dark-mode');
-      localStorage.setItem("theme", "dark");
-      document.documentElement.setAttribute("dark", "");
+  // Search
+  function searchOpen() {
+    search.classList.add("is-visible");
+    body.classList.add("search-is-visible");
+    globalWrap.classList.add("is-active");
+    menuToggle.classList.remove("is-open");
+    menuList.classList.remove("is-visible");
+    setTimeout(function () {
+      searchInput.focus();
+    }, 250);
+  }
+
+  function searchClose() {
+    search.classList.remove("is-visible");
+    body.classList.remove("search-is-visible");
+    globalWrap.classList.remove("is-active");
+  }
+
+  document.addEventListener('keydown', function(e){
+    if (e.key == 'Escape') {
+      searchClose();
     }
+  });
+
+
+  /* =============================================
+  // Stop Animations During Window Resizing
+  ============================================= */
+  let disableTransition;
+
+  window.addEventListener("resize", () => {
+    stopAnimation();
+  });
+
+  function stopAnimation() {
+    document.body.classList.add("disable-animation");
+    clearTimeout(disableTransition);
+    disableTransition = setTimeout(() => {
+      document.body.classList.remove("disable-animation");
+    }, 100);
   }
 
 
-  // Toggle list view
-  function viewToggle() {
-    if (html.classList.contains('view-list')) {
-      html.classList.remove('view-list');
-      localStorage.removeItem("classView");
-      document.documentElement.removeAttribute("list");
-    } else {
-      html.classList.add('view-list');
-      localStorage.setItem("classView", "list");
-      document.documentElement.setAttribute("list", "");
-    }
-  }
+  /* =======================
+  // Simple Jekyll Search
+  ======================= */
+  SimpleJekyllSearch({
+    searchInput: document.getElementById("js-search-input"),
+    resultsContainer: document.getElementById("js-results-container"),
+    json: "/search.json",
+    searchResultTemplate: '<a href="{url}" class="search-results__link"><time class="search-results-date" datetime="{date}">{date}</time><div class="search-results-title">{title}</div></a>',
+    noResultsText: '<div class="no-results">No results found...</div>'
+  });
 
 
   /* =======================
   // Responsive Videos
   ======================= */
-  reframe(".post__content iframe:not(.reframe-off), .page__content iframe:not(.reframe-off)");
-
-
-  /* =======================
-  // Zoom Image
-  ======================= */
-  const lightense = document.querySelector(".page__content img, .post__content img"),
-  imageLink = document.querySelectorAll(".page__content a img, .post__content a img");
-
-  if (imageLink) {
-    for (var i = 0; i < imageLink.length; i++) imageLink[i].parentNode.classList.add("image-link");
-    for (var i = 0; i < imageLink.length; i++) imageLink[i].classList.add("no-lightense");
-  }
-
-  if (lightense) {
-    Lightense(".page__content img:not(.no-lightense), .post__content img:not(.no-lightense)", {
-    padding: 60,
-    offset: 30
-    });
-  }
+  reframe(".post__content iframe:not(.reframe-off), .page__content iframe:not(.reframe-off), .project-content iframe:not(.reframe-off)");
 
 
   /* =======================
@@ -100,38 +109,51 @@ if(document.readyState){
   })
 
 
-  /* ==========================
-  // Lightbox Gallery
-  ========================== */
-  const lightbox = GLightbox({
-    touchNavigation: true,
-    loop: true,
-    moreLength: 0,
-    autoplayVideos: true
-  });
+  /* =======================
+  // Zoom Image
+  ======================= */
+  const lightense = document.querySelector(".page__content img, .post__content img, .project-content img"),
+  imageLink = document.querySelectorAll(".page__content a img, .post__content a img, .project-content a img");
+
+  if (imageLink) {
+    for (var i = 0; i < imageLink.length; i++) imageLink[i].parentNode.classList.add("image-link");
+    for (var i = 0; i < imageLink.length; i++) imageLink[i].classList.add("no-lightense");
+  }
+
+  if (lightense) {
+    Lightense(".page__content img:not(.no-lightense), .post__content img:not(.no-lightense), .project-content img:not(.no-lightense)", {
+    padding: 60,
+    offset: 30
+    });
+  }
 
 
-  /* =================================
-  // Smooth scroll to the tags page
-  ================================= */
-  document.querySelectorAll(".tag__link").forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
+  /* =======================
+  // Shuffle Letters
+  ======================= */
+  const shuffle = document.querySelectorAll(".shuffle");
 
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth"
+  if (shuffle) {
+    Array.prototype.forEach.call(shuffle, (element) => {
+      shuffleLetters(element, {
+        iterations: 2,
+        fps: 20
       });
     });
-  });
+  }
+
+
+  // =====================
+  // Load More Posts
+  // =====================
+  var load_posts_button = document.querySelector('.load-more-posts');
+
+  load_posts_button&&load_posts_button.addEventListener("click",function(e){e.preventDefault();var o=document.querySelector(".pagination"),e=pagination_next_url.split("/page")[0]+"/page/"+pagination_next_page_number+"/";fetch(e).then(function(e){if(e.ok)return e.text()}).then(function(e){var n=document.createElement("div");n.innerHTML=e;for(var t=document.querySelector(".grid"),a=n.querySelectorAll(".grid__article"),i=0;i<a.length;i++)t.appendChild(a.item(i));pagination_next_page_number++,pagination_next_page_number>pagination_available_pages_number&&(o.style.display="none")})});
 
 
   /* =======================
   // Scroll Top Button
   ======================= */
-  window.addEventListener("scroll", function () {
-    window.scrollY > window.innerHeight ? btnScrollToTop.classList.add("is-active") : btnScrollToTop.classList.remove("is-active");
-  });
-
   btnScrollToTop.addEventListener("click", function () {
     if (window.scrollY != 0) {
       window.scrollTo({
@@ -141,5 +163,5 @@ if(document.readyState){
       })
     }
   });
-}
-//});
+
+});

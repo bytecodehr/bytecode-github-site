@@ -1,0 +1,95 @@
+---
+layout: default
+---
+
+<!-- begin contact -->
+<div class="contact">
+  <div class="container">
+    <div class="contact__inner row">
+
+      <div class="col col-6 col-d-12">
+        <div class="contact__left">
+          <div class="page-head">
+            <div class="page-meta">
+              <h1 class="page-title">{{ page.title | escape }}</h1>
+              {% if site.data.settings.contact.description %}
+                <p class="page-description">{{ site.data.settings.contact.description }}</p>
+              {% else %}
+                <p class="page-description">{{ page.description }}</p>
+              {% endif %}
+            </div>
+          </div>
+          <form class="form" action="https://formspree.io/f/xeqnooey" method="POST">
+            <div class="form__group">
+              <label class="form__label screen-reader-text" for="form-name">Your Name</label>
+              <input class="form__input" id="form-name" type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label screen-reader-text" for="form-email">Your Email</label>
+              <input class="form__input" id="form-email" type="email" name="_replyto" placeholder="Your Email" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label screen-reader-text" for="form-text">Your Message</label>
+              <textarea class="form__input" id="form-text" name="text" rows="8" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="form__group">
+              <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+              <div class="g-recaptcha" data-sitekey="6LeVUZAiAAAAAEyuYzTb9Qk_gJ-ksc4M6Xvr-Nh7"></div>
+            </div>
+            <div class="form__group">
+              <button class="button button--primary" type="submit">Send Message</button>
+            </div>
+          </form>
+          <script async defer>
+            window.onload = function() {
+              var el = document.getElementById('g-recaptcha-response');
+              if (el) {
+                el.setAttribute('required', 'required');
+              }
+            }
+
+            var form = document.getElementById("contact-form");
+
+            async function handleSubmit(event) {
+              event.preventDefault();
+              var status = document.getElementById("form-status");
+              var data = new FormData(event.target);
+              fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                  'Accept': 'application/json'
+                }
+              }).then(response => {
+                status.innerHTML = "Thanks for your submission!";
+                form.reset()
+              }).catch(error => {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+              });
+            }
+            form.addEventListener("submit", handleSubmit)
+          </script>
+
+
+        </div>
+      </div>
+      <div class="col col-6 col-d-12">
+        <div class="contact__right">
+          <div class="contact__image">
+            <img class="lazy" data-src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="contact__inner row">
+      <div class="col col-12">
+        <iframe src="https://koalendar.com/e/discuss-your-next-project-with-vedran-marcetic?embed=true" width="100%" height="800px" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end contact -->
+
+{% include section-gallery.html %}

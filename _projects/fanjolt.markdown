@@ -15,7 +15,7 @@ description: Fanjolt aims to create memorable interactions between fans and has 
 image: '/images/projects/fanjolt/fanjolt-hero.jpeg'
 
 tags: [Ruby On Rails, PostgreSQL, Redis, Heroku, Sidekiq]
-
+label: Development
 ---
 
 [//]: # (## The beginning)

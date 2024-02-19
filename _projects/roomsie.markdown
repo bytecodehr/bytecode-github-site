@@ -14,6 +14,7 @@ description: Roomsie is an online marketplace that connects hosts with interns, 
 image: '/images/projects/roomsie/roomsie.webp'
 
 tags: [Ruby On Rails, React, PostgreSQL, Redis, Heroku]
+label: Development
 ---
 ## First contact
 In late 2017, we were approached Jacob Chaney, Roomsie’s CEO. He spoke to us about the project and the multitude of challenges he was dealing with. Roomsie was a project long-time in the making and over the past couple of years various development teams failed to deliver a working product.

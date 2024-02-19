@@ -7,9 +7,12 @@ project_url: https://www.twomargins.com/
 description: Two Margins wants to change the way financial information is analyzed. They use the wisdom of the crowd to help users gain financial insight and advantage.
 image: '/images/projects/twomargins/twomargins-hero.webp'
 tags: [Ruby On Rails, PostgreSQL, Nokogiri]
+label: Development
 ---
+
 > The coolest, most constructive best-yet crowdsourcing effort to hit Wall Street
-[http://blogs.wsj.com/moneybeat/2014/08/01/using-the-wisdom-of-the-crowd-to-democratize-markets][jekyll-docs]
+>
+> <cite>– [http://blogs.wsj.com/moneybeat/2014/08/01/using-the-wisdom-of-the-crowd-to-democratize-markets][jekyll-docs]</cite>
 
 ## About the project
 Two Margins wants to change the way financial information is analyzed. It uses the wisdom of the crowd to help users gain financial insight and advantage. It allows financial experts to annotate and comment U.S. Securities and Exchange Commission issued reports and other financial/ political documents. The original idea was simple in theory: upload financial documents and allow users to annotate and discuss them.

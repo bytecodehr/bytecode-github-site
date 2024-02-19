@@ -2,27 +2,22 @@
 layout: default
 ---
 
-<div class="container">
-  <div class="row">
-    <div class="col col-12">
-      <div class="page__info">
-        <h1 class="page__title">{{ page.heading | escape }}</h1>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- begin page -->
-<div class="container animate">
+<div class="container">
 
-  {% if page.image %}
-  <div class="row">
-    <div class="col col-12">
-      <div class="page-image">
-        <img src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
-      </div>
+  <div class="page-head">
+    <div class="page-meta">
+      <h1 class="page-title">{{ page.title | escape }}</h1>
+      {% if page.description %}
+        <p class="page-description">{{ page.description }}</p>
+      {% endif %}
     </div>
   </div>
+
+  {%if page.image %}
+    <div class="page-image">
+      <img class="lazy" data-src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}">
+    </div>
   {% endif %}
 
   <article class="page">
@@ -34,4 +29,4 @@ layout: default
 </div>
 <!-- end page -->
 
-{% include section-subscribe.html %}
+{% include section-gallery.html %}

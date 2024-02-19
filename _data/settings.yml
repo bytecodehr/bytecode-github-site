@@ -1,112 +1,229 @@
 #-------------------------------
 # Site Settings
-title: Bytecode - Developing complex products from concept to market.
-logo: '/images/logo/logo-crop.webp'
-author: Vedran Marčetić
-description: Helping companies develop their most valuable product ideas from concept to market.
+title: Bytecode
+logo: '/images/logo-crop.webp'
+description: An impressive portfolio theme for Jekyll
+color_scheme: auto # You have the option to choose between three modes: auto, light, and dark. The default mode is set to auto, which means that the color scheme will automatically adapt based on your operating system settings. This way, you can enjoy a personalized experience without having to manually switch between light and dark modes.
 
 
 #-------------------------------
-# Menu Settings
-menu__settings:
-  menu__items:
-    - title: 'Home'
-      url: '/'
-    - title: 'How we work'
-      url: '/how-we-work'
-    - title: 'Contact'
-      url: '/contact'
+# Author Global Settings
+author:
+  author_name: Jesse Parker
+  author_role: Product Designer
+  author_description: When I'm not a Product Designer, I can often be found cycling through picturesque landscapes, immersing myself in the joy of two-wheeled adventures. Reading books is another passion of mine, as I love delving into captivating stories and exploring new ideas. Beyond these pursuits, I relish engaging in various activities that nurture my creativity and keep me inspired.
+  author_avatar: '/images/01-1.jpg'
+
+
+#-------------------------------
+# Navigation Settings
+menu_settings:
+  menu_items:
+    - title: 'What We Work On'
+      url: '/what-we-work-on/'
+    - title: 'We Write About'
+      url: '/we-write-about/'
+    - title: 'How We Work'
+      url: '/how-we-work/'
+    - title: 'Schedule A Call With Us'
+      url: '/schedule-a-call-with-us/'
+
+# Call to action button
+cta_button:
+  enable: true
+  cta_button_link: '/schedule-a-call-with-us/'
+  cta_button_text: Get in touch
+
 
 #-------------------------------
 # Hero Settings
-# Helping companies develop their most valuable product ideas from concept to market.
 hero:
-  hero__title: Helping companies develop product ideas from concept to market.
-  hero__description: Bytecode is a high-grade Ruby and React web consultancy specialized in mapping out, designing, and delivering complex web and mobile applications on time.
+  enable: true
+  hero_intro: Hi, We're Bytecode
+  hero_title: High-grade Ruby and React web consultancy
+  hero_description: Helping companies develop product ideas from concept to market. Specialized in mapping out, designing, and delivering complex web and mobile applications on time.
+  hero_images:
+    - alt: 'Hobby'
+      url: '/images/hero-1.jpg'
+    - alt: 'Apartment'
+      url: '/images/hero-2.jpg'
+    - alt: 'Friends'
+      url: '/images/hero-3.jpg'
+    - alt: 'Workflow'
+      url: '/images/hero-4.jpg'
 
 
 #-------------------------------
-# Portfolio Settings
-portfolio:
-  portfolio__title: Portfolio
-  portfolio__gallery:
-    - image: /images/gallery-01.webp
-      title: Samantha Gades
-      description: Brown photo frame beside wall <a href="https://unsplash.com/photos/8Od75hgzb9Y">Unsplash</a>
-
-    - image: /images/gallery-02.webp
-      title: Paula Vermeulen
-      description: Gray mountain covered by mountain <a href="https://unsplash.com/photos/_f2m3mEkaaU">Unsplash</a>
-
-    - image: /images/gallery-03.webp
-      title: Bench Accounting
-      description: White wooden table near brown chair <a href="https://unsplash.com/photos/nvzvOPQW0gc">Unsplash</a>
-
-    - image: /images/gallery-04.webp
-      title: Nord Wood
-      description: White ceramic mug <a href="https://unsplash.com/photos/nDd3dIkkOLo">Unsplash</a>
-
-    - image: /images/gallery-05.webp
-      title: Luca Bravo
-      description: White ribs in a facade against a white sky <a href="https://unsplash.com/photos/alS7ewQ41M8">Unsplash</a>
-
-    - image: /images/gallery-06.webp
-      title: Isaac Benhesed
-      description: Minimalist black coffee <a href="https://unsplash.com/photos/onLbXleIkds">Unsplash</a>
-
-    - image: /images/gallery-07.webp
-      title: Water Journal
-      description: Water Journal is a bi-annual publication exploring the beauty and complexity of all things water <a href="https://unsplash.com/photos/EbuaKnSm8Zw">Unsplash</a>
-
-    - image: /images/gallery-08.webp
-      title: Luca Bravo
-      description: Worms eye view of city buildings <a href="https://unsplash.com/photos/a6x7YPiNxwI">Unsplash</a>
-
-    - image: /images/gallery-09.webp
-      title: Books and Laptop
-      description: Silver laptop computer with two books on the top <a href="https://unsplash.com/photos/fFIAKABImf4">Unsplash</a>
+# Newsletter
+mailchimp: disable # To enable the mailchimp form, use the value 'enable'. To disable the form, leave the field blank.
+mailchimp__identifier: gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp # Add your MailChimp form identifier. For example - gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp
+mailchimp__input__text: Your email address
+mailchimp__button__text: Subscribe
 
 
 #-------------------------------
-# Subscribe Settings
-mailchimp:
-  mailchimp__title: Get updates and digital art inspiration # Add your Title
-  mailchimp__identifier: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
-  mailchimp__button__text: Subscribe # Add your button text.
-  mailchimp__bg__color: "#f2eef8" # To change the color of the figure, add a hexadecimal color code (HEX). For example - "#f2eef8" (You can generate any color here - https://htmlcolorcodes.com/).
+# Projects Settings
+projects:
+  enable: true
+  projects_title: What we work on
+
+
+#-------------------------------
+# Testimonials Section
+testimonials:
+  enable: true
+  testimonials_title: See what our customers are saying
+
+testimonials_items:
+  - name: "Lucas Parker"
+    image: "/images/client-1.jpg"
+    designation: "Web Developer"
+    content : "If you're looking for a top-notch product designer, look no further. His ability to merge creativity with functionality is remarkable."
+    link: "https://twitter.com/"
+    icon: "fa-brands fa-twitter"
+    icon_color: "#1da1f3"
+
+  - name: "Olivia Williams"
+    image: "/images/client-2.jpg"
+    designation: "Data Analyst"
+    content : "His attention to every minute detail ensured that our products stand out, capturing the attention of potential customers."
+    link: "https://twitter.com/"
+    icon: "fa-brands fa-twitter"
+    icon_color: "#1da1f3"
+
+  - name: "Ava Martinez"
+    image: "/images/client-3.jpg"
+    designation: "Designer"
+    content : "The designer brought fresh ideas and innovative solutions to our project, delivering results that exceeded our expectations."
+    link: "https://twitter.com/"
+    icon: "fa-brands fa-twitter"
+    icon_color: "#1da1f3"
+
+  - name: "Evelyn Turner"
+    image: "/images/client-4.jpg"
+    designation: "Data Scientist"
+    content : "Exceptional talent! The designer was instrumental in crafting our brand's identity, infusing it with authenticity and personality."
+    link: "https://instagram.com/"
+    icon: "fa-brands fa-instagram"
+    icon_color: "#e1306c"
+
+  - name: "Oliver Davis"
+    image: "/images/client-5.jpg"
+    designation: "Software Engineer"
+    content : "Working with the designer was a breath of fresh air! His communication, timeliness, and creative flair were unparalleled."
+    link: "https://facebook.com/"
+    icon: "fa-brands fa-facebook-f"
+    icon_color: "#1977f3"
+
+  - name: "Isabella Lee"
+    image: "/images/client-6.jpg"
+    designation: "QA Engineer"
+    content : "His expertise in web design and branding elevated our online presence, attracting more visitors and increasing our conversions."
+    link: "https://twitter.com/"
+    icon: "fa-brands fa-twitter"
+    icon_color: "#1da1f3"
+
+  - name: "James Wright"
+    image: "/images/client-7.jpg"
+    designation: "Data Analyst"
+    content : "Jessy brought fresh ideas and innovative solutions to our project, delivering results that exceeded our expectations."
+    link: "https://facebook.com/"
+    icon: "fa-brands fa-facebook-f"
+    icon_color: "#1977f3"
+
+  - name: "Layla Foster"
+    image: "/images/client-8.jpg"
+    designation: "CEO"
+    content : "I can't thank Jessy enough for their outstanding UI/UX design services. He took our app's user experience to new heights."
+    link: "https://twitter.com/"
+    icon: "fa-brands fa-twitter"
+    icon_color: "#1da1f3"
+
+  - name: "Emily Collins"
+    image: "/images/client-9.jpg"
+    designation: "DevOps"
+    content : "Simply outstanding! The designer helped us turn our vague concept into a fully functional and visually stunning app."
+    link: "https://instagram.com/"
+    icon: "fa-brands fa-instagram"
+    icon_color: "#e1306c"
+
+
+#-------------------------------
+# Blog Section
+blog:
+  enable: true
+  blog_title: We write about
+
+
+#-------------------------------
+# Author Section Settings
+author_section:
+  enable: true
+  author_section_role: Rapid Prototyping
+  author_section_title: How we work?
+  author_section_description: Our approach focuses on delivering working prototypes quickly, allowing you to test assumptions and make informed decisions early on. We use simplified Scrum for development and work in weekly sprints to deliver measurable results. Our tech stack includes Ruby, Java, JavaScript, React, PostgreSQL, and Redis for robust and efficient solutions. We host our sites on reliable platforms such as Heroku and Digital Ocean for seamless deployment and scaling.
+  author_section_image: '/images/01.jpg'
+  author_section_button_text: vmarcetic@bytecode.hr
+  author_section_button_link: 'mailto:vmarcetic@bytecode.hr'
+
+
+#-------------------------------
+# Tags Section Settings
+tags_section:
+  enable: true
+  tags_section_title: Explore our topics
+
+
+#-------------------------------
+# Gallery Section Settings
+gallery:
+  enable: true
+  gallery_title: The Tech We Use
+  gallery_images:
+    - alt: 'Rest'
+      url: '/images/gallery-1.webp'
+    - alt: 'City'
+      url: '/images/gallery-2.webp'
+    - alt: 'Hobby'
+      url: '/images/gallery-3.webp'
+    - alt: 'Car'
+      url: '/images/gallery-4.webp'
+    - alt: 'Hobby'
+      url: '/images/gallery-5.webp'
+    - alt: 'Lifestyle'
+      url: '/images/gallery-6.webp'
 
 
 #-------------------------------
 # Footer Settings
-social:
-- {icon: "ion-logo-github", color: "#24292e", label: Github, link: "https://github.com/bytecodehr"}
-- {icon: "ion-logo-linkedin", color: "#0072b1", label: Linkedin, link: "https://www.linkedin.com/company/bytecodehr/"}
-#- {icon: "ion-logo-facebook", color: "#3b5999", label: Facebook, link: "https://facebook.com"}
-#- {icon: "ion-logo-pinterest", color: "#bd081c", label: Pinterest, link: "https://pinterest.com"}
-#- {icon: "ion-logo-dribbble", color: "#ea4c89", label: Dribbble, link: "https://dribbble.com"}
-#- {icon: "ion-logo-instagram", color: "#e4405f", label: Instagram, link: "https://instagram.com"}
-#- {icon: "ion ion-logo-vimeo", color: "#1393cd", label: Vimeo, link: "https://vimeo.com"}
 
-# Example of adding a new link to the footer section - {icon: "ion-logo-github", color: "#24292e, label: Github, link: "https://github.com"}
-# Other icons can be found at https://ionicons.com/v4/
+# Social links
+social:
+- {icon: "fa-brands fa-twitter", link: "https://twitter.com"}
+- {icon: "fa-brands fa-facebook-f", link: "https://facebook.com"}
+- {icon: "fa-brands fa-instagram", link: "https://instagram.com"}
+- {icon: "fa-brands fa-pinterest", link: "https://pinterest.com"}
+- {icon: "fa-brands fa-dribbble", link: "https://dribbble.com"}
+
+# Example of adding a new link to the footer - {icon: "fa-brands fa-youtube", link: "https://youtube.com"}
+# Other icons can be found at https://fontawesome.com/icons
 
 
 #-------------------------------
 # Contact Settings
 contact:
-  email: vmarcetic@bytecode.hr # Add your email for contact form
-  description: Contact us for any inquiries or collaborations.
+  email: your@email.com # Add your form_id
+  description: Nuntu comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want. # Add a description of your form
 
 # NOTE
-# Clancy comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want.
+# Nuntu theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
 
 
 #-------------------------------
 # Comment Section (Disqus)
-
-# disqus-identifier: anvodstudio-demo # add your shortname for Disqus Comment. For example anvodstudio-demo
+# disqus_identifier: anvod-studio-test # Add your shortname for Disqus Comment. For example anvod-studio-test
 
 
 #-------------------------------
 # Google Analytics
-google-analytics: G-N2M3542KGY
+google_analytics: # Add your GA Tracking Id

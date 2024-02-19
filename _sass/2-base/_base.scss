@@ -6,19 +6,61 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
+  overflow-x: hidden;
   color: var(--text-color);
   background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media only screen and (max-width: $mobile) {
+  &.search-is-visible {
+    overflow: hidden;
+    -webkit-overflow-scrolling: auto;
+  }
+
+  &.disable-animation {
+    *, *::after, *::before {
+      transition: none !important;
+    }
+  }
+
+  @media (max-width: $desktop) {
     font-size: 18px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
+
+  &.scheme--light {
+    @include scheme-light;
+  }
+
+  &.scheme--dark {
+    @include scheme-dark;
+  }
+
+  &.scheme--toggle {
+
+    @media (prefers-color-scheme: light) {
+      @include scheme-light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      @include scheme-dark;
+    }
   }
 }
 
 *::selection {
-  color: var(--white);
-  background-color: var(--brand-color);
+  color: var(--dark);
+  background-color: var(--secondary-color);
+}
+
+.global-wrap {
+  &.is-active {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
 }
 
 h1,
@@ -60,36 +102,52 @@ h6 {
 
 blockquote {
   position: relative;
-  margin: 40px 0;
-  padding-left: 26px;
-  font-size: 24px;
-  line-height: 1.7;
-  font-weight: 500;
-  border-left: 4px solid var(--heading-font-color);
-  color: var(--heading-font-color);
+  margin: 32px 0;
+  padding: 48px;
+  font-family: $heading-font-family;
+  font-size: 32px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: $heading-letter-spacing;
+  border-radius: 22px;
+  color: var(--dark);
+  background: var(--secondary-color);
 
   p {
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
 
   cite {
     display: inline-block;
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 700;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: $heading-letter-spacing;
     font-style: normal;
-    color: var(--heading-font-color);
+    color: var(--dark);
 
   }
 
-  @media only screen and (max-width: $mobile) {
+  @media (max-width: $tablet) {
+    padding: 40px;
+    font-size: 24px;
+    border-radius: 12px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 28px;
     font-size: 21px;
+
+    cite {
+      margin-top: 12px;
+      font-size: 16px;
+    }
   }
 }
 
 pre {
   overflow: auto;
-  padding: 15px;
+  padding: 16px;
   margin-bottom: 0;
   font-size: 14px;
   white-space: pre-wrap;
@@ -111,12 +169,13 @@ img,
   &+em {
     display: block;
     margin-top: 20px;
+    font-family: $heading-font-family;
     font-size: 12px;
-    line-height: 22px;
+    line-height: 100%;
     font-style: normal;
     font-weight: normal;
     text-align: center;
-    color: var(--heading-font-color);
+    color: var(--text-alt-color);
   
     a {
       font-weight: 500;
@@ -130,7 +189,7 @@ img,
     }
   
     @media only screen and (max-width: $mobile) {
-      margin-top: 12px;
+      margin-top: 16px;
     }
   }
 }
@@ -146,11 +205,22 @@ a {
 }
 
 hr {
+  position: relative;
   width: 100%;
   height: 1px;
-  margin: 60px 0;
+  margin: 48px 0;
   border: 0;
-  background: var(--background-alt-color);
+
+  &::before {
+    content: ". . .";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 0;
+    color: var(--heading-font-color)
+  }
 }
 
 .table-container {
@@ -160,9 +230,10 @@ hr {
 }
 
 table {
+  width: 100%;
+  font-family: $heading-font-family;
   font-size: 12px;
   color: var(--dark);
-  width: 100%;
   border-width: 1px;
   border-color: var(--background-alt-color);
   border-collapse: collapse;
@@ -193,33 +264,9 @@ table td {
   border: 1px solid var(--background-alt-color);
 }
 
-.button {
-  display: inline-block;
-  padding: 20px 40px;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all .25s;
-  color: var(--heading-font-color);
-  background: var(--background-alt-color);
-
-  &--primary {
-    color: var(--white);
-    background-color: var(--button-background-color);
-
-    &:hover {
-      background: var(--button-background-hover);
-    }
-  }
-}
-
 .lazy {
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity .5s ease;
 }
 
 .lazy.loaded {
@@ -227,5 +274,5 @@ table td {
 }
 
 .lightense-backdrop {
-  background-color: var(--background-alt-color) !important;
+  background-color: var(--background-color) !important;
 }

@@ -11,32 +11,45 @@ permalink: /:title
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-minifier
 
-#paginate: 9
-#paginate_path: "/blog/page/:num"
+paginate: 4
+paginate_path: "/we-write-about/page/:num"
 
+
+#-------------------------------
+# Collections
 collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /we-write-about/:slug
   projects:
     output: true
+    permalink: /what-we-work-on/:slug
 
 # Pages Path
 defaults:
   - scope:
-      path: '_pages'
+      path: ""
     values:
-      permalink: /:basename:output_ext
+      layout: "default"
   - scope:
-      path: '_projects'
+      path: ""
+      type: "pages"
     values:
-      permalink: /projects/:slug
-#  - scope:
-#      path: '_posts'
-#    values:
-#      permalink: /blog/:slug
-
-include:
-  - _pages
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
 sass:
   sass_dir: _sass

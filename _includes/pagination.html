@@ -1,31 +1,16 @@
-{% if paginator.total_pages > 1 %}
+{% assign postCount = site.posts | size %}
+{% assign postsCovered = site.paginate | plus:offset %}
+{% if postsCovered < postCount %}
 <!-- begin pagination -->
-<div class="container">
-  <div class="row">
-    <div class="col col-12">
-      <nav class="pagination">
-        <div class="pagination__inner">
-
-          <div class="pagination__list">
-            {% if paginator.previous_page %}
-              <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__prev pagination__item"><i class="ion ion-ios-arrow-back"></i> Prev</a>
-            {% else %}
-              <span class="pagination__prev pagination__item disabled"><i class="ion ion-ios-arrow-back"></i> Prev</span>
-            {% endif %}
-      
-            <div class="pagination__count pagination__item">Page {{ paginator.page }} of {{paginator.total_pages}}</div>
-      
-            {% if paginator.next_page %}
-              <a href="{{ paginator.next_page_path | relative_url }}" class="pagination__next pagination__item">Next <i class="ion ion-ios-arrow-forward"></i></a>
-            {% else %}
-              <span class="pagination__next pagination__item disabled">Next <i class="ion ion-ios-arrow-forward"></i></span>
-            {% endif %}
-          </div>
-
-        </div>
-      </nav>
-    </div>
+  <div class="pagination">
+    <button class="load-more-posts button button--primary">Load more posts</button>
   </div>
-</div>
 <!-- end pagination -->
 {% endif %}
+
+<script>
+  var base_url = "",
+    pagination_next_url = base_url + '/blog/page2',
+    pagination_next_page_number = '{{ paginator.next_page }}',
+    pagination_available_pages_number = '{{ paginator.total_pages }}';
+</script>

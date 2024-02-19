@@ -1,28 +1,28 @@
+{% if site.data.settings.blog.enable == true %}
 <!-- begin blog -->
-<section class="blog section">
+<section class="section blog">
 
   <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <div class="section__info">
-          <div class="section__head">
-            <h2 class="section__title">Recent posts</h2>
-            <a class="section__link" href="{{ '/blog' | relative_url }}">View all posts</a>
-          </div>
+    {% if site.data.settings.blog.blog_title %}
+      <div class="row">
+        <div class="col col-12">
+          <h2 class="section__title">{{ site.data.settings.blog.blog_title }}</h2>
         </div>
       </div>
-    </div>
+    {% endif %}
   </div>
 
-  <div class="container">
-    <div class="row">
-      {% if site.posts.size > 0 %}
-        {% for post in site.posts offset:0 limit:3 %}
-          {% include article.html %}
-        {% endfor %}
-      {% endif %}
-    </div>
+  <div class="blog__inner">
+    {% assign post_counter = site.post_counter | default: 1 %}
+    {% if site.posts.size > 0 %}
+      {% for post in site.posts offset:0 limit:3 %}
+        {% include article.html %}
+        {% assign post_counter = post_counter | plus: 1 %}
+      {% endfor %}
+    {% endif %}
   </div>
 
+  <a href="{{ '/blog' | relative_url }}" class="section__button">View all <i class="fa-solid fa-arrow-right-long"></i></a>
 </section>
 <!-- end blog -->
+{% endif %}

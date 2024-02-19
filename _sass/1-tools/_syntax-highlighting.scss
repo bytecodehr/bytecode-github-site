@@ -3,10 +3,16 @@
 */
 
 .highlight {
+  margin-bottom: 32px;
+  border-radius: 22px;
   background: var(--syntax-highlighting-background);
 
   .highlighter-rouge & {
     background: var(--syntax-highlighting-background);
+  }
+
+  @media (max-width: $tablet) {
+    border-radius: 12px;
   }
 
   .c     { color: #998; font-style: italic } // Comment

@@ -1,0 +1,26 @@
+{% if site.data.settings.gallery.enable == true %}
+<!-- begin section-gallery -->
+<section class="section section-gallery">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="section-gallery__inner">
+          {% if site.data.settings.gallery.gallery_title %}
+            <h3 class="section-gallery__title shuffle">{{ site.data.settings.gallery.gallery_title }}</h3>
+          {% endif %}
+          {% if site.data.settings.gallery %}
+          <div class="section-gallery__content">
+            {% for image in site.data.settings.gallery.gallery_images %}
+            <div class="section-gallery__image">
+              <img src="{{site.baseurl}}{{image.url}}" alt="{{image.alt}}" loading="lazy">
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end section-gallery -->
+{% endif %}

@@ -1,12 +1,12 @@
-# Clancy is an elegant portfolio theme for Jekyll
+# Nuntu – An impressive portfolio theme for Jekyll
 
-Clancy is an elegant portfolio theme for Jekyll designed for photographers, designers, illustrators, artists, creatives, etc. This theme will help you professionally introduce yourself to your visitors and showcase your work in a minimalistic style. This super clean and fully optimized theme can be easily customized to suit your needs.
+Nuntu is a feature-rich and versatile theme for Jekyll, designed for creating an impressive personal portfolio. Whether you're a developer, designer, writer, or any creative professional, Nuntu has got you covered with its wide range of functionalities and stunning design.
 
 * * *
 
 ### Demo
 
-Check the theme in action [Live Demo](https://clancy.netlify.app/) |
+Check the theme in action [Live Demo](https://nuntu.netlify.app/) |
 [Artem Sheludko](https://jekyllthemes.io/developers/artem-sheludko)
 
 * * *
@@ -14,26 +14,30 @@ Check the theme in action [Live Demo](https://clancy.netlify.app/) |
 ### Theme features
 
 - Works with GitHub Pages (host it for free)
-- Dark and light mode user can select themself
-- 100% responsive Design
-- Clean and Modern Code
-- Optimized for mobile devices
-- Super fast performance ⚡⚡⚡
-- No jQuery, only vanilla JS
-- Social sharing buttons
-- Scroll to top button
-- Syntax highlighting (supports the Jekyll syntax highlighter)
-- Compatible with modern browsers
-- Medium style image zoom
-- Image Lazy loading
-- Image gallery
-- Tags Page
-- Custom logo support
+- Dark and Light Mode
+- No jQuery, Only Vanilla JS
+- 100% Responsive Design
+- Clean Code
+- Optimized for Mobile Devices
+- Section Blog
+- Section Works
+- Section Testimonials
+- Super Fast Performance ⚡⚡⚡
+- Instant Search
+- Social Sharing Buttons
+- Scroll to Top Button
+- Syntax Highlighting
+- Compatible with Modern Browsers
+- Medium Style Image Zoom
+- Image Lazy Loading
+- Image Gallery
+- Tag Page
+- Custom Logo Support
 - Supports contact form (Formspree)
-- Supports MailChimp newsletter
-- Supports Disqus comments
+- Supports MailChimp Newsletter
+- Supports Disqus Comments
 - Supports Google Analytics
-- Ionicons icons
+- Free Font Awesome Icons
 - Free Google Fonts
 - Free Updates & Support
 
@@ -57,10 +61,10 @@ I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/de
 
 ### Documentation
 
-Before using the Clancy theme, please read the attached documentation.
+Before using the Nuntu theme, please read the attached documentation.
 
 * * *
 
 ### Support
 
-<p>If you have any questions, please feel free to contact me by mail <a href="mailto:hi.artemsheludko@gmail.com">Contact</a><p>
+<p>If you have any questions or feedback about the theme, please feel free to contact me by mail <a href="mailto:hi.artemsheludko@gmail.com">Contact</a><p>

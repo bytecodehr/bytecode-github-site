@@ -3,26 +3,28 @@
 
 {% include head.html %}
 
-<body>
+<body class="{% if site.data.settings.color_scheme == "auto" %}scheme--toggle{% else %}scheme--{{ site.data.settings.color_scheme }}{% endif %}">
 
-  {% if site.data.settings.google-analytics %}
+  {% if site.data.settings.google_analytics %}
     {% include google-analytics.html %}
   {% endif %}
 
-  {% include header.html %}
+  <!-- begin global wrap -->
+  <div class="global-wrap">
+    {% include header.html %}
+  
+    <!-- begin content -->
+    <main class="content" aria-label="Content">
+      {{ content }}
+    </main>
+    <!-- end content -->
+  
+    {% include footer.html %}
+  </div>
+  <!-- end global wrap -->
 
-  <!-- begin content -->
-  <main class="content" aria-label="Content">
-    {{ content }}
-  </main>
-  <!-- end content -->
-
-  <div class="top" title="Top"><i class="ion ion-ios-arrow-round-up"></i></div>
-
-  {% include footer.html %}
-
-  <script async defer src="{{ site.baseurl }}/js/scripts.js"></script>
-  <script async defer src="{{ site.baseurl }}/js/common.js"></script>
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <script src="{{ site.baseurl }}/js/common.js"></script>
 </body>
 
 </html>
