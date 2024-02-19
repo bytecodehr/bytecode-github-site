@@ -2,7 +2,7 @@
 layout: page
 title: How we work
 description: Developing complex products from concept to market.
-permalink: /how-we-work
+permalink: /how-we-work/
 ---
 
 ### Finding the right people to shape your idea can be daunting.
