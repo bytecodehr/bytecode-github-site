@@ -17,8 +17,21 @@
   <div id="consent-banner">
     <div class="consent-modal">
       <p>Please provide your consent for cookies and data collection. We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic.</p>
-      <button id="grant-consent">Grant Consent</button>
-      <button id="deny-consent">Deny Consent</button>
+      <div class="consent-buttons">
+        <button id="grant-consent">Grant Consent</button>
+        <button id="deny-consent">Deny Consent</button>
+        <button id="preferences-btn">Preferences</button>
+      </div>
+
+      <!-- Preferences Section -->
+      <div class="consent-preferences" id="consent-preferences">
+        <label><input type="checkbox" id="ad_storage"> Ad Storage</label>
+        <label><input type="checkbox" id="analytics_storage"> Analytics Storage</label>
+        <label><input type="checkbox" id="functionality_storage"> Functionality Storage</label>
+        <label><input type="checkbox" id="personalization_storage"> Personalization Storage</label>
+        <label><input type="checkbox" id="security_storage"> Security Storage</label>
+        <button id="save-preferences">Save Preferences</button>
+      </div>
     </div>
   </div>
 
@@ -27,31 +40,69 @@
       var consentBanner = document.getElementById('consent-banner');
       var grantButton = document.getElementById('grant-consent');
       var denyButton = document.getElementById('deny-consent');
+      var preferencesBtn = document.getElementById('preferences-btn');
+      var preferencesSection = document.getElementById('consent-preferences');
+      var savePreferencesBtn = document.getElementById('save-preferences');
+
+      function loadConsentPreferences() {
+        var preferences = localStorage.getItem('consentPreferences');
+        if (preferences) {
+          preferences = JSON.parse(preferences);
+          for (var key in preferences) {
+            if (preferences.hasOwnProperty(key)) {
+              document.getElementById(key).checked = preferences[key] === 'granted';
+            }
+          }
+        }
+      }
+
+      function saveConsentPreferences(preferences) {
+        localStorage.setItem('consentPreferences', JSON.stringify(preferences));
+      }
+
+      function applyConsentUpdate(consent) {
+        var consentConfig = {
+          'ad_storage': consent,
+          'analytics_storage': consent,
+          'ad_user_data': consent,
+          'ad_personalization': consent,
+          'functionality_storage': consent,
+          'personalization_storage': consent,
+          'security_storage': consent
+        };
+        gtag('consent', 'update', consentConfig);
+        saveConsentPreferences(consentConfig);
+        if (consent === 'granted') loadTagManager();
+      }
 
       grantButton.addEventListener('click', function() {
         localStorage.setItem('consentGranted', 'true');
-        updateConsent(true);
+        applyConsentUpdate('granted');
         consentBanner.style.display = 'none';
       });
 
       denyButton.addEventListener('click', function() {
         localStorage.setItem('consentGranted', 'false');
-        updateConsent(false);
+        applyConsentUpdate('denied');
         consentBanner.style.display = 'none';
       });
 
-      function updateConsent(consent) {
-        gtag('consent', 'update', {
-          'ad_storage': consent ? 'granted' : 'denied',
-          'analytics_storage': consent ? 'granted' : 'denied',
-          'ad_user_data': consent ? 'granted' : 'denied',
-          'ad_personalization': consent ? 'granted' : 'denied',
-          'functionality_storage': consent ? 'granted' : 'denied',
-          'personalization_storage': consent ? 'granted' : 'denied',
-          'security_storage': consent ? 'granted' : 'denied'
-        });
-        if (consent) loadTagManager();
-      }
+      preferencesBtn.addEventListener('click', function() {
+        preferencesSection.style.display = preferencesSection.style.display === 'none' ? 'block' : 'none';
+      });
+
+      savePreferencesBtn.addEventListener('click', function() {
+        var consentConfig = {
+          'ad_storage': document.getElementById('ad_storage').checked ? 'granted' : 'denied',
+          'analytics_storage': document.getElementById('analytics_storage').checked ? 'granted' : 'denied',
+          'functionality_storage': document.getElementById('functionality_storage').checked ? 'granted' : 'denied',
+          'personalization_storage': document.getElementById('personalization_storage').checked ? 'granted' : 'denied',
+          'security_storage': document.getElementById('security_storage').checked ? 'granted' : 'denied'
+        };
+        gtag('consent', 'update', consentConfig);
+        saveConsentPreferences(consentConfig);
+        preferencesSection.style.display = 'none';
+      });
 
       function loadTagManager() {
         var gtmScript = document.createElement('script');
@@ -61,9 +112,15 @@
       }
 
       if(localStorage.getItem('consentGranted') === 'true') {
-        updateConsent(true);
+        applyConsentUpdate('granted');
+        consentBanner.style.display = 'none';
+      } else if (localStorage.getItem('consentGranted') === 'false') {
+        applyConsentUpdate('denied');
         consentBanner.style.display = 'none';
       }
+
+      // Load saved consent preferences if available
+      loadConsentPreferences();
     });
   </script>
 
