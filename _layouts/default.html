@@ -56,15 +56,17 @@
       });
 
       function updateConsent(consent) {
-        gtag('consent', 'update', {
+        var consentConfig = {
           'ad_storage': consent ? 'granted' : 'denied',
           'analytics_storage': consent ? 'granted' : 'denied',
           'ad_user_data': consent ? 'granted' : 'denied',
           'ad_personalization': consent ? 'granted' : 'denied',
           'functionality_storage': consent ? 'granted' : 'denied',
           'personalization_storage': consent ? 'granted' : 'denied',
-          'security_storage': consent ? 'granted' : 'denied'
-        });
+          'security_storage': consent ? 'granted' : 'denied',
+        };
+        gtag('consent', 'update', consentConfig);
+        localStorage.setItem('individualConsentPreferences', JSON.stringify(consentConfig));
         if (consent) loadTagManager();
       }
 
@@ -115,6 +117,7 @@
       var savePreferencesBtn = document.getElementById('save-preferences');
       savePreferencesBtn.addEventListener('click', function() {
         saveIndividualConsentPreferences();
+        if (isAnyCheckboxChecked) loadTagManager();
         //consentBanner.style.display = 'none';
         document.getElementById('consent-preferences').style.display = 'none';
       });
@@ -132,6 +135,13 @@
         e.preventDefault();
         document.getElementById('consent-banner').style.display = 'block';
       });
+
+      function isAnyCheckboxChecked() {
+        var preferencesDiv = document.getElementById('consent-preferences');
+        var checkboxes = preferencesDiv.querySelectorAll('input[type="checkbox"]');
+        return Array.from(checkboxes).some(checkbox => checkbox.checked);
+      }
+
 
     });
   </script>
