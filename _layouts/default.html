@@ -14,24 +14,67 @@
   <!-- End Google Tag Manager -->
 
   <!-- Consent Banner (Modal) -->
-  <div id="consent-banner">
-    <div class="consent-modal">
-      <p>Please provide your consent for cookies and data collection. We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic.</p>
-      <div class="consent-buttons">
-        <button id="preferences-btn">Preferences</button>
-        <button id="grant-consent">Grant Consent</button>
-        <button id="deny-consent">Deny Consent</button>
-      </div>
+<div id="consent-banner">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <div class="consent-modal">
+    <h2>Privacy & Cookie Consent</h2>
+    <p>We value your privacy and want to be transparent about the data we collect, how we use it, and your rights to control that information. Consent for cookies and data collection helps us personalize and improve your experience. Please choose your preferences below.</p>
+    <div class="consent-buttons">
+      <button id="preferences-btn">Preferences</button>
+      <button id="grant-consent">Grant Consent</button>
+      <button id="deny-consent">Deny Consent</button>
+    </div>
 
       <!-- Preferences Section -->
       <div class="consent-preferences" id="consent-preferences">
-        <label><input type="checkbox" id="ad_storage"> Ad Storage</label>
-        <label><input type="checkbox" id="analytics_storage"> Analytics Storage</label>
-        <label><input type="checkbox" id="ad_user_data"> Ad User Data</label>
-        <label><input type="checkbox" id="ad_personalization"> Ad Personalization</label>
-        <label><input type="checkbox" id="functionality_storage"> Functionality Storage</label>
-        <label><input type="checkbox" id="personalization_storage"> Personalization Storage</label>
-        <label><input type="checkbox" id="security_storage"> Security Storage</label>
+        <label for="ad_storage">
+          <input type="checkbox" id="ad_storage">
+          <strong>Enable Targeted Ads</strong>
+          <br>
+          <span class="consent-description">Allow us to store information for the purpose of delivering tailored advertising based on your interests and interactions.</span>
+        </label>
+
+        <label for="analytics_storage">
+          <input type="checkbox" id="analytics_storage">
+          <strong>Allow Website Analytics</strong>
+          <br>
+          <span class="consent-description">Consent to the storage of data for analyzing how you navigate and interact with our site, helping us improve your user experience.</span>
+        </label>
+
+        <label for="ad_user_data">
+          <input type="checkbox" id="ad_user_data">
+          <strong>Personalize Ad Profiles</strong>
+          <br>
+          <span class="consent-description">Agree to the collection of demographic and behavioral data to create personalized advertising profiles.</span>
+        </label>
+
+        <label for="ad_personalization">
+          <input type="checkbox" id="ad_personalization">
+          <strong>Customize Ad Experience</strong>
+          <br>
+          <span class="consent-description">Allow us to use your data to make the advertisements you see more relevant to your interests.</span>
+        </label>
+
+        <label for="functionality_storage">
+          <input type="checkbox" id="functionality_storage">
+          <strong>Remember Site Preferences</strong>
+          <br>
+          <span class="consent-description">Permit us to remember your settings and preferences (like language and layout) for a more personalized website experience.</span>
+        </label>
+
+        <label for="personalization_storage">
+          <input type="checkbox" id="personalization_storage">
+          <strong>Personalize Content</strong>
+          <br>
+          <span class="consent-description">Consent to the use of your data for personalizing your content experience beyond advertisements.</span>
+        </label>
+
+        <label for="security_storage">
+          <input type="checkbox" id="security_storage">
+          <strong>Enhance Security</strong>
+          <br>
+          <span class="consent-description">Enable us to store data critical for security purposes, such as authentication and fraud prevention.</span>
+        </label>
         <button id="save-preferences">Save Preferences</button>
       </div>
     </div>
