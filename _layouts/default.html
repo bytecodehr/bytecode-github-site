@@ -37,17 +37,24 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var consentBanner = document.getElementById('consent-banner');
-      var grantButton = document.getElementById('grant-consent');
-      var denyButton = document.getElementById('deny-consent');
-      var preferencesBtn = document.getElementById('preferences-btn');
-      var preferencesSection = document.getElementById('consent-preferences');
-      var savePreferencesBtn = document.getElementById('save-preferences');
+      // Existing consent banner code
+      // ... your existing script ...
 
-      function loadConsentPreferences() {
-        var preferences = localStorage.getItem('consentPreferences');
-        if (preferences) {
-          preferences = JSON.parse(preferences);
+      // Function to save individual consent preferences
+      function saveIndividualConsentPreferences() {
+        var consentConfig = {
+          'ad_storage': document.getElementById('ad_storage').checked ? 'granted' : 'denied',
+          // Add other preferences
+        };
+        gtag('consent', 'update', consentConfig);
+        localStorage.setItem('individualConsentPreferences', JSON.stringify(consentConfig));
+      }
+
+      // Function to load individual consent preferences
+      function loadIndividualConsentPreferences() {
+        var savedPreferences = localStorage.getItem('individualConsentPreferences');
+        if (savedPreferences) {
+          var preferences = JSON.parse(savedPreferences);
           for (var key in preferences) {
             if (preferences.hasOwnProperty(key)) {
               document.getElementById(key).checked = preferences[key] === 'granted';
@@ -56,71 +63,26 @@
         }
       }
 
-      function saveConsentPreferences(preferences) {
-        localStorage.setItem('consentPreferences', JSON.stringify(preferences));
-      }
-
-      function applyConsentUpdate(consent) {
-        var consentConfig = {
-          'ad_storage': consent,
-          'analytics_storage': consent,
-          'ad_user_data': consent,
-          'ad_personalization': consent,
-          'functionality_storage': consent,
-          'personalization_storage': consent,
-          'security_storage': consent
-        };
-        gtag('consent', 'update', consentConfig);
-        saveConsentPreferences(consentConfig);
-        if (consent === 'granted') loadTagManager();
-      }
-
-      grantButton.addEventListener('click', function() {
-        localStorage.setItem('consentGranted', 'true');
-        applyConsentUpdate('granted');
-        consentBanner.style.display = 'none';
-      });
-
-      denyButton.addEventListener('click', function() {
-        localStorage.setItem('consentGranted', 'false');
-        applyConsentUpdate('denied');
-        consentBanner.style.display = 'none';
-      });
-
-      preferencesBtn.addEventListener('click', function() {
-        preferencesSection.style.display = preferencesSection.style.display === 'none' ? 'block' : 'none';
-      });
-
+      // "Save Preferences" button functionality
+      var savePreferencesBtn = document.getElementById('save-preferences');
       savePreferencesBtn.addEventListener('click', function() {
-        var consentConfig = {
-          'ad_storage': document.getElementById('ad_storage').checked ? 'granted' : 'denied',
-          'analytics_storage': document.getElementById('analytics_storage').checked ? 'granted' : 'denied',
-          'functionality_storage': document.getElementById('functionality_storage').checked ? 'granted' : 'denied',
-          'personalization_storage': document.getElementById('personalization_storage').checked ? 'granted' : 'denied',
-          'security_storage': document.getElementById('security_storage').checked ? 'granted' : 'denied'
-        };
-        gtag('consent', 'update', consentConfig);
-        saveConsentPreferences(consentConfig);
-        preferencesSection.style.display = 'none';
+        saveIndividualConsentPreferences();
+        document.getElementById('consent-preferences').style.display = 'none';
       });
 
-      function loadTagManager() {
-        var gtmScript = document.createElement('script');
-        gtmScript.async = true;
-        gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TKGX8P2'; // Replace YOUR_CONTAINER_ID
-        document.head.appendChild(gtmScript);
-      }
+      // Load individual preferences when the modal is opened
+      var preferencesBtn = document.getElementById('preferences-btn');
+      preferencesBtn.addEventListener('click', function() {
+        loadIndividualConsentPreferences();
+        document.getElementById('consent-preferences').style.display = 'block';
+      });
 
-      if(localStorage.getItem('consentGranted') === 'true') {
-        applyConsentUpdate('granted');
-        consentBanner.style.display = 'none';
-      } else if (localStorage.getItem('consentGranted') === 'false') {
-        applyConsentUpdate('denied');
-        consentBanner.style.display = 'none';
-      }
-
-      // Load saved consent preferences if available
-      loadConsentPreferences();
+      // Link to reopen the consent modal
+      var reopenConsentModalLink = document.getElementById('reopen-consent-modal');
+      reopenConsentModalLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('consent-banner').style.display = 'block';
+      });
     });
   </script>
 
@@ -142,6 +104,7 @@
     <!-- end content -->
   
     {% include footer.html %}
+    <a href="#" id="reopen-consent-modal">Marketing Preferences</a>
   </div>
   <!-- end global wrap -->
 
