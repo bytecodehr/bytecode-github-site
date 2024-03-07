@@ -27,6 +27,8 @@
       <div class="consent-preferences" id="consent-preferences">
         <label><input type="checkbox" id="ad_storage"> Ad Storage</label>
         <label><input type="checkbox" id="analytics_storage"> Analytics Storage</label>
+        <label><input type="checkbox" id="ad_user_data"> Ad User Data</label>
+        <label><input type="checkbox" id="ad_personalization"> Ad Personalization</label>
         <label><input type="checkbox" id="functionality_storage"> Functionality Storage</label>
         <label><input type="checkbox" id="personalization_storage"> Personalization Storage</label>
         <label><input type="checkbox" id="security_storage"> Security Storage</label>
@@ -37,13 +39,59 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Existing consent banner code
-      // ... your existing script ...
+      var consentBanner = document.getElementById('consent-banner');
+      var grantButton = document.getElementById('grant-consent');
+      var denyButton = document.getElementById('deny-consent');
+
+      grantButton.addEventListener('click', function() {
+        localStorage.setItem('consentGranted', 'true');
+        updateConsent(true);
+        consentBanner.style.display = 'none';
+      });
+
+      denyButton.addEventListener('click', function() {
+        localStorage.setItem('consentGranted', 'false');
+        updateConsent(false);
+        consentBanner.style.display = 'none';
+      });
+
+      function updateConsent(consent) {
+        gtag('consent', 'update', {
+          'ad_storage': consent ? 'granted' : 'denied',
+          'analytics_storage': consent ? 'granted' : 'denied',
+          'ad_user_data': consent ? 'granted' : 'denied',
+          'ad_personalization': consent ? 'granted' : 'denied',
+          'functionality_storage': consent ? 'granted' : 'denied',
+          'personalization_storage': consent ? 'granted' : 'denied',
+          'security_storage': consent ? 'granted' : 'denied'
+        });
+        if (consent) loadTagManager();
+      }
+
+      function loadTagManager() {
+        var gtmScript = document.createElement('script');
+        gtmScript.async = true;
+        gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TKGX8P2'; // Replace YOUR_CONTAINER_ID
+        document.head.appendChild(gtmScript);
+      }
+
+      if(localStorage.getItem('consentGranted') === 'true') {
+        updateConsent(true);
+        consentBanner.style.display = 'none';
+      }
+
+      // Existing consent banner code goes here
 
       // Function to save individual consent preferences
       function saveIndividualConsentPreferences() {
         var consentConfig = {
           'ad_storage': document.getElementById('ad_storage').checked ? 'granted' : 'denied',
+          'analytics_storage': document.getElementById('analytics_storage').checked ? 'granted' : 'denied',
+          'ad_user_data': document.getElementById('ad_user_data').checked ? 'granted' : 'denied',
+          'ad_personalization': document.getElementById('ad_personalization').checked ? 'granted' : 'denied',
+          'functionality_storage': document.getElementById('functionality_storage').checked ? 'granted' : 'denied',
+          'personalization_storage': document.getElementById('personalization_storage').checked ? 'granted' : 'denied',
+          'security_storage': document.getElementById('security_storage').checked ? 'granted' : 'denied',
           // Add other preferences
         };
         gtag('consent', 'update', consentConfig);
@@ -67,6 +115,7 @@
       var savePreferencesBtn = document.getElementById('save-preferences');
       savePreferencesBtn.addEventListener('click', function() {
         saveIndividualConsentPreferences();
+        //consentBanner.style.display = 'none';
         document.getElementById('consent-preferences').style.display = 'none';
       });
 
@@ -83,6 +132,7 @@
         e.preventDefault();
         document.getElementById('consent-banner').style.display = 'block';
       });
+
     });
   </script>
 
@@ -104,7 +154,6 @@
     <!-- end content -->
   
     {% include footer.html %}
-    <a href="#" id="reopen-consent-modal">Marketing Preferences</a>
   </div>
   <!-- end global wrap -->
 
