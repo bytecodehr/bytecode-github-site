@@ -54,3 +54,10 @@ defaults:
 sass:
   sass_dir: _sass
   style: compressed
+jekyll_admin:
+  hidden_links:
+    - pages
+    - staticfiles
+    - datafiles
+    - configuration
+  homepage: "posts"

@@ -5,6 +5,69 @@
 
 <body class="{% if site.data.settings.color_scheme == "auto" %}scheme--toggle{% else %}scheme--{{ site.data.settings.color_scheme }}{% endif %}">
 
+  <!-- Google Tag Manager -->
+<!--  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+<!--      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+<!--    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+<!--    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+<!--  })(window,document,'script','dataLayer','GTM-TKGX8P2');</script>-->
+  <!-- End Google Tag Manager -->
+
+  <!-- Consent Banner (Modal) -->
+  <div id="consent-banner">
+    <div class="consent-modal">
+      <p>Please provide your consent for cookies and data collection. We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic.</p>
+      <button id="grant-consent">Grant Consent</button>
+      <button id="deny-consent">Deny Consent</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var consentBanner = document.getElementById('consent-banner');
+      var grantButton = document.getElementById('grant-consent');
+      var denyButton = document.getElementById('deny-consent');
+
+      grantButton.addEventListener('click', function() {
+        localStorage.setItem('consentGranted', 'true');
+        updateConsent(true);
+        consentBanner.style.display = 'none';
+      });
+
+      denyButton.addEventListener('click', function() {
+        localStorage.setItem('consentGranted', 'false');
+        updateConsent(false);
+        consentBanner.style.display = 'none';
+      });
+
+      function updateConsent(consent) {
+        gtag('consent', 'update', {
+          'ad_storage': consent ? 'granted' : 'denied',
+          'analytics_storage': consent ? 'granted' : 'denied',
+          'functionality_storage': consent ? 'granted' : 'denied',
+          'personalization_storage': consent ? 'granted' : 'denied',
+          'security_storage': consent ? 'granted' : 'denied'
+        });
+        if (consent) loadTagManager();
+      }
+
+      function loadTagManager() {
+        var gtmScript = document.createElement('script');
+        gtmScript.async = true;
+        gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TKGX8P2'; // Replace YOUR_CONTAINER_ID
+        document.head.appendChild(gtmScript);
+      }
+
+      if(localStorage.getItem('consentGranted') === 'true') {
+        updateConsent(true);
+        consentBanner.style.display = 'none';
+      }
+    });
+  </script>
+
+  <!-- Rest of your HTML content -->
+
+
   {% if site.data.settings.google_analytics %}
     {% include google-analytics.html %}
   {% endif %}
