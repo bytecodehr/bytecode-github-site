@@ -1,9 +1,9 @@
 backend:
-  name: github
-  repo: vmarcetic/financijskium
+  name: git-gateway
+  repo: bytecodehr/bytecode-github-site
   branch: master
 
-site_url: https://vedran.codes/financijskium
+site_url: https://bytecode.hr
 media_folder: "images" # Folder where user uploaded files should go
 
 collections: # A list of collections the CMS should be able to edit
