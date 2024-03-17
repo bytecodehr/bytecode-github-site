@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: bytecodehr/bytecode-github-site
   branch: master
 
