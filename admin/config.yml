@@ -2,7 +2,8 @@ backend:
   name: github
   repo: bytecodehr/bytecode-github-site
   branch: master
-  base_url: https://auth.financijskium.hr/
+  base_url: https://financijskium.hr/
+  auth_endpoint: https://auth.financijskium.hr/
   client_id: f6f6fcf4fb1fc20dfc26
   client_secret: d80b9ac58f5aeab677ec1b775a7b1cbc915def41
 
