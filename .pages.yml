@@ -11,6 +11,12 @@ content:
         label: Layout
         type: string
         default: post
+      - name: image
+        label: Image
+        type: image
+      - name: tags
+        label: Tags
+        type: string
       - name: title
         label: Title
         type: string
@@ -20,9 +26,6 @@ content:
       - name: date
         label: Date
         type: date
-      - name: image
-        label: Image
-        type: image
-      - name: tags
-        label: Tags
-        type: string
+      - name: body
+        label: Body
+        type: rich-text
