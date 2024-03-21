@@ -45,9 +45,14 @@
   {{ include_to_scssify | scssify }}
   </style>
 
+
+  <script src="{{ site.baseurl }}/js/consent-modal.js"></script>
   <script>
     // Call this when you're ready to set the GTM container ID
-    window.setTagManager('GTM-TKGX8P2');
+    window.onload = async () => {
+      await loadConsentModal();
+      window.setTagManager('GTM-TKGX8P2');
+      loadConsentModalJs();
+    }
   </script>
-  <script src="{{ site.baseurl }}/js/consent-modal.js"></script>
 </head>
