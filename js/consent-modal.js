@@ -24,9 +24,9 @@ function loadConsentModal() {
         <div class="consent-main" id="consent-main">
           <p>We value your privacy and want to be transparent about the data we collect, how we use it, and your rights to control that information. Consent for cookies and data collection helps us personalize and improve your experience. Please choose your preferences below.</p>
           <div class="consent-buttons">
-            <button id="preferences-btn">Preferences</button>
-            <button id="grant-consent">Grant Consent</button>
-            <button id="deny-consent">Deny Consent</button>
+            <button id="preferences-btn">Customise Preferences</button>
+            <button id="grant-consent">Grant Consent To All</button>
+            <button id="deny-consent">Deny Consent To All</button>
           </div>
         </div>
     
@@ -560,7 +560,7 @@ function loadConsentModalJs() {
     saveIndividualConsentPreferences();
     if (isAnyCheckboxChecked) loadTagManager();
     document.getElementById('consent-preferences').style.display = 'none';
-    document.getElementById('consent-main').style.display = 'block';
+    document.getElementById('consent-main').style.display = 'none';
   });
 
   // Load individual preferences when the modal is opened
