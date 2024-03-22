@@ -538,6 +538,7 @@ function loadConsentModalJs() {
       // Add other preferences
     };
     gtag('consent', 'update', consentConfig);
+    localStorage.setItem('consentGranted', 'true');
     localStorage.setItem('individualConsentPreferences', JSON.stringify(consentConfig));
   }
 
