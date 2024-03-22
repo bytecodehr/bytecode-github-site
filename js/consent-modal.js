@@ -34,82 +34,103 @@ function loadConsentModal() {
           <div class="consent-preferences" id="consent-preferences">
             <div class="consent-preference">
               <div class="consent-preference-header">
-                <strong>Enable Targeted Ads</strong>
+                <div class="consent-preference-header--label">
+                  <i class="consent-modal--icon  consent-modal--icon-chevronUp"></i>
+                  <strong>Enable Targeted Ads</strong>
+                </div>
                 <input type="checkbox" id="ad_storage" class="checkbox" />
                 <label for="ad_storage" class="switch"></label>
               </div>
-              <div>
-                <span class="consent-description">Allow us to store information for the purpose of delivering tailored advertising based on your interests and interactions.</span>
+              <div class="consent-description active">
+                <span>Allow us to store information for the purpose of delivering tailored advertising based on your interests and interactions.</span>
               </div>
             </div>
     
             <div class="consent-preference">
               <div class="consent-preference-header">
-                <strong>Allow Website Analytics</strong>
+                <div class="consent-preference-header--label">
+                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <strong>Allow Website Analytics</strong>
+                </div>
                 <input type="checkbox" id="analytics_storage" class="checkbox" />
                 <label for="analytics_storage" class="switch"></label>
               </div>
-              <div>
-                <span class="consent-description">Consent to the storage of data for analyzing how you navigate and interact with our site, helping us improve your user experience.</span>
+              <div class="consent-description">
+                <span>Consent to the storage of data for analyzing how you navigate and interact with our site, helping us improve your user experience.</span>
               </div>
             </div>
     
             <div class="consent-preference">
               <div class="consent-preference-header">
-                <strong>Personalize Ad Profiles</strong>
+                <div class="consent-preference-header--label">
+                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <strong>Personalize Ad Profiles</strong>
+                </div>
                 <input type="checkbox" id="ad_user_data" class="checkbox" />
                 <label for="ad_user_data" class="switch"></label>
               </div>
-              <div>
-                <span class="consent-description">Agree to the collection of demographic and behavioral data to create personalized advertising profiles.</span>
+              <div class="consent-description">
+                <span>Agree to the collection of demographic and behavioral data to create personalized advertising profiles.</span>
               </div>
             </div>
     
             <div class="consent-preference">
               <div class="consent-preference-header">
-                <strong>Customize Ad Experience</strong>
+                <div class="consent-preference-header--label">
+                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <strong>Customize Ad Experience</strong>
+                </div>
                 <input type="checkbox" id="ad_personalization" class="checkbox" />
                 <label for="ad_personalization" class="switch"></label>
               </div>
-              <div>
-                <span class="consent-description">Allow us to use your data to make the advertisements you see more relevant to your interests.</span>
+              <div class="consent-description">
+                <span>Allow us to use your data to make the advertisements you see more relevant to your interests.</span>
               </div>
             </div>
     
             <div class="consent-preference">
               <div class="consent-preference-header">
-                <strong>Remember Site Preferences</strong>
+                <div class="consent-preference-header--label">
+                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <strong>Remember Site Preferences</strong>
+                </div>
                 <input type="checkbox" id="functionality_storage" class="checkbox" />
                 <label for="functionality_storage" class="switch"></label>
               </div>
-              <div>
-                <span class="consent-description">Permit us to remember your settings and preferences (like language and layout) for a more personalized website experience.</span>
+              <div class="consent-description">
+                <span>Permit us to remember your settings and preferences (like language and layout) for a more personalized website experience.</span>
               </div>
             </div>
     
             <div class="consent-preference">
               <div class="consent-preference-header">
-                <strong>Personalize Content</strong>
+                <div class="consent-preference-header--label">
+                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <strong>Personalize Content</strong>
+                </div>
                 <input type="checkbox" id="personalization_storage" class="checkbox" />
                 <label for="personalization_storage" class="switch"></label>
               </div>
-              <div>
-                <span class="consent-description">Consent to the use of your data for personalizing your content experience beyond advertisements.</span>
+              <div class="consent-description">
+                <span>Consent to the use of your data for personalizing your content experience beyond advertisements.</span>
               </div>
             </div>
     
             <div class="consent-preference">
               <div class="consent-preference-header">
-                <strong>Enhance Security</strong>
+                <div class="consent-preference-header--label">
+                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <strong>Enhance Security</strong>
+                </div>
                 <input type="checkbox" id="security_storage" class="checkbox" checked />
                 <label for="security_storage" class="switch"></label>
               </div>
-              <div>
-                <span class="consent-description">Enable us to store data critical for security purposes, such as authentication and fraud prevention.</span>
+              <div class="consent-description">
+                <span>Enable us to store data critical for security purposes, such as authentication and fraud prevention.</span>
               </div>
             </div>
 
-            <div class="consent-preferences-footer">
+            <div class="consent-preferences--footer">
               <button id="save-preferences">Save Preferences</button>
             </div>
           </div>
@@ -151,7 +172,8 @@ function loadConsentModal() {
     }
 
     .consent-modal-body {
-      padding: 20px 10px 20px 20px;
+      width: 100%;
+      padding: 20px;
       max-height: calc(100vh - 210px);
       overflow-y: auto;
     }
@@ -218,6 +240,7 @@ function loadConsentModal() {
       display: none;
       margin-top: 15px;
       width: 100%;
+      border-top: 1px solid #dcdcdc;
     }
 
     .consent-preferences label {
@@ -228,28 +251,42 @@ function loadConsentModal() {
 
     .consent-preference {
       border: 1px solid #dcdcdc;
+      border-top: none;
     }
 
     .consent-preference-header {
+      cursor: pointer;
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px solid #979797;
-      padding: 25px 30px;
+      padding: 25px 20px;
+    }
+
+    .consent-preference-header--label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .consent-description {
-      display: block;
+      display: none;
+      width: 100%;
+      border-top: 1px solid #bab8b8;
       background-color: #f7f8fa;
       padding: 20px 30px;
       font-size: 0.9em;
       color: #666;
     }
 
-    .consent-preferences-footer {
+    .consent-description.active {
+      display: block;
+    }
+
+    .consent-preferences--footer {
       padding: 20px 0;
     }
 
-    .switch {
+    .consent-preferences .switch {
+      cursor: pointer;
       position: relative;
       display: inline-block;
       width: 40px;
@@ -258,7 +295,7 @@ function loadConsentModal() {
       border-radius: 20px;
       transition: all 0.3s;
     }
-    .switch::after {
+    .consent-preferences .switch::after {
       content: '';
       position: absolute;
       width: 18px;
@@ -270,13 +307,13 @@ function loadConsentModal() {
       transition: all 0.3s;
     }
     
-    .checkbox:checked + .switch::after {
-      left : 20px;
+    .consent-preferences .checkbox:checked + .switch::after {
+      left : 21px;
     }
-    .checkbox:checked + .switch {
+    .consent-preferences .checkbox:checked + .switch {
       background-color: #7983ff;
     }
-    .checkbox {
+    .consent-preferences .checkbox {
       display : none;
     }
 
@@ -301,7 +338,21 @@ function loadConsentModal() {
       border-radius: 10px;
       border: 3px solid #ffffff;
     }
+
+    .consent-modal--icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .consent-modal--icon-chevronDown {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>');
+      background-repeat: no-repeat;
+    }
     
+    .consent-modal--icon-chevronUp {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg>');
+      background-repeat: no-repeat;
+    }
 
     @media (max-width: 768px) {
       .consent-modal {
@@ -346,7 +397,26 @@ function loadConsentModalJs() {
   var grantButton = document.getElementById('grant-consent');
   var denyButton = document.getElementById('deny-consent');
 
-  console.log(grantButton)
+  // toggle consent preference details
+  const preferenceEl = consentBanner.getElementsByClassName("consent-preference-header");
+
+  for (let i = 0; i < preferenceEl.length; i++) {
+    const element = preferenceEl[i];
+    element.addEventListener("click", function () {
+      const iEl = element.getElementsByTagName("i")[0];
+      const data = element.nextElementSibling;
+
+      let chevronDownClass = "consent-modal--icon  consent-modal--icon-chevronDown";
+      let chevronUpClass = "consent-modal--icon  consent-modal--icon-chevronUp";
+
+      if (iEl.className == chevronUpClass) {
+        iEl.classList.value = chevronDownClass;
+      } else {
+        iEl.classList.value = chevronUpClass;
+      }
+      data.classList.toggle("active");
+    });
+  }
 
   grantButton.addEventListener('click', function() {
     localStorage.setItem('consentGranted', 'true');
