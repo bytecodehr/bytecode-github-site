@@ -35,7 +35,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-modal--icon  consent-modal--icon-chevronUp"></i>
+                  <i class="consent-banner--icon  consent-banner--icon-chevronUp"></i>
                   <strong>Enable Targeted Ads</strong>
                 </div>
                 <input type="checkbox" id="ad_storage" class="checkbox" />
@@ -49,7 +49,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
                   <strong>Allow Website Analytics</strong>
                 </div>
                 <input type="checkbox" id="analytics_storage" class="checkbox" />
@@ -63,7 +63,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
                   <strong>Personalize Ad Profiles</strong>
                 </div>
                 <input type="checkbox" id="ad_user_data" class="checkbox" />
@@ -77,7 +77,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
                   <strong>Customize Ad Experience</strong>
                 </div>
                 <input type="checkbox" id="ad_personalization" class="checkbox" />
@@ -91,7 +91,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
                   <strong>Remember Site Preferences</strong>
                 </div>
                 <input type="checkbox" id="functionality_storage" class="checkbox" />
@@ -105,7 +105,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
                   <strong>Personalize Content</strong>
                 </div>
                 <input type="checkbox" id="personalization_storage" class="checkbox" />
@@ -119,7 +119,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-modal--icon consent-modal--icon-chevronDown"></i>
+                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
                   <strong>Enhance Security</strong>
                 </div>
                 <input type="checkbox" id="security_storage" class="checkbox" checked />
@@ -156,6 +156,52 @@ function loadConsentModal() {
       align-items: center;
       justify-content: center;
       z-index: 1000;
+    }
+
+    #reopen-consent-modal {
+      z-index: 100;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      outline: none;
+      border: 0;
+      vertical-align: middle;
+      color: #fff;
+      border-radius:1.625rem;
+      padding: 0.75rem;
+      text-decoration: none;
+      background: #282936;
+      font-size: inherit;
+      font-family: inherit;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #reopen-consent-modal i {
+      width: 24px;
+      height: 24px;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-settings"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /></svg> ');
+      background-repeat: no-repeat;
+    }
+
+    #reopen-consent-modal span {
+      font-family: Inter,Helvetica Neue,Helvetica,Arial,sans-serif;
+      font-size: 14px;
+      max-width: 0;
+      -webkit-transition: max-width 1s;
+      transition: max-width 1s;
+      display: inline-block;
+      vertical-align: top;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    #reopen-consent-modal:hover span {
+      margin: 0 0.5rem;
+      max-width: 12rem;
     }
 
     .consent-modal {
@@ -319,17 +365,17 @@ function loadConsentModal() {
       display : none;
     }
 
-    .consent-modal--icon {
+    .consent-banner--icon {
       width: 24px;
       height: 24px;
     }
 
-    .consent-modal--icon-chevronDown {
+    .consent-banner--icon-chevronDown {
       background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>');
       background-repeat: no-repeat;
     }
     
-    .consent-modal--icon-chevronUp {
+    .consent-banner--icon-chevronUp {
       background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg>');
       background-repeat: no-repeat;
     }
@@ -426,8 +472,8 @@ function loadConsentModalJs() {
       const iEl = element.getElementsByTagName("i")[0];
       const data = element.nextElementSibling;
 
-      let chevronDownClass = "consent-modal--icon  consent-modal--icon-chevronDown";
-      let chevronUpClass = "consent-modal--icon  consent-modal--icon-chevronUp";
+      let chevronDownClass = "consent-banner--icon  consent-banner--icon-chevronDown";
+      let chevronUpClass = "consent-banner--icon  consent-banner--icon-chevronUp";
 
       if (iEl.className == chevronUpClass) {
         iEl.classList.value = chevronDownClass;
