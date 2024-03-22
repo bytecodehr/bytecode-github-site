@@ -513,8 +513,8 @@ function loadConsentModalJs() {
   savePreferencesBtn.addEventListener('click', function() {
     saveIndividualConsentPreferences();
     if (isAnyCheckboxChecked) loadTagManager();
-    consentBanner.style.display = 'none';
     document.getElementById('consent-preferences').style.display = 'none';
+    document.getElementById('consent-main').style.display = 'block';
   });
 
   // Load individual preferences when the modal is opened
