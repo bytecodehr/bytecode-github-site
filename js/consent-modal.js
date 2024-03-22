@@ -560,7 +560,7 @@ function loadConsentModalJs() {
     saveIndividualConsentPreferences();
     if (isAnyCheckboxChecked) loadTagManager();
     document.getElementById('consent-preferences').style.display = 'none';
-    document.getElementById('consent-main').style.display = 'none';
+    document.getElementById('consent-banner').style.display = 'none';
   });
 
   // Load individual preferences when the modal is opened
