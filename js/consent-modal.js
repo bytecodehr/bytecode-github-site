@@ -246,7 +246,6 @@ function loadConsentModal() {
     .consent-preferences label {
       display: flex;
       align-items: center;
-      margin-bottom: 5px;
     }
 
     .consent-preference {
@@ -258,6 +257,7 @@ function loadConsentModal() {
       cursor: pointer;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 25px 20px;
     }
 
@@ -265,6 +265,7 @@ function loadConsentModal() {
       display: flex;
       align-items: center;
       gap: 10px;
+      margin-right: 10px;
     }
 
     .consent-description {
@@ -286,6 +287,7 @@ function loadConsentModal() {
     }
 
     .consent-preferences .switch {
+      flex-shrink: 0;
       cursor: pointer;
       position: relative;
       display: inline-block;
@@ -357,8 +359,25 @@ function loadConsentModal() {
     @media (max-width: 768px) {
       .consent-modal {
         width: 95%;
-        padding: 20px;
       }
+
+      .consent-modal-body {
+        max-height: calc(100vh - 100px);
+      }
+
+      .consent-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .consent-preference-header {
+        padding: 20px 15px;
+      }
+
+      .consent-preference-header--label {
+        gap: 12px;
+      }
+
     }
   `;
 
