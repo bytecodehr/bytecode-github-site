@@ -58,5 +58,3 @@ At first, your app's URL will show "No shop provided". You'll need to point your
 ### Conclusion
 
 Deploying your Shopify app on DigitalOcean simplifies the process, ensuring that your app is scalable and robust. Remember to regularly update and monitor your app for optimal performance.
-
-Yea
