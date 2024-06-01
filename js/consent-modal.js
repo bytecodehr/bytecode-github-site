@@ -19,6 +19,9 @@ function loadConsentModal() {
   const modalHTML = `
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <div class="consent-modal">
+      <div id="consent-modal--closeBtn">
+        <i class="consent-banner--icon consent-banner--icon-x"></i>
+      </div>
       <div class="consent-modal-body">
         <h2>Privacy & Cookie Consent</h2>
         <div class="consent-main" id="consent-main">
@@ -35,7 +38,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-banner--icon  consent-banner--icon-chevronUp"></i>
+                  <i class="consent-banner--icon consent-banner--icon-chevronUp"></i>
                   <strong>Enable Targeted Ads</strong>
                 </div>
                 <input type="checkbox" id="ad_storage" class="checkbox" />
@@ -49,7 +52,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
+                  <i class="consent-banner--icon  consent-banner--icon-chevronDown"></i>
                   <strong>Allow Website Analytics</strong>
                 </div>
                 <input type="checkbox" id="analytics_storage" class="checkbox" />
@@ -63,7 +66,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
+                  <i class="consent-banner--icon  consent-banner--icon-chevronDown"></i>
                   <strong>Personalize Ad Profiles</strong>
                 </div>
                 <input type="checkbox" id="ad_user_data" class="checkbox" />
@@ -77,7 +80,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
+                  <i class="consent-banner--icon  consent-banner--icon-chevronDown"></i>
                   <strong>Customize Ad Experience</strong>
                 </div>
                 <input type="checkbox" id="ad_personalization" class="checkbox" />
@@ -91,7 +94,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
+                  <i class="consent-banner--icon  consent-banner--icon-chevronDown"></i>
                   <strong>Remember Site Preferences</strong>
                 </div>
                 <input type="checkbox" id="functionality_storage" class="checkbox" />
@@ -105,7 +108,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
+                  <i class="consent-banner--icon  consent-banner--icon-chevronDown"></i>
                   <strong>Personalize Content</strong>
                 </div>
                 <input type="checkbox" id="personalization_storage" class="checkbox" />
@@ -119,7 +122,7 @@ function loadConsentModal() {
             <div class="consent-preference">
               <div class="consent-preference-header">
                 <div class="consent-preference-header--label">
-                  <i class="consent-banner--icon consent-banner--icon-chevronDown"></i>
+                  <i class="consent-banner--icon  consent-banner--icon-chevronDown"></i>
                   <strong>Enhance Security</strong>
                 </div>
                 <input type="checkbox" id="security_storage" class="checkbox" checked />
@@ -205,6 +208,7 @@ function loadConsentModal() {
     }
 
     .consent-modal {
+      position: relative;
       background-color: white;
       padding: 4px;
       border-radius: 8px;
@@ -215,6 +219,14 @@ function loadConsentModal() {
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    #consent-modal--closeBtn {
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: #333;
     }
 
     .consent-modal-body {
@@ -366,6 +378,7 @@ function loadConsentModal() {
     }
 
     .consent-banner--icon {
+      display: inline-block;
       width: 24px;
       height: 24px;
     }
@@ -377,6 +390,11 @@ function loadConsentModal() {
     
     .consent-banner--icon-chevronUp {
       background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg>');
+      background-repeat: no-repeat;
+    }
+
+    .consent-banner--icon-x {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>');
       background-repeat: no-repeat;
     }
 
@@ -462,6 +480,7 @@ function loadConsentModalJs() {
   var consentBanner = document.getElementById('consent-banner');
   var grantButton = document.getElementById('grant-consent');
   var denyButton = document.getElementById('deny-consent');
+  var closeButton = document.getElementById('consent-modal--closeBtn');
 
   // toggle consent preference details
   const preferenceEl = consentBanner.getElementsByClassName("consent-preference-header");
@@ -472,8 +491,8 @@ function loadConsentModalJs() {
       const iEl = element.getElementsByTagName("i")[0];
       const data = element.nextElementSibling;
 
-      let chevronDownClass = "consent-banner--icon  consent-banner--icon-chevronDown";
-      let chevronUpClass = "consent-banner--icon  consent-banner--icon-chevronUp";
+      let chevronDownClass = "consent-banner--icon consent-banner--icon-chevronDown";
+      let chevronUpClass = "consent-banner--icon consent-banner--icon-chevronUp";
 
       if (iEl.className == chevronUpClass) {
         iEl.classList.value = chevronDownClass;
@@ -483,6 +502,10 @@ function loadConsentModalJs() {
       data.classList.toggle("active");
     });
   }
+
+  closeButton.addEventListener('click', function() {
+    consentBanner.style.display = 'none';
+  });
 
   grantButton.addEventListener('click', function() {
     localStorage.setItem('consentGranted', 'true');
