@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: llama3 langcahinrb
+tags: [llama3, langchainrb]
 title: How to use langchainrb and llama3 to generate blog posts
 date: 2024-04-22
 ---

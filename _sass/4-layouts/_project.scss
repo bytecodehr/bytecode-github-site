@@ -4,9 +4,9 @@
   transform: translate(0);
   padding-top: 56.25%;
   margin-top: 20px;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   min-height: 280px;
-  border-radius: 22px;
+  border-radius: $global-radius;
   overflow: hidden;
   background: var(--background-alt-color);
 
@@ -21,33 +21,33 @@
   }
 
   @media (max-width: $desktop) {
-    padding-top: 65%;
+    padding-top: 56.25%;
     margin-top: 0;
     margin-bottom: 32px;
   }
 
   @media (max-width: $tablet) {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
 .project-content {
   max-width: 780px;
-  margin: 0 auto 60px;
-  color: var(--text-alt-color);
+  margin: 0 auto 48px;
+  color: var(--text-color);
 
   a {
     font-weight: 500;
-    border-bottom: 1px solid var(--border-color);
+    color: var(--primary-color);
+    border-bottom: 1px solid transparent;
 
     &:hover {
-      color: var(--link-color);
-      border-bottom-color: var(--link-color-hover);
+      border-bottom-color: var(--primary-color);
     }
   }
 
   img {
-    border-radius: 22px;
+    border-radius: $global-radius;
     overflow: hidden;
 
     &.lightense-open {
@@ -68,50 +68,56 @@
 
   @media (max-width: $tablet) {
     img, .js-reframe {
-      border-radius: 12px;
+      border-radius: 8px;
     }
   }
 }
 
 .project-head {
-  margin-bottom: 48px;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
   border-bottom: 1px solid var(--border-color);
 
   .project-label {
     display: inline-block;
-    margin-bottom: 4px;
-    font-size: 32px;
-    line-height: 1.3;
-    color: var(--text-alt-color);
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--primary-color);
   }
 
   .project-title {
-    margin-bottom: 24px;
-    font-size: 48px;
-    line-height: 1.4;
+    margin-bottom: 16px;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .project-description {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-alt-color);
   }
 
   @media (max-width: $desktop) {
     margin-bottom: 32px;
 
     .project-title {
-      font-size: 42px;
-    }
-  }
-
-  @media (max-width: $tablet) {
-    .project-label {
-      font-size: 28px;
+      font-size: 36px;
     }
   }
 
   @media (max-width: $mobile) {
     .project-title {
-      font-size: 36px;
+      font-size: 28px;
     }
 
     .project-label {
-      font-size: 24px;
+      font-size: 13px;
     }
   }
 }

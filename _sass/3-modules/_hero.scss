@@ -1,9 +1,9 @@
 /* Hero */
 .hero {
-  margin-top: 80px;
+  padding: 80px 0 40px;
 
   @media (max-width: $desktop) {
-    margin-top: 0;
+    padding: 48px 0 24px;
   }
 }
 
@@ -13,11 +13,11 @@
 }
 
 .hero__left {
-  max-width: 560px;
+  max-width: 580px;
   margin-right: auto;
 
   @media (max-width: $wide) {
-    max-width: 440px;
+    max-width: 460px;
   }
 
   @media (max-width: $desktop) {
@@ -26,51 +26,53 @@
 }
 
 .hero__intro {
-  display: flex;
-  align-items: flex-end;
-  min-height: 50px;
-  margin-bottom: 8px;
-  transform: rotate(-4deg);
-  font-family: 'Yellowtail', cursive;
-  font-size: 40px;
-  line-height: 1.25;
-  color: var(--secondary-color);
-
-  @media (max-width: $wide) {
-    font-size: 36px;
-  }
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  font-family: $heading-font-family;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 6px;
 
   @media (max-width: $tablet) {
-    font-size: 32px;
+    font-size: 13px;
   }
 }
 
 .hero__title {
-  margin-bottom: 24px;
-  font-size: 58px;
-  line-height: 1.24;
+  margin-bottom: 20px;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--heading-font-color);
 
   @media (max-width: $wide) {
-    font-size: 48px;
+    font-size: 44px;
   }
 
   @media (max-width: $mobile) {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 
 .hero__description {
   margin-bottom: 0;
-  font-size: 21px;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--text-alt-color);
 
   @media (max-width: $wide) {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   @media (max-width: $mobile) {
-    font-size: inherit;
+    font-size: 16px;
   }
 }
 
@@ -84,20 +86,21 @@
 
   .subscribe-email {
     width: 100%;
-    height: 64px;
-    padding: 20px 24px;
+    height: 56px;
+    padding: 16px 20px;
     font-family: $heading-font-family;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 24px;
     border: 1px solid var(--border-color);
-    border-radius: 100px;
+    border-radius: 8px;
     outline: 0;
     color: var(--heading-font-color);
     background: var(--background-alt-color);
     transition: $global-transition;
 
     &:focus {
-      background: var(--background-alt-color-2);
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
 
     &::placeholder {
@@ -109,22 +112,18 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 0;
-    font-size: 20px;
+    right: 4px;
+    font-size: 15px;
   }
 
   @media (max-width: $wide) {
     .subscribe-email {
-      height: 62px;
-    }
-
-    .subscribe-button {
-      font-size: 18px;
+      height: 52px;
     }
   }
 
   @media (max-width: $desktop) {
-    margin-top: 20px;
+    margin-top: 24px;
   }
 
   @media (max-width: $mobile) {
@@ -134,9 +133,9 @@
     }
 
     .subscribe-email {
-      height: 60px;
+      height: 48px;
       margin-bottom: 12px;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .subscribe-button {
@@ -144,7 +143,7 @@
       top: 0;
       transform: translateY(0);
       right: 0;
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 }
@@ -165,23 +164,24 @@
     position: relative;
     height: 100%;
     padding-top: 100%;
-    border-radius: 22px;
+    border-radius: $global-radius;
     background: var(--background-alt-color);
     user-select: none;
+    overflow: hidden;
   }
 
   .row {
     min-width: 100%;
-    margin-left: -12px;
-    margin-right: -12px;
+    margin-left: -8px;
+    margin-right: -8px;
   }
 
   .col {
     display: flex;
     align-items: center;
     flex-grow: 1;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .hero__column__one,
@@ -199,14 +199,14 @@
       left: 0%;
       bottom: 0%;
       object-fit: cover;
-      border-radius: 22px;
+      border-radius: $global-radius;
     }
   }
 
   .hero__column__two {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
   }
 
   .hero__column__three {
@@ -221,29 +221,29 @@
 
   @media (max-width: $tablet) {
     .row {
-      margin-left: -8px;
-      margin-right: -8px;
+      margin-left: -6px;
+      margin-right: -6px;
     }
 
     .col {
-      padding-left: 8px;
-      padding-right: 8px;
+      padding-left: 6px;
+      padding-right: 6px;
     }
 
     .hero__column__one,
     .hero__column__two,
     .hero__column__three {
       img {
-        border-radius: 12px;
+        border-radius: 8px;
       }
     }
 
     .hero__images__box {
-      border-radius: 12px;
+      border-radius: 8px;
     }
 
     .hero__column__two {
-      gap: 16px;
+      gap: 12px;
     }
   }
 }

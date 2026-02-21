@@ -1,10 +1,31 @@
 /* Pagination */
 .pagination {
-  padding: 32px 0;
+  padding: 40px 0 16px;
   text-align: center;
-  transition: $global-transition;
 
-  &:active {
-    transform: translateY(2px) scale(0.98);
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    font-family: $heading-font-family;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: $heading-letter-spacing;
+    color: var(--heading-font-color);
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: background-color 0.2s, border-color 0.2s, transform 0.15s;
+
+    &:hover {
+      background: var(--background-alt-color);
+      border-color: var(--heading-font-color);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
   }
 }

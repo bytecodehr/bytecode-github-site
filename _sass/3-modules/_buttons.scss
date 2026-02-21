@@ -2,33 +2,53 @@
 .button {
   display: inline-block;
   font-family: $heading-font-family;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1;
   text-decoration: none;
-  border-radius: 100px;
+  border-radius: 8px;
   border: none;
   outline: none;
   cursor: pointer;
-  transition: all .2s;
+  transition: all .2s ease;
   color: var(--button-color);
   background: var(--button-background-color);
 
   &:hover {
     color: var(--button-color-hover);
     background: var(--button-background-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 
   &--primary {
-    padding: 22px 40px;
+    padding: 16px 32px;
+    font-size: 15px;
   }
 
   &--small {
-    padding: 12px 20px;
+    padding: 10px 18px;
   }
 
   &--big {
     display: block;
     width: 100%;
+  }
+
+  &--outline {
+    color: var(--heading-font-color);
+    background: transparent;
+    border: 1px solid var(--border-color);
+
+    &:hover {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      background: transparent;
+      box-shadow: none;
+    }
   }
 }

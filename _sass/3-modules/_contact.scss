@@ -1,11 +1,11 @@
 /* Contact */
 .contact {
-  margin-top: 80px;
-  margin-bottom: 120px;
+  margin-top: 48px;
+  margin-bottom: 80px;
   
   @media (max-width: $desktop) {
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 56px;
   }
 }
 
@@ -14,17 +14,19 @@
   align-items: center;
 
   .page-head {
-    margin: 0 0 32px;
+    margin: 0 0 24px;
   }
 
   .page-title {
-    font-size: 58px;
-    line-height: 1.24;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
 
   @media (max-width: $wide) {
     .page-title {
-      font-size: 48px;
+      font-size: 36px;
     }
   }
 
@@ -38,13 +40,13 @@
 
   @media (max-width: $mobile) {
     .page-title {
-      font-size: 36px;
+      font-size: 28px;
     }
   }
 }
 
 .contact__left {
-  max-width: 560px;
+  max-width: 520px;
   margin-right: auto;
 
   @media (max-width: $wide) {
@@ -60,7 +62,7 @@
   .contact__image {
     position: relative;
     transform: translate(0);
-    border-radius: 22px;
+    border-radius: $global-radius;
     padding-bottom: 75%;
     overflow: hidden;
     background: var(--background-alt-color);
@@ -75,18 +77,18 @@
   }
 
   @media (max-width: $desktop) {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   @media (max-width: $tablet) {
     .contact__image {
-      border-radius: 12px;
+      border-radius: 8px;
     }
   }
 }
 
 .form__group {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 
   &:last-child {
     margin-bottom: 0;
@@ -95,31 +97,32 @@
 
 .form__input {
   width: 100%;
-  padding: 20px 24px;
+  padding: 14px 18px;
   font-family: $heading-font-family;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   border: 1px solid var(--border-color);
-  border-radius: 100px;
+  border-radius: 8px;
   outline: 0;
   transition: .2s ease-in-out;
   resize: vertical;
   color: var(--heading-font-color);
-  background-color: var(--background-alt-color);
+  background-color: var(--background-color);
 
   &::placeholder {
     color: var(--text-alt-color);
   }
 
   &:focus {
-    background: var(--background-alt-color-2);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
   }
 }
 
 textarea.form__input {
-  border-radius: 22px;
+  border-radius: $global-radius;
 
   @media (max-width: $tablet) {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }

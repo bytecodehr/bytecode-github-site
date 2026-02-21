@@ -1,12 +1,26 @@
-/* Author */
+/* Author / CTA Section */
 .author {
   .author__inner {
     display: flex;
     align-items: center;
+    padding: 56px 48px;
+    border-radius: $global-radius;
+    background: var(--background-alt-color);
+
+    @media (max-width: $desktop) {
+      padding: 40px 32px;
+      flex-direction: column;
+    }
+
+    @media (max-width: $mobile) {
+      padding: 32px 24px;
+    }
   }
 
   @media (max-width: $desktop) {
     .author__inner .col {
+      width: 100%;
+
       &:last-child {
         order: -1;
       }
@@ -15,70 +29,65 @@
 }
 
 .author__left {
-  max-width: 560px;
+  max-width: 520px;
   margin-right: auto;
 
   .author__role {
-    display: flex;
-    align-items: flex-end;
-    min-height: 50px;
-    margin-bottom: 8px;
-    transform: rotate(-4deg);
-    font-family: 'Yellowtail', cursive;
-    font-size: 40px;
-    line-height: 1.25;
-    color: var(--secondary-color);
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 14px;
+    font-family: $heading-font-family;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.08);
+    border-radius: 6px;
   }
 
   .author__title {
-    margin-bottom: 20px;
-    font-size: 40px;
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-weight: 700;
     line-height: 1.2;
+    letter-spacing: -0.02em;
   }
 
   .author__description {
-    font-size: 21px;
+    font-size: 16px;
+    line-height: 1.7;
     color: var(--text-alt-color);
+  }
+
+  .author__button {
+    margin-top: 8px;
   }
 
   @media (max-width: $wide) {
     max-width: 440px;
-
-    .author__role {
-      font-size: 32px;
-    }
-
-    .author__description {
-      font-size: 18px;
-    }
   }
 
   @media (max-width: $desktop) {
     max-width: 100%;
-    margin-top: 4px;
-
-    .author__role {
-      margin-bottom: 12px;
-    }
+    margin-top: 8px;
   }
 
   @media (max-width: $tablet) {
     .author__title {
-      font-size: 32px;
+      font-size: 26px;
     }
 
     .author__description {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      font-size: 15px;
     }
   }
 
   @media (max-width: $mobile) {
     .author__title {
-      font-size: 28px;
-    }
-
-    .author__description {
-      font-size: inherit;
+      font-size: 24px;
     }
   }
 }
@@ -87,10 +96,10 @@
   .author__image {
     position: relative;
     transform: translate(0);
-    border-radius: 22px;
+    border-radius: $global-radius;
     padding-bottom: 75%;
     overflow: hidden;
-    background: var(--background-alt-color);
+    background: var(--background-alt-color-2);
     user-select: none;
 
     img {
@@ -103,7 +112,7 @@
 
   @media (max-width: $tablet) {
     .author__image {
-      border-radius: 12px;
+      border-radius: 8px;
     }
   }
 }

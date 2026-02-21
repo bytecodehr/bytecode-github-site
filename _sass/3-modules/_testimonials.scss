@@ -1,49 +1,50 @@
 /* Testimonials */
 .testimonial__item {
   position: relative;
-  padding: 32px;
-  margin-bottom: 32px;
+  padding: 28px;
+  margin-bottom: 24px;
   border: 1px solid var(--border-color);
-  border-radius: 22px;
-  transition: all cubic-bezier(0, 0, .2, 1) .2s;
+  border-radius: $global-radius;
+  transition: all .2s ease;
   will-change: transform;
   overflow: hidden;
 
   &:hover {
-    transform: scale(1.03);
-    background: var(--background-alt-color);
+    border-color: var(--border-color-hover);
+    box-shadow: var(--card-shadow);
   }
 
   @media (max-width: $tablet) {
-    padding: 28px;
-    border-radius: 12px;
+    padding: 24px;
+    border-radius: 8px;
   }
 }
 
 .testimonials__wrap {
   position: relative;
-  margin-bottom: -32px;
+  margin-bottom: -24px;
 
   &::after {
     content: "";
     position: absolute;
-    bottom: 20px;
+    bottom: 12px;
     display: block;
-    height: 180px;
+    height: 120px;
     width: 100%;
-    border-radius: 0px 0px 22px 22px;
+    border-radius: 0px 0px $global-radius $global-radius;
     background: var(--gradient);
   }
 }
 
 .testimonial__text {
-  margin-bottom: 24px;
-  font-size: 16px;
-  line-height: 1.63;
-  color: var(--text-alt-color);
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-color);
 
   @media (max-width: $tablet) {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    font-size: 14px;
   }
 }
 
@@ -61,8 +62,8 @@
 
 .testimonial__image {
   position: relative;
-  min-width: 48px;
-  height: 48px;
+  min-width: 40px;
+  height: 40px;
   margin-right: 12px;
   border-radius: 50%;
   overflow: hidden;
@@ -86,14 +87,14 @@
   .testimonial__name,
   .testimonial__designation {
     font-family: $heading-font-family;
-    font-size: 14px;
-    line-height: 1.1;
+    font-size: 13px;
+    line-height: 1.2;
     letter-spacing: $heading-letter-spacing;
   }
 
   .testimonial__name {
-    margin-bottom: 4px;
-    font-weight: 500;
+    margin-bottom: 3px;
+    font-weight: 600;
 
     a {
       &::after {
@@ -110,10 +111,12 @@
 
   .testimonial__designation {
     margin-bottom: 0;
+    font-weight: 400;
     color: var(--text-alt-color);
   }
 }
 
 .testimonial__icon {
-  font-size: 18px;
+  font-size: 16px;
+  opacity: 0.6;
 }
