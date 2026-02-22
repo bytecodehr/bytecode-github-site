@@ -1,5 +1,6 @@
 ---
 layout: project
+date: 2023-01-02
 name: Shindig
 title: Shindig - Increased Check-in Speed - Empower your event ticketing
 card_description: Increased Check-in Speed

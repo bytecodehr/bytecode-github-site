@@ -1,5 +1,6 @@
 ---
 layout: project
+date: 2023-01-03
 name: TwoMargins
 title: TwoMargins - Crowdsourcing Wall Street - Discuss financial documents
 card_description: Crowdsourcing Wall Street

@@ -182,16 +182,22 @@ gallery:
   gallery_items:
     - name: Ruby on Rails
       icon: simple-icons:rubyonrails
+      color: "#cc0000"
     - name: React
       icon: simple-icons:react
+      color: "#61dafb"
     - name: PostgreSQL
       icon: simple-icons:postgresql
+      color: "#4169e1"
     - name: Shopify
       icon: simple-icons:shopify
+      color: "#96bf48"
     - name: Docker
       icon: simple-icons:docker
+      color: "#2496ed"
     - name: Redis
       icon: simple-icons:redis
+      color: "#dc382d"
 
 
 #-------------------------------

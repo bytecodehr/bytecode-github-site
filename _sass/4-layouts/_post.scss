@@ -7,20 +7,34 @@
 
   .page-head,
   .post-head {
-    margin: 0 auto;
-    max-width: 780px;
+    max-width: 600px;
+    margin: 0;
   }
 
   .page-title,
-  .post-title {
+  .post-title,
+  .page-hero__title {
     color: #f1f5f9;
     margin-bottom: 16px;
+    font-size: 52px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+
+    @media (max-width: $wide) {
+      font-size: 44px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 32px;
+    }
   }
 
   .page-description,
   .post-description {
     color: #94a3b8;
     margin-bottom: 0;
+    font-size: 18px;
+    line-height: 1.6;
   }
 
   .post-date {
@@ -36,20 +50,6 @@
       border-color: var(--brand);
       color: var(--brand);
       background: rgba(5, 150, 105, 0.1);
-    }
-  }
-
-  .page-hero__title {
-    font-size: 58px;
-    line-height: 1.24;
-    color: #f1f5f9;
-
-    @media (max-width: $wide) {
-      font-size: 48px;
-    }
-
-    @media (max-width: $mobile) {
-      font-size: 36px;
     }
   }
 
