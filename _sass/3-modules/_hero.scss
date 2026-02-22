@@ -1,22 +1,48 @@
 /* Hero */
 .hero {
   background: $brand-gradient;
-  padding-top: 60px;
-  padding-bottom: 100px;
+  padding-top: 80px;
+  padding-bottom: 120px;
+  position: relative;
+  overflow: hidden;
+
+  // Radial emerald glow behind the text area
+  &::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: -5%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  // Subtle noise/texture feel via a top highlight
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(5, 150, 105, 0.2) 50%, transparent 100%);
+  }
 
   @media (max-width: $desktop) {
-    padding-top: 20px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 80px;
   }
 }
 
 .hero__inner {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .hero__left {
-  max-width: 560px;
+  max-width: 540px;
   margin-right: auto;
 
   @media (max-width: $wide) {
@@ -32,16 +58,16 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 20px;
-  padding: 6px 14px;
+  margin-bottom: 24px;
+  padding: 7px 16px;
   font-family: $heading-font-family;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--brand);
-  background: rgba(5, 150, 105, 0.12);
-  border: 1px solid rgba(5, 150, 105, 0.25);
+  background: rgba(5, 150, 105, 0.1);
+  border: 1px solid rgba(5, 150, 105, 0.2);
   border-radius: 100px;
 
   &::before {
@@ -51,14 +77,20 @@
     height: 6px;
     background: var(--brand);
     border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
   }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
 }
 
 .hero__title {
   margin-bottom: 24px;
-  font-size: 56px;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  font-size: 58px;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
   color: #f1f5f9;
 
   strong, b {
@@ -72,14 +104,16 @@
 
   @media (max-width: $mobile) {
     font-size: 36px;
+    line-height: 1.12;
   }
 }
 
 .hero__description {
-  margin-bottom: 0;
-  font-size: 19px;
+  margin-bottom: 32px;
+  font-size: 18px;
   line-height: 1.7;
   color: #94a3b8;
+  max-width: 480px;
 
   @media (max-width: $wide) {
     font-size: 17px;
@@ -87,6 +121,37 @@
 
   @media (max-width: $mobile) {
     font-size: inherit;
+    margin-bottom: 24px;
+  }
+}
+
+// CTA button in hero
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-family: $heading-font-family;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 10px;
+  transition: all 0.2s;
+
+  &:hover {
+    background: var(--brand-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(5, 150, 105, 0.3);
+  }
+
+  i {
+    font-size: 13px;
+    transition: transform 0.2s;
+  }
+
+  &:hover i {
+    transform: translateX(3px);
   }
 }
 
@@ -183,23 +248,31 @@
     height: 100%;
     padding-top: 100%;
     border-radius: 16px;
-    background: #1e293b;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     user-select: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+    }
   }
 
   .row {
     min-width: 100%;
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: -8px;
+    margin-right: -8px;
   }
 
   .col {
     display: flex;
     align-items: center;
     flex-grow: 1;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .hero__column__one,
@@ -212,19 +285,23 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      top: 0%;
-      right: 0%;
-      left: 0%;
-      bottom: 0%;
+      top: 0;
+      left: 0;
       object-fit: cover;
       border-radius: 16px;
+      transition: transform 0.6s ease;
     }
+  }
+
+  // Subtle zoom on image hover
+  .hero__images__box:hover img {
+    transform: scale(1.05);
   }
 
   .hero__column__two {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
   }
 
   .hero__column__three {
@@ -261,7 +338,8 @@
     }
 
     .hero__column__two {
-      gap: 12px;
+      gap: 10px;
     }
   }
+
 }

@@ -1,20 +1,68 @@
 /* Projects */
 .projects {
   background: $brand-gradient;
+  padding-top: 0;
   padding-bottom: 0;
+}
+
+// Header area — tight, blends into first card
+.projects__header {
+  padding: 56px 0 48px;
 
   .section__title {
     color: #f1f5f9;
+    margin-bottom: 12px;
   }
 
+  @media (max-width: $desktop) {
+    padding: 48px 0 36px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 40px 0 28px;
+  }
+}
+
+.projects__description {
+  max-width: 480px;
+  margin-bottom: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #94a3b8;
+
+  @media (max-width: $mobile) {
+    font-size: 15px;
+  }
+}
+
+// Footer area — "View all" as a clean pill button
+.projects__footer {
+  padding: 40px 0 48px;
+
   .section__button {
-    color: #f1f5f9;
-    border-bottom-color: #1e293b;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 12px 28px;
+    font-size: 14px;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    border-radius: 100px;
+    border-bottom: 1px solid #334155;
 
     &:hover {
-      color: var(--brand);
+      color: #f1f5f9;
+      border-color: var(--brand);
+      background: rgba(5, 150, 105, 0.08);
       border-bottom-color: var(--brand);
     }
+  }
+
+  // center the inline-flex button
+  text-align: center;
+
+  @media (max-width: $mobile) {
+    padding: 32px 0 40px;
   }
 }
 

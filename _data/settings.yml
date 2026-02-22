@@ -66,6 +66,7 @@ mailchimp__button__text: Subscribe
 projects:
   enable: true
   projects_title: What we work on
+  projects_description: A selection of products we helped bring to life — from concept through launch.
 
 
 #-------------------------------

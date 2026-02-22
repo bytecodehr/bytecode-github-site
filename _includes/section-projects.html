@@ -3,10 +3,15 @@
 <section class="section projects">
 
   {% if site.data.settings.projects.projects_title %}
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <h2 class="section__title">{{ site.data.settings.projects.projects_title }}</h2>
+  <div class="projects__header">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+          <h2 class="section__title">{{ site.data.settings.projects.projects_title }}</h2>
+          {% if site.data.settings.projects.projects_description %}
+            <p class="projects__description">{{ site.data.settings.projects.projects_description }}</p>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
@@ -47,7 +52,11 @@
     {% endfor %}
   </div>
 
-  <a href="{{ '/what-we-work-on' | relative_url }}" class="section__button">View all <i class="fa-solid fa-arrow-right-long"></i></a>
+  <div class="projects__footer">
+    <div class="container">
+      <a href="{{ '/what-we-work-on' | relative_url }}" class="section__button">View all <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+  </div>
 </section>
 <!-- end projects -->
 {% endif %}
