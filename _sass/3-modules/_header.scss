@@ -12,15 +12,22 @@
 
 /* Logo */
 .logo__link {
-  font-family: $heading-font-family;
-  font-size: 32px;
-  line-height: 1;
-  font-weight: 900;
-  letter-spacing: $heading-letter-spacing;
+  display: inline-block;
+  text-decoration: none;
 }
 
-.logo__image {
-  max-height: 50px;
+.logo__wordmark {
+  display: block;
+  font-family: $heading-font-family;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--heading-font-color);
+
+  @media (max-width: $mobile) {
+    font-size: 20px;
+  }
 }
 
 /* Nav */

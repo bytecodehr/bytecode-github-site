@@ -1,7 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Bytecode
-logo: '/images/logo-crop.webp'
+logo: # using CSS text logo now (see _includes/logo.html)
 description: Helping companies develop their most valuable product ideas from concept to market.
 color_scheme: light # You have the option to choose between three modes: auto, light, and dark. The default mode is set to auto, which means that the color scheme will automatically adapt based on your operating system settings. This way, you can enjoy a personalized experience without having to manually switch between light and dark modes.
 
