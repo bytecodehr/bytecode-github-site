@@ -3,12 +3,12 @@
   position: relative;
   transform: translate(0);
   padding-top: 56.25%;
-  margin-top: 20px;
   margin-bottom: 48px;
+  margin-top: -20px;
   min-height: 280px;
   border-radius: 22px;
   overflow: hidden;
-  background: var(--background-alt-color);
+  background: #f0e9df;
 
   img {
     position: absolute;
@@ -34,11 +34,11 @@
 .project-content {
   max-width: 780px;
   margin: 0 auto 60px;
-  color: var(--text-alt-color);
+  color: #475569;
 
   a {
     font-weight: 500;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #e7ddd0;
 
     &:hover {
       color: var(--link-color);
@@ -74,34 +74,35 @@
 }
 
 .project-head {
-  margin-bottom: 48px;
-  border-bottom: 1px solid var(--border-color);
+  max-width: 780px;
+  margin: 0 auto;
 
   .project-label {
     display: inline-block;
-    margin-bottom: 4px;
-    font-size: 32px;
-    line-height: 1.3;
-    color: var(--text-alt-color);
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--brand);
   }
 
   .project-title {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     font-size: 48px;
-    line-height: 1.4;
+    line-height: 1.25;
+    color: #f1f5f9;
+  }
+
+  .project-description {
+    color: #94a3b8;
+    margin-bottom: 0;
   }
 
   @media (max-width: $desktop) {
-    margin-bottom: 32px;
-
     .project-title {
       font-size: 42px;
-    }
-  }
-
-  @media (max-width: $tablet) {
-    .project-label {
-      font-size: 28px;
     }
   }
 
@@ -109,9 +110,14 @@
     .project-title {
       font-size: 36px;
     }
+  }
+}
 
-    .project-label {
-      font-size: 24px;
-    }
+/* Next work nav */
+.project-nav {
+  background: #111827;
+
+  .section__title {
+    color: #f1f5f9;
   }
 }
