@@ -1,6 +1,6 @@
 /* Projects */
 .projects {
-  background: linear-gradient(135deg, #0f172a 0%, #1a0f2e 30%, #1f0c28 60%, #1a1030 100%);
+  background: #0f172a;
   padding-top: 40px;
   padding-bottom: 0;
 
@@ -84,15 +84,17 @@
   }
 
   // --- Per-card accent colors ---
+  // Lighter dark backgrounds with accent text. Hover brightens title.
+
   // 1) Indigo
   &:nth-child(3n + 1) {
-    background: #131629;
+    background: #1c2044;
 
     .project__label { color: #818cf8; }
-    .project__image { background: #1c1f3a; }
+    .project__image { background: #262b52; }
     .project__button {
-      border-color: #2a2d52;
-      background: #1c1f3a;
+      border-color: #333966;
+      background: #262b52;
       &:hover { color: #818cf8; border-color: #818cf8; }
     }
     &:hover .project__title a { color: #818cf8; }
@@ -100,13 +102,13 @@
 
   // 2) Amber
   &:nth-child(3n + 2) {
-    background: #1a1608;
+    background: #2a2310;
 
     .project__label { color: #fbbf24; }
-    .project__image { background: #2a2410; }
+    .project__image { background: #36301a; }
     .project__button {
-      border-color: #3d3518;
-      background: #2a2410;
+      border-color: #4a4020;
+      background: #36301a;
       &:hover { color: #fbbf24; border-color: #fbbf24; }
     }
     &:hover .project__title a { color: #fbbf24; }
@@ -114,13 +116,13 @@
 
   // 3) Rose
   &:nth-child(3n + 3) {
-    background: #1f0c18;
+    background: #301628;
 
     .project__label { color: #f472b6; }
-    .project__image { background: #2e1425; }
+    .project__image { background: #3e1e34; }
     .project__button {
-      border-color: #451d38;
-      background: #2e1425;
+      border-color: #542a46;
+      background: #3e1e34;
       &:hover { color: #f472b6; border-color: #f472b6; }
     }
     &:hover .project__title a { color: #f472b6; }
