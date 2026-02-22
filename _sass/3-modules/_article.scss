@@ -1,20 +1,54 @@
 /* Blog section */
 .blog {
   background: #faf6f1;
-  padding-bottom: 48px;
+  padding-top: 80px;
+  padding-bottom: 24px;
 
   .section__title {
     color: #1e293b;
+    margin-bottom: 8px;
   }
 
-  .section__button {
-    color: #1e293b;
-    border-bottom-color: #e7ddd0;
+  @media (max-width: $desktop) {
+    padding-top: 60px;
+  }
+}
 
-    &:hover {
-      color: var(--brand);
-      border-bottom-color: var(--brand);
+// Blog footer — full-width gradient strip (matches projects footer)
+.blog__footer {
+  display: block;
+  background: $brand-gradient;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 36px 0;
+  text-align: center;
+  transition: all 0.25s;
+
+  &:hover {
+    background: linear-gradient(135deg, #0a1220 0%, #0a2e1f 35%, #10412e 50%, #0a2e1f 65%, #0a1220 100%);
+
+    .blog__footer-text {
+      color: #fff;
+      letter-spacing: 0.03em;
+
+      i {
+        transform: translateX(4px);
+      }
     }
+  }
+}
+
+.blog__footer-text {
+  font-family: $heading-font-family;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #94a3b8;
+  transition: all 0.25s;
+
+  i {
+    margin-left: 10px;
+    font-size: 16px;
+    transition: transform 0.25s;
   }
 }
 

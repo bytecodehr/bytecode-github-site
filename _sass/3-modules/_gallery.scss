@@ -53,14 +53,9 @@
 }
 
 /* Section Gallery (tech logos / partners) */
-@keyframes tech-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
 .section-gallery {
-  background: #faf6f1;
-  padding: 80px 0;
+  background: #0f172a;
+  padding: 64px 0 72px;
 }
 
 .section-gallery__inner {
@@ -68,19 +63,19 @@
 
   .section-gallery__title {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 36px;
     font-family: $heading-font-family;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #94876e;
+    color: #64748b;
   }
 
   .section-gallery__content {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
+    gap: 16px;
   }
 
   .section-gallery__item {
@@ -90,16 +85,15 @@
     gap: 14px;
     padding: 32px 16px;
     border-radius: 14px;
-    background: #fff;
-    border: 1px solid #e7ddd0;
+    background: #1e293b;
+    border: 1px solid #334155;
     user-select: none;
-    animation: tech-float 3s ease-in-out infinite;
-    animation-delay: calc(var(--i) * 0.4s);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 
     &:hover {
       border-color: var(--brand-color);
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--brand-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--brand-color);
+      transform: translateY(-3px);
     }
   }
 
@@ -121,7 +115,7 @@
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.02em;
-    color: #1e293b;
+    color: #e2e8f0;
     text-align: center;
     line-height: 1.3;
   }
@@ -166,10 +160,5 @@
     }
   }
 
-  // Reduce motion for accessibility
-  @media (prefers-reduced-motion: reduce) {
-    .section-gallery__item {
-      animation: none;
-    }
-  }
+
 }

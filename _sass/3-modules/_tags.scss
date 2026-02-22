@@ -1,44 +1,50 @@
-/* Section Tags */
+/* Section Tags — compact subsection on beige */
 .section-tags {
   background: #faf6f1;
+  padding: 0 0 24px;
+
+  @media (max-width: $desktop) {
+    padding: 0 0 20px;
+  }
 }
 
 .section-tags__inner {
-  max-width: 760px;
-  margin: 0 auto;
+  max-width: 100%;
+  padding-top: 32px;
+  border-top: 1px solid #e7ddd0;
 
   .section-tags__title {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 32px;
-    font-size: 36px;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #94876e;
 
     i {
       transform: rotate(45deg);
-      margin-right: 12px;
-      font-size: 28px;
+      margin-right: 8px;
+      font-size: 12px;
     }
   }
 
   .section-tags__name {
-    padding: 8px 16px;
+    padding: 7px 14px;
     font-family: $heading-font-family;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1;
     font-weight: 500;
     text-transform: capitalize;
     border: 1px solid #e7ddd0;
-    border-radius: 8px;
+    border-radius: 6px;
     background: #fff;
     transition: all 0.15s;
   }
 
   .section-tags__box {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
@@ -59,22 +65,7 @@
     }
   }
 
-  @media (max-width: $desktop) {
-    .section-tags__title,
-    .section-tags__box {
-      justify-content: flex-start;
-    }
-  }
-
   @media (max-width: $mobile) {
-    .section-tags__title {
-      font-size: 28px;
-
-      i {
-        font-size: 24px;
-      }
-    }
-
     .section-tags__box {
       .section-tags__name {
         margin: 0 4px 4px 0;

@@ -1,8 +1,12 @@
+// Wrapper: one continuous gradient for hero + projects (no seam)
+.dark-flow {
+  background: $brand-gradient;
+}
+
 /* Hero */
 .hero {
-  background: $brand-gradient;
   padding-top: 80px;
-  padding-bottom: 120px;
+  padding-bottom: 64px;
   position: relative;
   overflow: hidden;
 
@@ -18,20 +22,9 @@
     pointer-events: none;
   }
 
-  // Subtle noise/texture feel via a top highlight
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(5, 150, 105, 0.2) 50%, transparent 100%);
-  }
-
   @media (max-width: $desktop) {
     padding-top: 40px;
-    padding-bottom: 80px;
+    padding-bottom: 48px;
   }
 }
 
