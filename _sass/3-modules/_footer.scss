@@ -82,11 +82,11 @@
   }
 }
 
-// --- Main footer area ---
+// --- Main footer area — dark slate blue ---
 .footer__main {
-  background: #faf6f1;
+  background: #0f172a;
   padding: 64px 0 32px;
-  border-top: 1px solid #e7ddd0;
+  border-top: none;
 }
 
 .footer__top {
@@ -94,7 +94,7 @@
   justify-content: space-between;
   gap: 60px;
   padding-bottom: 48px;
-  border-bottom: 1px solid #e7ddd0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   @media (max-width: $desktop) {
     flex-direction: column;
@@ -107,7 +107,7 @@
   flex-shrink: 0;
 
   .logo__wordmark {
-    color: #1e293b;
+    color: #f1f5f9;
   }
 
   .logo__bar {
@@ -123,7 +123,7 @@
   margin-top: 16px;
   font-size: 15px;
   line-height: 1.6;
-  color: #78716c;
+  color: #94a3b8;
 }
 
 // Nav columns
@@ -148,7 +148,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #1e293b;
+  color: #e2e8f0;
 }
 
 .footer__links {
@@ -168,7 +168,7 @@
     font-family: $heading-font-family;
     font-size: 14px;
     font-weight: 500;
-    color: #78716c;
+    color: #94a3b8;
     transition: color 0.2s;
 
     &:hover {
@@ -203,10 +203,10 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: 1px solid #e7ddd0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  background: #fff;
-  color: #78716c;
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
   font-size: 15px;
   cursor: pointer;
   transition: all 0.2s;
@@ -220,11 +220,11 @@
 .copyright {
   font-family: $heading-font-family;
   font-size: 13px;
-  color: #a8a29e;
+  color: #64748b;
 
   a {
     font-weight: 600;
-    color: #78716c;
+    color: #94a3b8;
     transition: color 0.2s;
 
     &:hover {
@@ -240,7 +240,7 @@
   font-family: $heading-font-family;
   font-size: 13px;
   font-weight: 500;
-  color: #78716c;
+  color: #94a3b8;
   cursor: pointer;
   transition: color 0.2s;
 
@@ -284,8 +284,8 @@
     font-size: 15px;
     border-radius: 10px;
     will-change: transform;
-    color: #78716c;
-    background: #f0e9df;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.05);
     transition: all 0.2s;
 
     &:hover {
