@@ -1,10 +1,16 @@
 /* Sections */
 .section {
   position: relative;
-  margin: 120px 0;
+  margin: 0;
+  padding: 100px 0;
+
+  // Alternating section backgrounds for visual rhythm
+  &:nth-child(even) {
+    background: var(--section-alt-bg);
+  }
 
   @media (max-width: $desktop) {
-    margin: 60px 0;
+    padding: 60px 0;
   }
 }
 
@@ -13,6 +19,7 @@
   margin-bottom: 32px;
   font-size: 40px;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 
   @media (max-width: $mobile) {
     font-size: 32px;
@@ -24,17 +31,19 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 32px 0;
+  padding: 28px 0;
   font-family: $heading-font-family;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1;
   text-align: center;
   letter-spacing: $heading-letter-spacing;
-  border-bottom: 1px solid var(--border-color);
+  color: var(--brand);
+  border-bottom: 2px solid var(--border-color);
+  transition: all 0.2s;
 
   &:hover {
-    background: var(--background-alt-color);
+    border-bottom-color: var(--brand);
 
     i {
       transform: rotate(-45deg) translateX(3px);
@@ -43,12 +52,12 @@
 
   i {
     transform: rotate(-45deg);
-    font-size: 15px;
+    font-size: 14px;
     transition: $global-transition;
   }
 
   @media (max-width: $mobile) {
-    padding: 24px 0;
-    font-size: 18px;
+    padding: 20px 0;
+    font-size: 16px;
   }
 }
