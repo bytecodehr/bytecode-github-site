@@ -11,6 +11,9 @@ $global-radius: 22px;
 // Transition
 $global-transition: all .25s;
 
+// Brand gradient — dark slate → deep emerald → dark slate
+$brand-gradient: linear-gradient(135deg, #111827 0%, #0a2e1f 40%, #0d3326 55%, #111827 100%);
+
 
 // *****************
 // Typography

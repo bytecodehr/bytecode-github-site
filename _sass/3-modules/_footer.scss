@@ -5,7 +5,7 @@
 
 // --- CTA Banner with gradient ---
 .footer__cta {
-  background: linear-gradient(135deg, #111827 0%, #0f2d22 50%, #111827 100%);
+  background: $brand-gradient;
   padding: 80px 0;
   position: relative;
   overflow: hidden;
