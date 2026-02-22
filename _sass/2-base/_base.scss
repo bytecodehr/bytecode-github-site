@@ -52,8 +52,8 @@ body {
 }
 
 *::selection {
-  color: var(--dark);
-  background-color: var(--secondary-color);
+  color: #fff;
+  background-color: var(--brand);
 }
 
 .global-wrap {

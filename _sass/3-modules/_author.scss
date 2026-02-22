@@ -1,5 +1,7 @@
-/* Author */
+/* Author / CTA Section */
 .author {
+  background: #111827;
+
   .author__inner {
     display: flex;
     align-items: center;
@@ -19,47 +21,57 @@
   margin-right: auto;
 
   .author__role {
-    display: flex;
-    align-items: flex-end;
-    min-height: 50px;
-    margin-bottom: 8px;
-    transform: rotate(-4deg);
-    font-family: 'Yellowtail', cursive;
-    font-size: 40px;
-    line-height: 1.25;
-    color: var(--secondary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 6px 14px;
+    font-family: $heading-font-family;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--brand);
+    background: rgba(5, 150, 105, 0.12);
+    border: 1px solid rgba(5, 150, 105, 0.25);
+    border-radius: 100px;
   }
 
   .author__title {
     margin-bottom: 20px;
     font-size: 40px;
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #f1f5f9;
   }
 
   .author__description {
-    font-size: 21px;
-    color: var(--text-alt-color);
+    font-size: 18px;
+    line-height: 1.7;
+    color: #94a3b8;
+    margin-bottom: 28px;
+  }
+
+  .author__button {
+    color: #fff;
+    background: var(--brand);
+
+    &:hover {
+      background: var(--brand-hover);
+    }
   }
 
   @media (max-width: $wide) {
     max-width: 440px;
 
-    .author__role {
-      font-size: 32px;
-    }
-
     .author__description {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
   @media (max-width: $desktop) {
     max-width: 100%;
     margin-top: 4px;
-
-    .author__role {
-      margin-bottom: 12px;
-    }
   }
 
   @media (max-width: $tablet) {
@@ -87,11 +99,12 @@
   .author__image {
     position: relative;
     transform: translate(0);
-    border-radius: 22px;
+    border-radius: 16px;
     padding-bottom: 75%;
     overflow: hidden;
-    background: var(--background-alt-color);
+    background: #1e293b;
     user-select: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
     img {
       position: absolute;

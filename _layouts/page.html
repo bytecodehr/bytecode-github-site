@@ -3,29 +3,33 @@ layout: default
 ---
 
 <!-- begin page -->
-<div class="container">
-
-  <div class="page-head">
-    <div class="page-meta">
-      <h1 class="page-title">{{ page.title | escape }}</h1>
-      {% if page.description %}
-        <p class="page-description">{{ page.description }}</p>
-      {% endif %}
+<div class="page-hero">
+  <div class="container">
+    <div class="page-head">
+      <div class="page-meta">
+        <h1 class="page-title">{{ page.title | escape }}</h1>
+        {% if page.description %}
+          <p class="page-description">{{ page.description }}</p>
+        {% endif %}
+      </div>
     </div>
   </div>
+</div>
 
-  {%if page.image %}
-    <div class="page-image">
-      <img class="lazy" data-src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}">
-    </div>
-  {% endif %}
+<div class="page-body">
+  <div class="container">
+    {%if page.image %}
+      <div class="page-image">
+        <img class="lazy" data-src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}">
+      </div>
+    {% endif %}
 
-  <article class="page">
-    <div class="page__content">
-      {{ content }}
-    </div>
-  </article>
-
+    <article class="page">
+      <div class="page__content">
+        {{ content }}
+      </div>
+    </article>
+  </div>
 </div>
 <!-- end page -->
 

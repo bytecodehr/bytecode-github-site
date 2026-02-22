@@ -6,13 +6,16 @@
       <div class="col col-12">
         <div class="section-gallery__inner">
           {% if site.data.settings.gallery.gallery_title %}
-            <h3 class="section-gallery__title shuffle">{{ site.data.settings.gallery.gallery_title }}</h3>
+            <h3 class="section-gallery__title">{{ site.data.settings.gallery.gallery_title }}</h3>
           {% endif %}
-          {% if site.data.settings.gallery %}
+          {% if site.data.settings.gallery.gallery_items %}
           <div class="section-gallery__content">
-            {% for image in site.data.settings.gallery.gallery_images %}
-            <div class="section-gallery__image">
-              <img src="{{site.baseurl}}{{image.url}}" alt="{{image.alt}}" loading="lazy">
+            {% for item in site.data.settings.gallery.gallery_items %}
+            <div class="section-gallery__item">
+              <div class="section-gallery__icon">
+                <iconify-icon icon="{{ item.icon }}" width="40" height="40"></iconify-icon>
+              </div>
+              <span class="section-gallery__label">{{ item.name }}</span>
             </div>
             {% endfor %}
           </div>

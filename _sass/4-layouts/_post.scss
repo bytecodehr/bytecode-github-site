@@ -1,22 +1,91 @@
 /* Post + Page */
 
+// Dark page header banner
+.page-hero {
+  background: #111827;
+  padding: 80px 0 60px;
+
+  .page-head,
+  .post-head {
+    margin: 0 auto;
+    max-width: 780px;
+  }
+
+  .page-title,
+  .post-title {
+    color: #f1f5f9;
+    margin-bottom: 16px;
+  }
+
+  .page-description,
+  .post-description {
+    color: #94a3b8;
+    margin-bottom: 0;
+  }
+
+  .post-date {
+    color: #64748b;
+  }
+
+  .post-tags .post__tag {
+    border-color: #334155;
+    color: #94a3b8;
+    background: transparent;
+
+    &:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+      background: rgba(5, 150, 105, 0.1);
+    }
+  }
+
+  .page-hero__title {
+    font-size: 58px;
+    line-height: 1.24;
+    color: #f1f5f9;
+
+    @media (max-width: $wide) {
+      font-size: 48px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    padding: 48px 0 40px;
+  }
+}
+
+// Beige page content area
+.page-body {
+  background: #faf6f1;
+  padding: 60px 0 0;
+
+  .page-image {
+    margin-top: -20px;
+  }
+
+  @media (max-width: $desktop) {
+    padding: 40px 0 0;
+  }
+}
+
 // Page Section
 .page-section {
-  margin-top: 80px;
+  margin-top: 0;
 
   .page-section__title {
     font-size: 58px;
     line-height: 1.24;
+    color: #f1f5f9;
   }
 
   @media (max-width: $wide) {
     .page-section__title {
       font-size: 48px;
     }
-  }
-
-  @media (max-width: $desktop) {
-    margin-top: 0;
   }
 
   @media (max-width: $mobile) {
@@ -143,11 +212,11 @@
 .page {
   max-width: 780px;
   margin: 0 auto 60px;
-  color: var(--text-alt-color);
+  color: #475569;
 
   a {
     font-weight: 500;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #e7ddd0;
 
     &:hover {
       color: var(--link-color);
@@ -217,12 +286,14 @@
     border-radius: 60px;
     border: none;
     text-decoration: none;
-    color: var(--heading-font-color);
-    background-color: var(--background-alt-color);
+    color: #1e293b;
+    background-color: #fff;
+    border: 1px solid #e7ddd0;
     transition: $global-transition;
 
     &:hover {
-      background-color: var(--background-alt-color-2);
+      border-color: var(--brand);
+      color: var(--brand);
     }
 
     .share-name {
@@ -265,9 +336,9 @@
   max-width: 780px;
   margin: 0 auto;
   padding: 32px 0;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  color: var(--text-alt-color);
+  border-top: 1px solid #e7ddd0;
+  border-bottom: 1px solid #e7ddd0;
+  color: #475569;
 }
 
 .post-author__info {

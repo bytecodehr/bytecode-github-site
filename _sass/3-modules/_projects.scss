@@ -1,19 +1,97 @@
 /* Projects */
+.projects {
+  background: #111827;
+  padding-bottom: 0;
+
+  .section__title {
+    color: #f1f5f9;
+  }
+
+  .section__button {
+    color: #f1f5f9;
+    border-bottom-color: #1e293b;
+
+    &:hover {
+      color: var(--brand);
+      border-bottom-color: var(--brand);
+    }
+  }
+}
+
 .project {
   position: relative;
-  padding: 48px 0;
-  border-top: 1px solid var(--border-color);
+  padding: 56px 0;
   transition: $global-transition;
 
-  &:hover {
-    .project__image {
-      box-shadow: var(--card-shadow-hover);
-      transform: translateY(-2px);
+  // Alternating image/text position — even cards flip the row
+  &:nth-child(even) {
+    .row {
+      flex-direction: row-reverse;
+
+      @media (max-width: $desktop) {
+        flex-direction: column;
+      }
+    }
+
+    .project__meta {
+      margin-right: 0;
+      margin-left: auto;
+
+      @media (max-width: $desktop) {
+        margin-left: 0;
+        margin-right: auto;
+      }
     }
   }
 
-  &:last-child {
-    border-bottom: 1px solid var(--border-color);
+  // --- Per-card accent colors ---
+  // 1) Indigo
+  &:nth-child(3n + 1) {
+    background: #131629;
+
+    .project__label { color: #818cf8; }
+    .project__image { background: #1c1f3a; }
+    .project__button {
+      border-color: #2a2d52;
+      background: #1c1f3a;
+      &:hover { color: #818cf8; border-color: #818cf8; }
+    }
+    &:hover .project__title a { color: #818cf8; }
+  }
+
+  // 2) Amber
+  &:nth-child(3n + 2) {
+    background: #1a1608;
+
+    .project__label { color: #fbbf24; }
+    .project__image { background: #2a2410; }
+    .project__button {
+      border-color: #3d3518;
+      background: #2a2410;
+      &:hover { color: #fbbf24; border-color: #fbbf24; }
+    }
+    &:hover .project__title a { color: #fbbf24; }
+  }
+
+  // 3) Rose
+  &:nth-child(3n + 3) {
+    background: #1f0c18;
+
+    .project__label { color: #f472b6; }
+    .project__image { background: #2e1425; }
+    .project__button {
+      border-color: #451d38;
+      background: #2e1425;
+      &:hover { color: #f472b6; border-color: #f472b6; }
+    }
+    &:hover .project__title a { color: #f472b6; }
+  }
+
+  &:hover {
+    .project__image {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+      transform: translateY(-2px);
+    }
   }
 }
 
@@ -39,21 +117,24 @@
 
   .project__label {
     display: inline-block;
-    margin-bottom: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    line-height: 1.3;
+    line-height: 1;
     color: var(--brand);
   }
 
   .project__title {
-    margin-bottom: 20px;
-    font-size: 36px;
-    line-height: 1.3;
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 1.25;
 
     a {
+      color: #f1f5f9;
+      transition: color 0.2s;
+
       &::after {
         content: "";
         position: absolute;
@@ -68,13 +149,13 @@
 
   .project__description {
     display: -webkit-box;
-    margin-bottom: 32px;
-    font-size: 17px;
+    margin-bottom: 28px;
+    font-size: 16px;
     line-height: 1.7;
     overflow-y: hidden;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    color: var(--text-alt-color);
+    color: #94a3b8;
   }
 
   .project__button {
@@ -85,25 +166,22 @@
     margin-top: auto;
     padding: 10px 20px;
     font-family: $heading-font-family;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background: var(--background-color);
+    border: 1px solid #334155;
+    color: #f1f5f9;
+    background: #1e293b;
     transition: all 0.2s;
 
     &:hover {
       color: var(--brand);
       border-color: var(--brand);
-
-      i {
-        margin-left: 4px;
-      }
     }
 
     i {
-      font-size: 12px;
+      font-size: 11px;
       transition: $global-transition;
     }
   }
@@ -117,12 +195,8 @@
   }
 
   @media (max-width: $tablet) {
-    .project__label {
-      font-size: 13px;
-    }
-
     .project__title {
-      font-size: 32px;
+      font-size: 28px;
     }
 
     .project__description {
@@ -132,7 +206,7 @@
 
   @media (max-width: $mobile) {
     .project__title {
-      font-size: 28px;
+      font-size: 24px;
     }
 
     .project__description {
@@ -147,9 +221,9 @@
   border-radius: 16px;
   padding-bottom: 75%;
   overflow: hidden;
-  background: var(--background-alt-color);
+  background: #1e293b;
   user-select: none;
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s, transform 0.3s;
 
   img {

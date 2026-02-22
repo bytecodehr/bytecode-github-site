@@ -179,19 +179,19 @@ tags_section:
 gallery:
   enable: true
   gallery_title: The Tech We Use
-  gallery_images:
-    - alt: 'Rest'
-      url: '/images/gallery-1.webp'
-    - alt: 'City'
-      url: '/images/gallery-2.webp'
-    - alt: 'Hobby'
-      url: '/images/gallery-3.webp'
-    - alt: 'Car'
-      url: '/images/gallery-4.webp'
-    - alt: 'Hobby'
-      url: '/images/gallery-5.webp'
-    - alt: 'Lifestyle'
-      url: '/images/gallery-6.webp'
+  gallery_items:
+    - name: Ruby on Rails
+      icon: simple-icons:rubyonrails
+    - name: React
+      icon: simple-icons:react
+    - name: PostgreSQL
+      icon: simple-icons:postgresql
+    - name: Shopify
+      icon: simple-icons:shopify
+    - name: Docker
+      icon: simple-icons:docker
+    - name: Redis
+      icon: simple-icons:redis
 
 
 #-------------------------------

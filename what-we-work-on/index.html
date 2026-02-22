@@ -4,18 +4,22 @@ title: What We Work On
 description: I shows only the best websites and portfolios built completely with passion, simplicity & creativity!
 ---
 
-<!-- begin page-section -->
-<section class="page-section">
+<!-- begin page hero -->
+<div class="page-hero">
   <div class="container">
     {% if page.title %}
       <div class="row">
         <div class="col col-12">
-          <h1 class="page-section__title">{{ page.title }}</h1>
+          <h1 class="page-hero__title">{{ page.title }}</h1>
         </div>
       </div>
     {% endif %}
   </div>
+</div>
+<!-- end page hero -->
 
+<!-- begin page-section -->
+<section class="page-section projects-listing">
   {% for project in site.projects reversed %}
     <article class="project">
       <div class="project__content">

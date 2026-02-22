@@ -64,15 +64,15 @@ The main takeaway is that you should never be afraid to show your product to use
 # Which tech do we use?
 
 <p class="hero__description">
-    We use Ruby <span class="iconify" data-icon="mdi:language-ruby" style="color: #c00;"></span> (on Rails) and JAVA <span class="iconify" data-icon="logos:java"></span>
-    for backend, and JavaScript <span class="iconify" data-icon="logos:javascript" style="color: #4f5b93;"></span>
-    and React <span class="iconify" data-icon="logos:react"></span> for frontend and mobile.
-    We store data in PostgreSQL <span class="iconify" data-icon="logos:postgresql"></span> and Redis <span class="iconify" data-icon="logos:redis"></span>.
+    We use Ruby <iconify-icon icon="mdi:language-ruby" style="color: #c00;" inline></iconify-icon> (on Rails) and JAVA <iconify-icon icon="logos:java" inline></iconify-icon>
+    for backend, and JavaScript <iconify-icon icon="logos:javascript" inline></iconify-icon>
+    and React <iconify-icon icon="simple-icons:react" inline></iconify-icon> for frontend and mobile.
+    We store data in PostgreSQL <iconify-icon icon="simple-icons:postgresql" inline></iconify-icon> and Redis <iconify-icon icon="simple-icons:redis" inline></iconify-icon>.
 </p>
 <p class="hero__description">
-    We host most of our sites on Heroku <span class="iconify" data-icon="logos:heroku-icon"></span>,
-    <span class="iconify" data-icon="logos:aws"></span>
-    and Digital Ocean <span class="iconify" data-icon="simple-icons:digitalocean" style="color: #008bcf;"></span>,
-    using Kubernetes <span class="iconify" data-icon="logos:kubernetes"></span> and
-    Docker <span class="iconify" data-icon="logos:docker-icon"></span>.
+    We host most of our sites on Heroku <iconify-icon icon="simple-icons:heroku" inline></iconify-icon>,
+    AWS <iconify-icon icon="simple-icons:amazonaws" inline></iconify-icon>
+    and Digital Ocean <iconify-icon icon="simple-icons:digitalocean" style="color: #008bcf;" inline></iconify-icon>,
+    using Kubernetes <iconify-icon icon="simple-icons:kubernetes" inline></iconify-icon> and
+    Docker <iconify-icon icon="simple-icons:docker" inline></iconify-icon>.
 </p>

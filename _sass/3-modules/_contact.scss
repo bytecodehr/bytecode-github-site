@@ -1,11 +1,11 @@
 /* Contact */
 .contact {
-  margin-top: 80px;
-  margin-bottom: 120px;
-  
+  margin-top: 0;
+  margin-bottom: 60px;
+  padding-top: 20px;
+
   @media (max-width: $desktop) {
-    margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 }
 
@@ -18,13 +18,14 @@
   }
 
   .page-title {
-    font-size: 58px;
-    line-height: 1.24;
+    font-size: 48px;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
   }
 
   @media (max-width: $wide) {
     .page-title {
-      font-size: 48px;
+      font-size: 40px;
     }
   }
 
@@ -38,7 +39,7 @@
 
   @media (max-width: $mobile) {
     .page-title {
-      font-size: 36px;
+      font-size: 32px;
     }
   }
 }
@@ -60,11 +61,12 @@
   .contact__image {
     position: relative;
     transform: translate(0);
-    border-radius: 22px;
+    border-radius: 16px;
     padding-bottom: 75%;
     overflow: hidden;
     background: var(--background-alt-color);
     user-select: none;
+    box-shadow: var(--card-shadow);
 
     img {
       position: absolute;
@@ -86,7 +88,7 @@
 }
 
 .form__group {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 
   &:last-child {
     margin-bottom: 0;
@@ -95,31 +97,28 @@
 
 .form__input {
   width: 100%;
-  padding: 20px 24px;
+  padding: 16px 20px;
   font-family: $heading-font-family;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  border: 1px solid var(--border-color);
-  border-radius: 100px;
+  border: 1px solid #e7ddd0;
+  border-radius: 10px;
   outline: 0;
-  transition: .2s ease-in-out;
+  transition: border-color .2s, box-shadow .2s;
   resize: vertical;
   color: var(--heading-font-color);
-  background-color: var(--background-alt-color);
+  background-color: #fff;
 
   &::placeholder {
     color: var(--text-alt-color);
   }
 
   &:focus {
-    background: var(--background-alt-color-2);
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
   }
 }
 
 textarea.form__input {
-  border-radius: 22px;
-
-  @media (max-width: $tablet) {
-    border-radius: 12px;
-  }
+  border-radius: 10px;
 }
