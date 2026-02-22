@@ -2,18 +2,16 @@
 
 // Page Section
 .page-section {
-  margin-top: 48px;
+  margin-top: 80px;
 
   .page-section__title {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    font-size: 58px;
+    line-height: 1.24;
   }
 
   @media (max-width: $wide) {
     .page-section__title {
-      font-size: 42px;
+      font-size: 48px;
     }
   }
 
@@ -23,7 +21,7 @@
 
   @media (max-width: $mobile) {
     .page-section__title {
-      font-size: 32px;
+      font-size: 36px;
     }
   }
 }
@@ -31,48 +29,43 @@
 .post-head,
 .page-head {
   max-width: 780px;
-  margin: 20px auto 40px;
+  margin: 20px auto 48px;
 
   @media (max-width: $desktop) {
-    margin: 0 auto 24px;
+    margin: 0 auto 32px;
   }
 }
 
 .post-date {
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-family: $heading-font-family;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
   color: var(--text-alt-color);
 }
 
 .post-title,
 .page-title {
-  margin-bottom: 16px;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  font-size: 48px;
+  line-height: 1.4;
 
   @media (max-width: $desktop) {
-    font-size: 36px;
+    font-size: 42px;
   }
 
   @media (max-width: $mobile) {
-    font-size: 28px;
+    font-size: 36px;
   }
 }
 
 .post-description,
 .page-description {
-  margin-bottom: 20px;
-  font-size: 17px;
-  line-height: 1.7;
+  margin-bottom: 24px;
   color: var(--text-alt-color);
 
   @media (max-width: $desktop) {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 }
 
@@ -82,34 +75,34 @@
 
   .post__tag {
     display: inline-block;
-    padding: 6px 14px;
-    margin: 0 6px 6px 0;
+    padding: 10px 20px;
+    margin: 0 8px 8px 0;
     font-family: $heading-font-family;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1;
     font-weight: 500;
     text-transform: capitalize;
     border: 1px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 100px;
     background: var(--background-color);
-    transition: $global-transition;
+    will-change: transform;
 
     &:hover {
-      border-color: var(--primary-color);
-      color: var(--primary-color);
+      transform: scale(1.06);
+      background: var(--background-alt-color);
     }
 
     &:last-child {
-      margin: 0 0 6px 0;
+      margin: 0 0 8px 0;
     }
   }
 
   @media (max-width: $mobile) {
     .post__tag {
-      margin: 0 4px 4px 0;
+      margin: 0 6px 6px 0;
 
       &:last-child {
-        margin: 0 0 4px 0;
+        margin: 0 0 6px 0;
       }
     }
   }
@@ -120,9 +113,9 @@
   position: relative;
   transform: translate(0);
   padding-top: 56.25%;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   min-height: 280px;
-  border-radius: $global-radius;
+  border-radius: 22px;
   overflow: hidden;
   background: var(--background-alt-color);
 
@@ -137,33 +130,33 @@
   }
 
   @media (max-width: $desktop) {
-    padding-top: 56.25%;
+    padding-top: 65%;
     margin-bottom: 32px;
   }
 
   @media (max-width: $tablet) {
-    border-radius: 8px;
+    border-radius: 12px;
   }
 }
 
 .post,
 .page {
   max-width: 780px;
-  margin: 0 auto 48px;
-  color: var(--text-color);
+  margin: 0 auto 60px;
+  color: var(--text-alt-color);
 
   a {
     font-weight: 500;
-    color: var(--primary-color);
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid var(--border-color);
 
     &:hover {
-      border-bottom-color: var(--primary-color);
+      color: var(--link-color);
+      border-bottom-color: var(--link-color-hover);
     }
   }
 
   img {
-    border-radius: $global-radius;
+    border-radius: 22px;
     overflow: hidden;
 
     &.lightense-open {
@@ -189,7 +182,7 @@
 
   @media (max-width: $tablet) {
     img, .js-reframe {
-      border-radius: 8px;
+      border-radius: 12px;
     }
   }
 }
@@ -201,37 +194,64 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 6px;
+    margin: -4px 0;
+  }
+  
+  .share__item {
+    margin: 4px;
+    text-align: center;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   .share__link {
     display: flex;
     align-items: center;
     font-family: $heading-font-family;
-    font-size: 13px;
-    padding: 10px 16px;
+    font-size: 14px;
+    padding: 15px 20px;
     line-height: 1;
     font-weight: 500;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border-radius: 60px;
+    border: none;
     text-decoration: none;
-    color: var(--text-alt-color);
-    background-color: var(--background-color);
+    color: var(--heading-font-color);
+    background-color: var(--background-alt-color);
     transition: $global-transition;
 
     &:hover {
-      border-color: var(--border-color-hover);
-      color: var(--heading-font-color);
+      background-color: var(--background-alt-color-2);
     }
 
     .share-name {
-      margin-left: 8px;
+      &::before {
+        content: "";
+        position: relative;
+        top: 0;
+        display: inline-block;
+        margin: 0 8px;
+        width: 1px;
+        height: 10px;
+        opacity: 0.2;
+        background-color: var(--heading-font-color);
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    margin-top: 0;
+
+    .share__link {
+      font-size: 13px;
     }
   }
 
   @media (max-width: $mobile) {
     .share__link {
-      padding: 8px 12px;
+      font-size: 16px;
+      padding: 10px 25px;
 
       .share-name {
         display: none;
@@ -286,23 +306,22 @@
 
   .post-author__link {
     margin-bottom: 4px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.2;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: $heading-letter-spacing;
   }
 
   .post-author__role {
-    font-size: 14px;
-    color: var(--text-alt-color);
+    font-size: 16px;
   }
 }
 
 .post-author__description {
-  margin: 12px 0 0;
+  margin: 16px 0 0;
 
   @media (max-width: $mobile) {
-    margin: 8px 0 0;
+    margin: 12px 0 0;
   }
 }
 
@@ -317,7 +336,7 @@
 
 /* Disqus */
 .show-comments {
-  margin-top: 40px;
+  margin-top: 48px;
   text-align: center;
 
   @media (max-width: $desktop) {
@@ -337,16 +356,13 @@
 
   .error__title {
     margin-bottom: 24px;
-    font-size: 100px;
-    font-weight: 800;
+    font-size: 120px;
     line-height: 1;
-    letter-spacing: -0.03em;
-    color: var(--primary-color);
   }
   
   @media (max-width: $mobile) {
     .error__title {
-      font-size: 72px;
+      font-size: 100px;
     }
   }
 }
