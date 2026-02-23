@@ -14,17 +14,17 @@
   }
 }
 
-// Blog footer — full-width gradient strip (matches projects footer)
+// Blog footer — full-width dark strip (matches projects footer)
 .blog__footer {
   display: block;
-  background: $brand-gradient;
+  background: #0f172a;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 36px 0;
   text-align: center;
   transition: all 0.25s;
 
   &:hover {
-    background: linear-gradient(135deg, #0a1220 0%, #0a2e1f 35%, #10412e 50%, #0a2e1f 65%, #0a1220 100%);
+    background: #111b2e;
 
     .blog__footer-text {
       color: #fff;

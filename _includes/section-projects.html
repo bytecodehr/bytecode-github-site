@@ -2,16 +2,6 @@
 <!-- begin projects -->
 <section class="section projects">
 
-  {% if site.data.settings.projects.projects_title %}
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <h2 class="section__title">{{ site.data.settings.projects.projects_title }}</h2>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-
   <div class="projects__inner">
     {% assign sorted = site.projects | sort: 'date' | reverse %}
     {% for project in sorted limit:3 %}
