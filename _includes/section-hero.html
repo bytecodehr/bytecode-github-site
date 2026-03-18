@@ -2,32 +2,31 @@
 <!-- begin hero -->
 <section class="hero">
   <div class="container">
-    <div class="hero__inner">
-      <div class="hero__content">
-        {% if site.data.settings.hero.hero_intro %}
-          <span class="hero__intro shuffle">{{ site.data.settings.hero.hero_intro }}</span>
-        {% endif %}
-        {% if site.data.settings.hero.hero_title %}
-          <h1 class="hero__title">{{ site.data.settings.hero.hero_title }}</h1>
-        {% endif %}
-        {% if site.data.settings.hero.hero_description %}
-          <p class="hero__description">{{ site.data.settings.hero.hero_description }}</p>
-        {% endif %}
-        <a href="{{ '/schedule-a-call-with-us/' | relative_url }}" class="hero__cta">Start a project <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
+    <div class="hero__center">
+
+      {% if site.data.settings.hero.hero_intro %}
+        <span class="eyebrow eyebrow--dark">{{ site.data.settings.hero.hero_intro }}</span>
+      {% endif %}
+
+      {% if site.data.settings.hero.hero_title %}
+        <h1 class="hero__title">{{ site.data.settings.hero.hero_title }}</h1>
+      {% endif %}
+
+      {% if site.data.settings.hero.hero_description %}
+        <p class="hero__description">{{ site.data.settings.hero.hero_description }}</p>
+      {% endif %}
+
+      <a href="{{ '/schedule-a-call-with-us/' | relative_url }}" class="hero__cta">
+        Start a project
+        <span class="hero__cta-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+
     </div>
   </div>
-
-  <div class="sound-wave-bg">
-    <div class="sound-wave">
-      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-    </div>
-  </div>
-
 </section>
 <!-- end hero -->
 {% endif %}

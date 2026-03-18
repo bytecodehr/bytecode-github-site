@@ -60,8 +60,7 @@
 @import '1-tools/grid';
 /* >>>>>>>>>>>>>> :: 1.5-Syntax Highlighting <<<<<<<<<<<<<<< */
 @import '1-tools/syntax-highlighting';
-/* >>>>>>>>>>>>>> :: 1.6-Font Awesome (6.4.2) <<<<<<<<<<<<<<< */
-@import '1-tools/font-awesome';
+/* >>>>>>>>>>>>>> :: 1.6-Font Awesome — REMOVED (replaced with inline SVGs) <<<<<<<<<<<<<<< */
 
 
 /* =======================
@@ -102,6 +101,10 @@
 @import '3-modules/footer';
 /* >>>>>>>>>>>>>> :: 3.14-Search <<<<<<<<<<<<<<< */
 @import '3-modules/search';
+/* >>>>>>>>>>>>>> :: 3.15-How We Work <<<<<<<<<<<<<<< */
+@import '3-modules/how-we-work';
+/* >>>>>>>>>>>>>> :: 3.16-Brands <<<<<<<<<<<<<<< */
+@import '3-modules/brands';
 
 
 /* =======================

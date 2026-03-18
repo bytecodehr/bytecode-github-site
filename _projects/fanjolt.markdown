@@ -4,13 +4,13 @@ date: 2023-01-01
 
 name: Fanjolt
 
-title: Fanjolt - 1000+ Happy fans - interact with favourite celebrities
+title: "Fanjolt: Building a Celebrity-Fan Interaction Platform with 1,000+ Users"
 
 project_url: https://www.fanjolt.com/
 
-card_description: 1000+ Happy fans
+card_description: 1,000+ Happy fans
 
-description: Fanjolt aims to create memorable interactions between fans and has a curated list of premier talent to help them support their favourite causes.
+description: We built Fanjolt from the ground up — a Ruby on Rails marketplace connecting fans with celebrities for personalized video messages, live interactions, and charity-driven experiences.
 
 image: '/images/projects/fanjolt/fanjolt-hero.jpeg'
 
@@ -18,37 +18,46 @@ tags: [Ruby On Rails, PostgreSQL, Redis, Heroku, Sidekiq]
 label: Development
 ---
 
-[//]: # (## The beginning)
+## The concept
 
-[//]: # ()
-[//]: # (After delivering two back-to-back client applications in late 2014, my colleague and I decided to take a couple of months off to work on a side project which we later named Movieo.)
+Fanjolt set out to bridge the gap between celebrities and their fans. The idea was straightforward: give fans a way to book personalized video messages, live calls, and exclusive experiences with a curated roster of athletes, musicians, and public figures — with a portion of every transaction going to the talent's chosen charity.
 
-[//]: # ()
-[//]: # ()
-[//]: # (Since this was a pure passion project, we skipped market research and jumped straight into design. We started by brainstorming and sketching out different user interfaces, then spent some time refining what we thought was the best one. We wanted a simple-to-use filtering system that encouraged exploration, with movies ranked by a combination of IMDb, Rotten Tomatoes, and Metacritic scores.)
+The founding team had a clear vision but needed a technical partner who could move fast and build a product robust enough to handle real-money transactions and time-sensitive fulfillment workflows.
 
-[//]: # ()
-[//]: # ()
-[//]: # (The next step was building the actual web app. Responsibilities were split, which translated into Ivor working on the client-side, while Vedran dealt with the back-end part of the application. Smooth and performant user experience was our top priority, so we needed all movie data to be readily available in our own database. We decided to write a script that imported quarter of a million movies from TMDB and OMDB API’s, and automatically updated them on a daily basis.)
+## What we built
 
-[//]: # ()
-[//]: # ()
-[//]: # (## In conclusion)
+We designed and developed the entire Fanjolt platform as a two-sided marketplace. The core architecture had to handle several distinct workflows simultaneously:
 
-[//]: # ()
-[//]: # (Today, Movieo is used by about 100,000 people every month. Even though we haven’t promoted it in years, the numbers are still slowly but steadily rising.)
+**For fans:**
+- Browse and discover talent across categories (sports, entertainment, music)
+- Book personalized video messages with specific instructions
+- Purchase live video call slots and exclusive experiences
+- Track request status from purchase through delivery
 
-[//]: # ()
-[//]: # ()
-[//]: # (Looking back, the decision to start our own project was definitely worthwhile. We learned a lot as we went through all phases of the product lifecycle. We received several interesting job opportunities, and most importantly, we had tons of fun in the process.)
+**For talent:**
+- Manage availability and pricing for different interaction types
+- Record and submit personalized video messages
+- Accept or decline requests within a defined time window
+- Track earnings and charitable donation allocation
 
-[//]: # ()
-[//]: # ()
-[//]: # (## The path forward)
+**Behind the scenes:**
+- Sidekiq-powered background job system for video processing, email notifications, and fulfillment deadline tracking
+- Redis-backed caching layer to handle traffic spikes during talent promotions
+- Automated refund processing when fulfillment deadlines expire
+- Stripe Connect integration for split payments between platform, talent, and charity
 
-[//]: # ()
-[//]: # (We are involved with the project and we are developing new features day by day.)
+## Technical decisions
 
-[//]: # ()
-[//]: # ()
-[//]: # (![Racechip Bytecode]&#40;{{site.baseurl}}/images/projects/racechip/racechip.webp&#41;)
+We chose Ruby on Rails for its rapid development cycle — critical for a startup that needed to iterate quickly based on early user feedback. PostgreSQL gave us the relational integrity needed for financial transactions, while Redis + Sidekiq handled the asynchronous processing that made the platform feel responsive even during peak load.
+
+The video processing pipeline was one of the more complex pieces. Uploaded videos needed to be transcoded into multiple formats, thumbnailed, and delivered to fans within minutes of talent submission. We built a multi-stage pipeline that could handle this without blocking the main application.
+
+## Results
+
+Within months of launch, Fanjolt had onboarded dozens of talent profiles and served over 1,000 fans with personalized interactions. The platform processed transactions reliably, maintained sub-second response times, and scaled without incident during promotional pushes.
+
+The charity component proved to be a strong differentiator — talent were more willing to participate knowing their fans' purchases supported causes they cared about.
+
+## Our role
+
+We were responsible for the full technical build: database architecture, API design, payment integration, background job infrastructure, deployment pipeline, and ongoing maintenance. We worked directly with the Fanjolt founding team throughout, advising on product decisions where our technical perspective could reduce scope without sacrificing the user experience.

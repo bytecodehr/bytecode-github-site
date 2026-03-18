@@ -2,17 +2,8 @@
 # Site Settings
 title: Bytecode
 logo: # using CSS text logo now (see _includes/logo.html)
-description: Helping companies develop their most valuable product ideas from concept to market.
-color_scheme: light # You have the option to choose between three modes: auto, light, and dark. The default mode is set to auto, which means that the color scheme will automatically adapt based on your operating system settings. This way, you can enjoy a personalized experience without having to manually switch between light and dark modes.
-
-
-#-------------------------------
-# Author Global Settings
-author:
-  author_name: Jesse Parker
-  author_role: Product Designer
-  author_description: When I'm not a Product Designer, I can often be found cycling through picturesque landscapes, immersing myself in the joy of two-wheeled adventures. Reading books is another passion of mine, as I love delving into captivating stories and exploring new ideas. Beyond these pursuits, I relish engaging in various activities that nurture my creativity and keep me inspired.
-  author_avatar: '/images/01-1.jpg'
+description: A Ruby and React web consultancy helping companies develop complex web and mobile applications — from concept through launch.
+color_scheme: light
 
 
 #-------------------------------
@@ -41,7 +32,7 @@ hero:
   enable: true
   hero_intro: Hi, We're Bytecode
   hero_title: High-grade Ruby and React web consultancy
-  hero_description: Helping companies develop product ideas from concept to market. Specialized in mapping out, designing, and delivering complex web and mobile applications on time.
+  hero_description: We help companies develop product ideas from concept to market. Specialized in mapping out, designing, and delivering complex web and mobile applications on time.
   hero_images:
     - alt: 'Hobby'
       url: '/images/hero-1.jpg'
@@ -54,99 +45,11 @@ hero:
 
 
 #-------------------------------
-# Newsletter
-mailchimp: disable # To enable the mailchimp form, use the value 'enable'. To disable the form, leave the field blank.
-mailchimp__identifier: gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp # Add your MailChimp form identifier. For example - gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp
-mailchimp__input__text: Your email address
-mailchimp__button__text: Subscribe
-
-
-#-------------------------------
 # Projects Settings
 projects:
   enable: true
   projects_title: What we work on
   projects_description: A selection of products we helped bring to life — from concept through launch.
-
-
-#-------------------------------
-# Testimonials Section
-testimonials:
-  enable: true
-  testimonials_title: See what our customers are saying
-
-testimonials_items:
-  - name: "Lucas Parker"
-    image: "/images/client-1.jpg"
-    designation: "Web Developer"
-    content : "If you're looking for a top-notch product designer, look no further. His ability to merge creativity with functionality is remarkable."
-    link: "https://twitter.com/"
-    icon: "fa-brands fa-twitter"
-    icon_color: "#1da1f3"
-
-  - name: "Olivia Williams"
-    image: "/images/client-2.jpg"
-    designation: "Data Analyst"
-    content : "His attention to every minute detail ensured that our products stand out, capturing the attention of potential customers."
-    link: "https://twitter.com/"
-    icon: "fa-brands fa-twitter"
-    icon_color: "#1da1f3"
-
-  - name: "Ava Martinez"
-    image: "/images/client-3.jpg"
-    designation: "Designer"
-    content : "The designer brought fresh ideas and innovative solutions to our project, delivering results that exceeded our expectations."
-    link: "https://twitter.com/"
-    icon: "fa-brands fa-twitter"
-    icon_color: "#1da1f3"
-
-  - name: "Evelyn Turner"
-    image: "/images/client-4.jpg"
-    designation: "Data Scientist"
-    content : "Exceptional talent! The designer was instrumental in crafting our brand's identity, infusing it with authenticity and personality."
-    link: "https://instagram.com/"
-    icon: "fa-brands fa-instagram"
-    icon_color: "#e1306c"
-
-  - name: "Oliver Davis"
-    image: "/images/client-5.jpg"
-    designation: "Software Engineer"
-    content : "Working with the designer was a breath of fresh air! His communication, timeliness, and creative flair were unparalleled."
-    link: "https://facebook.com/"
-    icon: "fa-brands fa-facebook-f"
-    icon_color: "#1977f3"
-
-  - name: "Isabella Lee"
-    image: "/images/client-6.jpg"
-    designation: "QA Engineer"
-    content : "His expertise in web design and branding elevated our online presence, attracting more visitors and increasing our conversions."
-    link: "https://twitter.com/"
-    icon: "fa-brands fa-twitter"
-    icon_color: "#1da1f3"
-
-  - name: "James Wright"
-    image: "/images/client-7.jpg"
-    designation: "Data Analyst"
-    content : "Jessy brought fresh ideas and innovative solutions to our project, delivering results that exceeded our expectations."
-    link: "https://facebook.com/"
-    icon: "fa-brands fa-facebook-f"
-    icon_color: "#1977f3"
-
-  - name: "Layla Foster"
-    image: "/images/client-8.jpg"
-    designation: "CEO"
-    content : "I can't thank Jessy enough for their outstanding UI/UX design services. He took our app's user experience to new heights."
-    link: "https://twitter.com/"
-    icon: "fa-brands fa-twitter"
-    icon_color: "#1da1f3"
-
-  - name: "Emily Collins"
-    image: "/images/client-9.jpg"
-    designation: "DevOps"
-    content : "Simply outstanding! The designer helped us turn our vague concept into a fully functional and visually stunning app."
-    link: "https://instagram.com/"
-    icon: "fa-brands fa-instagram"
-    icon_color: "#e1306c"
 
 
 #-------------------------------
@@ -161,11 +64,11 @@ blog:
 author_section:
   enable: true
   author_section_role: Rapid Prototyping
-  author_section_title: How we work?
-  author_section_description: Our approach focuses on delivering working prototypes quickly, allowing you to test assumptions and make informed decisions early on. We use simplified Scrum for development and work in weekly sprints to deliver measurable results. Our tech stack includes Ruby, Java, JavaScript, React, PostgreSQL, and Redis for robust and efficient solutions. We host our sites on reliable platforms such as Heroku and Digital Ocean for seamless deployment and scaling.
+  author_section_title: How we work
+  author_section_description: We work in focused weekly sprints with a simplified Scrum process — no unnecessary ceremonies, just consistent delivery. Our stack is Ruby on Rails and React, backed by PostgreSQL and Redis, hosted on platforms like Heroku and Digital Ocean. We prioritize building working software early so you can test assumptions and make informed decisions before committing to large-scale development.
   author_section_image: '/images/01.jpg'
-  author_section_button_text: vmarcetic@bytecode.hr
-  author_section_button_link: 'mailto:vmarcetic@bytecode.hr'
+  author_section_button_text: Learn our process
+  author_section_button_link: '/how-we-work/'
 
 
 #-------------------------------
@@ -204,31 +107,20 @@ gallery:
 #-------------------------------
 # Footer Settings
 
-# Social links
+# Social links (currently placeholder — update with real profiles)
 social:
-- {icon: "fa-brands fa-twitter", link: "https://twitter.com"}
-- {icon: "fa-brands fa-facebook-f", link: "https://facebook.com"}
-- {icon: "fa-brands fa-instagram", link: "https://instagram.com"}
-- {icon: "fa-brands fa-pinterest", link: "https://pinterest.com"}
-- {icon: "fa-brands fa-dribbble", link: "https://dribbble.com"}
-
-# Example of adding a new link to the footer - {icon: "fa-brands fa-youtube", link: "https://youtube.com"}
-# Other icons can be found at https://fontawesome.com/icons
 
 
 #-------------------------------
 # Contact Settings
 contact:
-  email: your@email.com # Add your form_id
-  description: Nuntu comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want. # Add a description of your form
-
-# NOTE
-# Nuntu theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
+  email: vmarcetic@bytecode.hr
+  description: Tell us about your project and we'll get back to you within a business day. Or schedule a call directly using the calendar below.
 
 
 #-------------------------------
 # Comment Section (Disqus)
-# disqus_identifier: anvod-studio-test # Add your shortname for Disqus Comment. For example anvod-studio-test
+# disqus_identifier: anvod-studio-test
 
 
 #-------------------------------

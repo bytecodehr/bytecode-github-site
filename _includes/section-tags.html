@@ -7,7 +7,10 @@
         <div class="section-tags__inner">
 
           {% if site.data.settings.tags_section.tags_section_title %}
-            <h2 class="section-tags__title"><i class="fa-solid fa-arrow-right-long"></i> {{ site.data.settings.tags_section.tags_section_title }}</h2>
+            <h2 class="section-tags__title">
+              <svg class="section-tags__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              {{ site.data.settings.tags_section.tags_section_title }}
+            </h2>
           {% endif %}
 
           <div class="section-tags__box">

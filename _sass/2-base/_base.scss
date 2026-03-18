@@ -6,6 +6,7 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
+  font-weight: $base-font-weight;
   overflow-x: hidden;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -24,30 +25,15 @@ body {
   }
 
   @media (max-width: $desktop) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media (max-width: $mobile) {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   &.scheme--light {
     @include scheme-light;
-  }
-
-  &.scheme--dark {
-    @include scheme-dark;
-  }
-
-  &.scheme--toggle {
-
-    @media (prefers-color-scheme: light) {
-      @include scheme-light;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      @include scheme-dark;
-    }
   }
 }
 
@@ -63,12 +49,10 @@ body {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+// ==================
+// Typography
+// ==================
+h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
   line-height: $heading-line-height;
@@ -76,84 +60,77 @@ h6 {
   color: var(--heading-font-color);
 }
 
-h1 {
-  font-size: $font-size-h1;
-}
+h1 { font-size: $font-size-h1; }
+h2 { font-size: $font-size-h2; }
+h3 { font-size: $font-size-h3; }
+h4 { font-size: $font-size-h4; }
+h5 { font-size: $font-size-h5; }
+h6 { font-size: $font-size-h6; }
 
-h2 {
-  font-size: $font-size-h2;
-}
+p {
+  margin-bottom: 1.5em;
+  max-width: 65ch; // Optimal reading measure
 
-h3 {
-  font-size: $font-size-h3;
-}
-
-h4 {
-  font-size: $font-size-h4;
-}
-
-h5 {
-  font-size: $font-size-h5;
-}
-
-h6 {
-  font-size: $font-size-h6;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 blockquote {
   position: relative;
-  margin: 32px 0;
+  margin: 40px 0;
   padding: 48px;
   font-family: $heading-font-family;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 1.4;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: $heading-letter-spacing;
-  border-radius: 22px;
-  color: var(--dark);
-  background: var(--secondary-color);
+  border-radius: $global-radius;
+  color: var(--heading-font-color);
+  background: var(--background-alt-color);
+  border-left: 3px solid var(--brand);
 
   p {
     margin-bottom: 0;
+    max-width: none;
   }
 
   cite {
     display: inline-block;
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
-    letter-spacing: $heading-letter-spacing;
+    letter-spacing: 0;
     font-style: normal;
-    color: var(--dark);
-
+    color: var(--text-alt-color);
   }
 
   @media (max-width: $tablet) {
-    padding: 40px;
-    font-size: 24px;
-    border-radius: 12px;
+    padding: 36px;
+    font-size: 22px;
   }
 
   @media (max-width: $mobile) {
-    padding: 28px;
-    font-size: 21px;
+    padding: 24px;
+    font-size: 19px;
 
     cite {
       margin-top: 12px;
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 }
 
 pre {
   overflow: auto;
-  padding: 16px;
+  padding: 20px;
   margin-bottom: 0;
   font-size: 14px;
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-all;
   color: var(--heading-font-color);
+  border-radius: $global-radius;
 }
 
 img,
@@ -166,17 +143,16 @@ img,
 img,
 .lightense-wrap,
 .gallery {
-  &+em {
+  & + em {
     display: block;
-    margin-top: 20px;
-    font-family: $heading-font-family;
-    font-size: 12px;
-    line-height: 100%;
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.4;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     text-align: center;
-    color: var(--text-alt-color);
-  
+    color: var(--text-caption-color);
+
     a {
       font-weight: 500;
       border-bottom: 1px solid var(--border-color);
@@ -187,9 +163,9 @@ img,
         border-color: var(--link-color-hover);
       }
     }
-  
+
     @media only screen and (max-width: $mobile) {
-      margin-top: 16px;
+      margin-top: 12px;
     }
   }
 }
@@ -210,17 +186,7 @@ hr {
   height: 1px;
   margin: 48px 0;
   border: 0;
-
-  &::before {
-    content: ". . .";
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 50px;
-    line-height: 0;
-    color: var(--heading-font-color)
-  }
+  background: var(--border-color);
 }
 
 .table-container {
@@ -231,42 +197,44 @@ hr {
 
 table {
   width: 100%;
-  font-family: $heading-font-family;
-  font-size: 12px;
-  color: var(--dark);
-  border-width: 1px;
-  border-color: var(--background-alt-color);
-  border-collapse: collapse;
+  font-size: 14px;
   color: var(--heading-font-color);
+  border-width: 1px;
+  border-color: var(--border-color);
+  border-collapse: collapse;
 }
 
 table th {
-  padding: 10px;
-  font-size: 16px;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 600;
   text-align: left;
-  border: 1px solid var(--th-color);
-  color: var(--heading-font-color);
-  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--border-color);
+  color: var(--text-alt-color);
   background-color: var(--th-color);
 }
 
 table tr {
   background-color: var(--tr-color);
-  transition: all .3s ease;
+  transition: background-color 0.2s;
+
   &:nth-child(even) {
     background-color: transparent;
   }
 }
 
 table td {
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid var(--background-alt-color);
+  padding: 12px 16px;
+  font-size: 15px;
+  border: 1px solid var(--border-color);
 }
 
+// Lazy loading
 .lazy {
   opacity: 0;
-  transition: opacity .5s ease;
+  transition: opacity 0.6s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .lazy.loaded {
@@ -275,4 +243,77 @@ table td {
 
 .lightense-backdrop {
   background-color: var(--background-color) !important;
+}
+
+// ==================
+// Scroll Reveal
+// ==================
+// Elements with .reveal fade up on viewport entry (JS-driven)
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.8s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Stagger delays for child reveals
+@for $i from 1 through 8 {
+  .reveal-delay-#{$i} {
+    transition-delay: #{$i * 0.08}s;
+  }
+}
+
+// ==================
+// Noise Texture Overlay (fixed, performant)
+// ==================
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+// ==================
+// Eyebrow Badge
+// ==================
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  font-family: $base-font-family;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: rgba(5, 150, 105, 0.08);
+  border: 1px solid rgba(5, 150, 105, 0.15);
+  border-radius: 100px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: var(--brand);
+    border-radius: 50%;
+  }
+
+  // On dark backgrounds
+  &--dark {
+    color: var(--brand);
+    background: rgba(5, 150, 105, 0.12);
+    border-color: rgba(5, 150, 105, 0.2);
+  }
 }

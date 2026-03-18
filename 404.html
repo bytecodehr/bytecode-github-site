@@ -1,10 +1,16 @@
 ---
 layout: page
 permalink: /404.html
+title: Page not found
 ---
 
 <div class="error">
   <h2 class="error__title">404</h2>
-  <p class="error__text">The requested page could not be found.</p>
-  <p><a href="{{site.baseurl}}/" class="button button--primary" style="border: none; color: white">Back to the blog</a></p>
+  <p class="error__text">The page you're looking for doesn't exist or has been moved.</p>
+  <a href="{{ site.baseurl }}/" class="error__link">
+    <span>Back to homepage</span>
+    <span class="error__arrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </span>
+  </a>
 </div>

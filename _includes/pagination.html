@@ -3,7 +3,10 @@
 {% if postsCovered < postCount %}
 <!-- begin pagination -->
   <div class="pagination">
-    <button class="load-more-posts button button--primary">Load more posts</button>
+    <button class="load-more-posts pagination__button">
+      <span>Load more posts</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
   </div>
 <!-- end pagination -->
 {% endif %}

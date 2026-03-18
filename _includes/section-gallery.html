@@ -2,26 +2,22 @@
 <!-- begin section-gallery -->
 <section class="section section-gallery">
   <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <div class="section-gallery__inner">
-          {% if site.data.settings.gallery.gallery_title %}
-            <h3 class="section-gallery__title">{{ site.data.settings.gallery.gallery_title }}</h3>
-          {% endif %}
-          {% if site.data.settings.gallery.gallery_items %}
-          <div class="section-gallery__content">
-            {% for item in site.data.settings.gallery.gallery_items %}
-            <div class="section-gallery__item" style="--brand-color: {{ item.color }}; --i: {{ forloop.index0 }};">
-              <div class="section-gallery__icon">
-                <iconify-icon icon="{{ item.icon }}" width="40" height="40"></iconify-icon>
-              </div>
-              <span class="section-gallery__label">{{ item.name }}</span>
-            </div>
-            {% endfor %}
+    <div class="section-gallery__inner">
+      {% if site.data.settings.gallery.gallery_title %}
+        <h3 class="section-gallery__title reveal">{{ site.data.settings.gallery.gallery_title }}</h3>
+      {% endif %}
+      {% if site.data.settings.gallery.gallery_items %}
+      <div class="section-gallery__grid reveal reveal-delay-1">
+        {% for item in site.data.settings.gallery.gallery_items %}
+        <div class="section-gallery__item" style="--brand-color: {{ item.color }};">
+          <div class="section-gallery__icon">
+            <iconify-icon icon="{{ item.icon }}" width="36" height="36"></iconify-icon>
           </div>
-          {% endif %}
+          <span class="section-gallery__label">{{ item.name }}</span>
         </div>
+        {% endfor %}
       </div>
+      {% endif %}
     </div>
   </div>
 </section>

@@ -4,12 +4,19 @@
   <!-- CTA banner -->
   <div class="footer__cta">
     <div class="container">
-      <div class="footer__cta-inner">
+      <div class="footer__cta-inner reveal">
         <div class="footer__cta-text">
           <h2 class="footer__cta-title">Ready to build something great?</h2>
           <p class="footer__cta-desc">Let's talk about your next project and turn your vision into reality.</p>
         </div>
-        <a href="{{ '/schedule-a-call-with-us/' | relative_url }}" class="button button--primary footer__cta-btn">Get in touch <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="{{ '/schedule-a-call-with-us/' | relative_url }}" class="footer__cta-btn">
+          Get in touch
+          <span class="footer__cta-btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -60,9 +67,20 @@
         <div class="copyright">&copy; {{ site.time | date: '%Y' }} <a href="/">{{ site.data.settings.title }}</a>. All rights reserved.</div>
         <div class="footer__bottom-right">
           <button id="reopen-consent-modal" class="footer__cookie-btn" title="Cookie Preferences">
-            <i class="fa-solid fa-cookie-bite"></i>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="5" cy="6" r="1" fill="currentColor"/>
+              <circle cx="9" cy="5" r="1" fill="currentColor"/>
+              <circle cx="10" cy="9" r="1" fill="currentColor"/>
+              <circle cx="6" cy="10" r="0.8" fill="currentColor"/>
+            </svg>
           </button>
-          <div class="top" title="Back to top"><i class="fa-solid fa-arrow-up"></i> Back to top</div>
+          <button class="top" title="Back to top">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 12V2M7 2L3 6M7 2L11 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to top
+          </button>
         </div>
       </div>
 

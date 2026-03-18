@@ -1,4 +1,4 @@
-/* Color Scheme */
+/* Color Scheme — Editorial Luxury */
 
 @mixin scheme-light {
   // Brand — Emerald
@@ -7,55 +7,74 @@
   --brand-light: #ecfdf5;
   --brand-muted: #a7f3d0;
 
-  // Accent (warm complement)
+  // Accent (warm complement — defined, rarely used)
   --accent: #f59e0b;
   --accent-light: #fffbeb;
 
-  // Neutrals
+  // Neutrals — warm-shifted
   --white: #fff;
-  --gray-50: #f8fafc;
-  --gray-100: #f1f5f9;
-  --gray-200: #e2e8f0;
-  --gray-300: #cbd5e1;
-  --gray-400: #94a3b8;
-  --gray-500: #64748b;
-  --gray-600: #475569;
-  --gray-700: #334155;
-  --gray-800: #1e293b;
-  --gray-900: #0f172a;
-  --gradient-color: 248, 250, 252;
+  --gray-50: #FDFBF7;
+  --gray-100: #F7F3ED;
+  --gray-200: #EDE8E0;
+  --gray-300: #D9D2C8;
+  --gray-400: #9C9590;
+  --gray-500: #6B6560;
+  --gray-600: #4A4541;
+  --gray-700: #2E2A27;
+  --gray-800: #1E1B18;
+  --gray-900: #141211;
+  --gradient-color: 253, 251, 247;
 
   --gradient: linear-gradient(180deg, rgba(var(--gradient-color), 0) 0%, var(--background-color) 100%);
 
-  --background-color: #f5efe7;
-  --background-alt-color: #efe8dd;
-  --background-alt-color-2: #e7ddd0;
+  // Surfaces
+  --background-color: #FDFBF7;
+  --background-alt-color: #F7F3ED;
+  --background-alt-color-2: #EDE8E0;
+  --surface-color: #fff;
 
-  --text-color: var(--gray-700);
-  --text-alt-color: var(--gray-500);
+  // Text
+  --text-color: #2E2A27;
+  --text-alt-color: #6B6560;
+  --text-caption-color: #9C9590;
+  --heading-font-color: #141211;
 
-  --heading-font-color: var(--gray-900);
-
+  // Links
   --link-color: var(--heading-font-color);
   --link-color-hover: var(--brand);
   --link-alt-color-hover: var(--gray-50);
 
+  // Buttons
   --button-color: var(--white);
   --button-color-hover: var(--white);
   --button-background-color: var(--brand);
   --button-background-hover: var(--brand-hover);
 
-  --border-color: var(--gray-200);
+  // Borders — warm tinted
+  --border-color: #E8E2D9;
+  --border-color-light: #F0EBE4;
 
-  --th-color: var(--gray-50);
-  --tr-color: var(--gray-50);
+  // Table
+  --th-color: var(--background-alt-color);
+  --tr-color: var(--background-alt-color);
 
-  --syntax-highlighting-background: var(--gray-50);
+  // Code
+  --syntax-highlighting-background: var(--background-alt-color);
 
-  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --card-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+  // Shadows — warm tinted, never pure black
+  --card-shadow: 0 1px 3px rgba(30, 20, 10, 0.04), 0 1px 2px rgba(30, 20, 10, 0.03);
+  --card-shadow-hover: 0 12px 32px rgba(30, 20, 10, 0.08), 0 4px 12px rgba(30, 20, 10, 0.04);
+  --card-shadow-elevated: 0 20px 40px -12px rgba(30, 20, 10, 0.1);
 
-  --section-alt-bg: var(--gray-50);
+  // Dark sections (hero, footer CTA) — lifted, not pitch-black
+  --dark-bg: #141A1E;
+  --dark-surface: #1C2328;
+  --dark-border: rgba(255, 255, 255, 0.1);
+  --dark-text: #F2F0ED;
+  --dark-text-muted: #94908A;
+  --dark-text-caption: #6B6660;
+
+  --section-alt-bg: var(--background-alt-color);
 }
 
 @mixin scheme-dark {
@@ -68,46 +87,56 @@
   --accent-light: #1c1917;
 
   --white: #fff;
-  --gray-50: #f8fafc;
-  --gray-100: #f1f5f9;
-  --gray-200: #e2e8f0;
-  --gray-300: #cbd5e1;
-  --gray-400: #94a3b8;
-  --gray-500: #64748b;
-  --gray-600: #475569;
-  --gray-700: #334155;
-  --gray-800: #1e293b;
-  --gray-900: #0f172a;
-  --gradient-color: 15, 23, 42;
+  --gray-50: #FDFBF7;
+  --gray-100: #F7F3ED;
+  --gray-200: #EDE8E0;
+  --gray-300: #D9D2C8;
+  --gray-400: #9C9590;
+  --gray-500: #6B6560;
+  --gray-600: #4A4541;
+  --gray-700: #2E2A27;
+  --gray-800: #1E1B18;
+  --gray-900: #141211;
+  --gradient-color: 12, 15, 20;
 
   --gradient: linear-gradient(180deg, rgba(var(--gradient-color), 0) 0%, var(--background-color) 100%);
 
-  --background-color: var(--gray-900);
-  --background-alt-color: var(--gray-800);
-  --background-alt-color-2: #162033;
+  --background-color: #0C0F14;
+  --background-alt-color: #161921;
+  --background-alt-color-2: #1E222D;
+  --surface-color: #161921;
 
-  --text-color: var(--gray-400);
-  --text-alt-color: var(--gray-500);
-
-  --heading-font-color: var(--gray-100);
+  --text-color: #8A8680;
+  --text-alt-color: #5C5854;
+  --text-caption-color: #454240;
+  --heading-font-color: #F2F0ED;
 
   --link-color: var(--heading-font-color);
   --link-color-hover: var(--brand);
 
-  --button-color: var(--gray-900);
-  --button-color-hover: var(--gray-900);
+  --button-color: #0C0F14;
+  --button-color-hover: #0C0F14;
   --button-background-color: var(--brand);
   --button-background-hover: var(--brand-hover);
 
-  --border-color: #1e293b;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-light: rgba(255, 255, 255, 0.04);
 
   --th-color: #0c1322;
   --tr-color: #0c1322;
 
   --syntax-highlighting-background: #0c1322;
 
-  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  --card-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.3);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.4);
+  --card-shadow-elevated: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
 
-  --section-alt-bg: var(--gray-800);
+  --dark-bg: #080A0E;
+  --dark-surface: #0C0F14;
+  --dark-border: rgba(255, 255, 255, 0.06);
+  --dark-text: #F2F0ED;
+  --dark-text-muted: #8A8680;
+  --dark-text-caption: #5C5854;
+
+  --section-alt-bg: #161921;
 }

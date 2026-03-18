@@ -1,0 +1,64 @@
+/* ============================================================
+   Brand logo strip — flows from hero bottom
+   ============================================================ */
+
+.brands {
+  padding: 0 0 48px;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: $tablet) {
+    padding: 0 0 36px;
+  }
+}
+
+.brands__inner {
+  padding: 0;
+}
+
+.brands__label {
+  font-family: $heading-font-family;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.15);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.brands__strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  flex-wrap: wrap;
+
+  @media (max-width: $desktop) {
+    gap: 32px;
+  }
+
+  @media (max-width: $mobile) {
+    gap: 20px 28px;
+  }
+}
+
+.brands__logo {
+  color: rgba(255, 255, 255, 0.22);
+  transition: color 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+  flex-shrink: 0;
+
+  svg {
+    display: block;
+    height: 20px;
+    width: auto;
+
+    @media (max-width: $mobile) {
+      height: 16px;
+    }
+  }
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.45);
+  }
+}

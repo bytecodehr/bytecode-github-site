@@ -1,31 +1,35 @@
 {% if site.data.settings.blog.enable == true %}
 <!-- begin blog -->
 <section class="section blog">
-
   <div class="container">
-    {% if site.data.settings.blog.blog_title %}
-      <div class="row">
-        <div class="col col-12">
-          <h2 class="section__title">{{ site.data.settings.blog.blog_title }}</h2>
-        </div>
-      </div>
-    {% endif %}
-  </div>
 
-  <div class="blog__inner">
-    {% assign post_counter = site.post_counter | default: 1 %}
-    {% if site.posts.size > 0 %}
-      {% for post in site.posts offset:0 limit:3 %}
-        {% include article.html %}
-        {% assign post_counter = post_counter | plus: 1 %}
-      {% endfor %}
-    {% endif %}
-  </div>
+    <div class="blog__header reveal">
+      <span class="eyebrow">Insights</span>
+      {% if site.data.settings.blog.blog_title %}
+        <h2 class="blog__title">{{ site.data.settings.blog.blog_title }}</h2>
+      {% endif %}
+    </div>
 
+    <div class="blog__list">
+      {% assign post_counter = site.post_counter | default: 1 %}
+      {% if site.posts.size > 0 %}
+        {% for post in site.posts offset:0 limit:3 %}
+          {% include article.html %}
+          {% assign post_counter = post_counter | plus: 1 %}
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <div class="blog__more reveal">
+      <a href="{{ '/we-write-about/' | relative_url }}" class="blog__more-link">
+        View all posts
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
 </section>
-
-<a href="{{ '/blog' | relative_url }}" class="blog__footer">
-  <span class="blog__footer-text">View all posts <i class="fa-solid fa-arrow-right-long"></i></span>
-</a>
 <!-- end blog -->
 {% endif %}

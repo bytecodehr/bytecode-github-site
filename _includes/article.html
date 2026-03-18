@@ -1,38 +1,68 @@
-<div class="article grid__article">
+{% if include.card %}
+{% assign card_index = forloop.index0 | modulo: 3 %}
+{% if card_index == 0 %}{% assign card_class = "article--warm" %}
+{% elsif card_index == 1 %}{% assign card_class = "article--silver" %}
+{% else %}{% assign card_class = "article--mist" %}{% endif %}
 
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <div class="article__inner">
-      
-          <div class="article__meta">
-            <time class="article__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
-          </div>
-      
-          <div class="article__content">
-            <span class="article__count">({{ post_counter }})</span>
-
-            <div class="article__info">
-              <h2 class="article__title">
-                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-              </h2>
-
-              {% if post.tags.size >= 1 %}
-              <div class="article-tags__box">
-                {% for tag in post.tags %}
-                  <a href="{{ site.baseurl }}/tags/?tag={{ tag | url_encode }}" class="article__tag">{{ tag }}</a>
-                {% endfor %}
-              </div>
-              {% endif %}
-
-            </div>
-          </div>
-
-          <a href="{{ post.url | prepend: site.baseurl }}" class="article__button">Read Post <i class="fa-solid fa-arrow-right-long"></i></a>
-        
-        </div>
-      </div>
+<article class="article article--card {{ card_class }} reveal">
+  <a href="{{ post.url | prepend: site.baseurl }}" class="article__card-link">
+    <div class="article__card-top">
+      <time class="article__card-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+      <span class="article__card-arrow">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
     </div>
-  </div>
 
-</div>
+    <h3 class="article__card-title">{{ post.title }}</h3>
+
+    {% if post.description %}
+      <p class="article__card-desc">{{ post.description | truncatewords: 30 }}</p>
+    {% elsif post.excerpt %}
+      <p class="article__card-desc">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+    {% endif %}
+
+    {% if post.tags.size >= 1 %}
+    <div class="article__card-tags">
+      {% for tag in post.tags %}
+        <span class="article__card-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </a>
+</article>
+
+{% else %}
+
+<article class="article reveal">
+  <div class="article__inner">
+
+    <div class="article__meta">
+      <time class="article__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+    </div>
+
+    <div class="article__content">
+      <h3 class="article__title">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h3>
+
+      {% if post.tags.size >= 1 %}
+      <div class="article__tags">
+        {% for tag in post.tags %}
+          <a href="{{ site.baseurl }}/tags/?tag={{ tag | url_encode }}" class="article__tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    <a href="{{ post.url | prepend: site.baseurl }}" class="article__arrow" aria-label="Read post">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+  </div>
+</article>
+
+{% endif %}

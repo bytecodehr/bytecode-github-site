@@ -1,38 +1,44 @@
 {% if site.data.settings.author_section.enable == true %}
-<!-- begin author -->
+<!-- begin how-we-work CTA -->
 <section class="section author">
   <div class="container">
-    <div class="author__inner row">
+    <div class="author__shell reveal">
+      <div class="author__core">
 
-      <div class="col col-6 col-d-12">
-        <div class="author__left">
+        <div class="author__text">
           {% if site.data.settings.author_section.author_section_role %}
-            <span class="author__role shuffle">{{ site.data.settings.author_section.author_section_role }}</span>
+            <span class="eyebrow eyebrow--dark">{{ site.data.settings.author_section.author_section_role }}</span>
           {% endif %}
+
           {% if site.data.settings.author_section.author_section_title %}
             <h2 class="author__title">{{ site.data.settings.author_section.author_section_title }}</h2>
           {% endif %}
+
           {% if site.data.settings.author_section.author_section_description %}
             <p class="author__description">{{ site.data.settings.author_section.author_section_description }}</p>
           {% endif %}
-          {% if site.data.settings.author_section.author_section_button_text %}
-            <a href="{{ site.data.settings.author_section.author_section_button_link }}" class="author__button button button--small">{{ site.data.settings.author_section.author_section_button_text }}</a>
-          {% endif %}
-        </div>
-      </div>
 
-      {% if site.data.settings.author_section.author_section_image %}
-      <div class="col col-6 col-d-12">
-        <div class="author__right">
+          <a href="{{ '/how-we-work/' | relative_url }}" class="author__cta">
+            Learn our process
+            <span class="author__cta-arrow">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        {% if site.data.settings.author_section.author_section_image %}
+        <div class="author__media">
           <div class="author__image">
-            <img class="lazy" data-src="{{ site.data.settings.author_section.author_section_image }}" alt="{{ site.data.settings.author.author_name }}">
+            <img class="lazy" data-src="{{ site.data.settings.author_section.author_section_image }}" alt="How we work">
           </div>
         </div>
-      </div>
-      {% endif %}
+        {% endif %}
 
+      </div>
     </div>
   </div>
 </section>
-<!-- end author -->
+<!-- end how-we-work CTA -->
 {% endif %}

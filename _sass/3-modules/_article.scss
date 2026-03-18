@@ -1,227 +1,384 @@
-/* Blog section */
+// ============================================================
+// Blog Section (warm beige bg)
+// ============================================================
 .blog {
-  background: #f5efe7;
-  padding-top: 80px;
-  padding-bottom: 24px;
-
-  .section__title {
-    color: #1e293b;
-    margin-bottom: 8px;
-  }
+  background: var(--background-color);
+  padding-top: 96px;
+  padding-bottom: 96px;
 
   @media (max-width: $desktop) {
-    padding-top: 60px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 }
 
-// Blog footer — full-width dark strip (matches projects footer)
-.blog__footer {
-  display: block;
-  background: #0f172a;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 36px 0;
+.blog__header {
+  margin-bottom: 48px;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 36px;
+  }
+}
+
+.blog__title {
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--heading-font-color);
+
+  @media (max-width: $tablet) {
+    font-size: 30px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 26px;
+  }
+}
+
+
+// "View all" link — editorial inline style
+.blog__more {
+  margin-top: 48px;
   text-align: center;
-  transition: all 0.25s;
+}
+
+.blog__more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: $heading-font-family;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--heading-font-color);
+  transition: $global-transition;
+
+  svg {
+    transition: transform $global-transition;
+  }
 
   &:hover {
-    background: #111b2e;
+    color: var(--brand);
 
-    .blog__footer-text {
-      color: #fff;
-      letter-spacing: 0.03em;
-
-      i {
-        transform: translateX(4px);
-      }
+    svg {
+      transform: translateX(4px);
     }
   }
 }
 
-.blog__footer-text {
-  font-family: $heading-font-family;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: #94a3b8;
-  transition: all 0.25s;
 
-  i {
-    margin-left: 10px;
-    font-size: 16px;
-    transition: transform 0.25s;
-  }
-}
-
-/* Article */
+// ============================================================
+// Article — list item on warm bg
+// ============================================================
 .article {
   position: relative;
-  padding: 40px 0;
-  border-top: 1px solid #e7ddd0;
+  padding: 32px 0;
+  border-top: 1px solid var(--border-color);
   transition: $global-transition;
+
+  &:last-child {
+    border-bottom: 1px solid var(--border-color);
+  }
 
   &:hover {
     .article__title a {
       color: var(--brand);
     }
 
-    .article__button {
-      transform: translateX(4px);
+    .article__arrow {
       border-color: var(--brand);
       color: var(--brand);
+      transform: translate(2px, -2px);
     }
   }
 
-  &:last-child {
-    border-bottom: 1px solid #e7ddd0;
-  }
-
   @media (max-width: $mobile) {
-    padding: 28px 0;
+    padding: 24px 0;
   }
 }
 
 .article__inner {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
+  gap: 24px;
 
   @media (max-width: $tablet) {
     flex-direction: column;
+    gap: 8px;
   }
 }
 
+
+// Date column
 .article__meta {
-  width: 100%;
-  max-width: 180px;
-  margin-right: 12px;
+  flex-shrink: 0;
+  width: 140px;
+  padding-top: 6px;
+
+  @media (max-width: $tablet) {
+    width: auto;
+    padding-top: 0;
+  }
+}
+
+.article__date {
   font-family: $heading-font-family;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-alt-color);
-
-  @media (max-width: $tablet) {
-    margin-right: 0;
-    margin-bottom: 8px;
-  }
-
-  @media (max-width: $mobile) {
-    font-size: 13px;
-  }
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-caption-color);
+  letter-spacing: 0.01em;
 }
 
+
+// Content column
 .article__content {
-  display: flex;
-  max-width: 634px;
+  flex: 1;
+  min-width: 0;
+}
 
-  .article__count {
-    margin-top: 8px;
-    margin-right: 12px;
-    font-family: $heading-font-family;
-    font-size: 14px;
-    font-weight: normal;
-    color: var(--text-alt-color);
-  }
+.article__title {
+  margin-bottom: 0;
+  font-size: 26px;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
 
-  .article__title {
-    margin-bottom: 0;
-    font-size: 32px;
-    line-height: 1.35;
+  a {
+    color: var(--heading-font-color);
+    transition: color $global-transition;
 
-    a {
-      transition: color 0.2s;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1;
-      }
+    // Full-card clickable area
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
     }
   }
 
   @media (max-width: $tablet) {
-    max-width: 100%;
-
-    .article__count {
-      display: none;
-    }
-
-    .article__title {
-      font-size: 28px;
-    }
+    font-size: 22px;
   }
 
   @media (max-width: $mobile) {
-    .article__title {
-      font-size: 24px;
-    }
+    font-size: 20px;
   }
 }
 
-.article-tags__box {
+
+// Tags
+.article__tags {
   position: relative;
   z-index: 2;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 14px;
+  gap: 6px;
+  margin-top: 12px;
+}
 
-  .article__tag {
-    display: inline-block;
-    padding: 6px 14px;
-    margin: 0 6px 6px 0;
-    font-family: $heading-font-family;
-    font-size: 13px;
-    line-height: 1;
-    font-weight: 500;
-    text-transform: capitalize;
-    border: 1px solid #e7ddd0;
-    border-radius: 6px;
-    background: #fff;
-    transition: all 0.15s;
+.article__tag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-family: $heading-font-family;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: capitalize;
+  color: var(--text-caption-color);
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  transition: $global-transition;
 
-    &:hover {
-      border-color: var(--brand);
-      color: var(--brand);
-    }
-
-    &:last-child {
-      margin: 0 0 6px 0;
-    }
-  }
-
-  @media (max-width: $mobile) {
-    .article__tag {
-      margin: 0 4px 4px 0;
-
-      &:last-child {
-        margin: 0 0 4px 0;
-      }
-    }
+  &:hover {
+    border-color: var(--brand);
+    color: var(--brand);
   }
 }
 
-.article__button {
+
+// Arrow button
+.article__arrow {
+  flex-shrink: 0;
   z-index: 2;
-  display: inline-flex;
-  padding: 8px 16px;
-  font-size: 0;
-  border: 1px solid #e7ddd0;
-  border-radius: 8px;
-  background: #fff;
-  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-top: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-caption-color);
+  background: var(--surface-color);
+  transition: $global-transition;
 
-  i {
-    font-size: 14px;
-  }
-
-  &:hover {
-    transform: translateX(4px);
+  svg {
+    width: 13px;
+    height: 13px;
   }
 
   @media (max-width: $desktop) {
     display: none;
   }
+}
+
+
+// ============================================================
+// Article Cards — soft gradient style (for blog listing page)
+// ============================================================
+.article-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: $desktop) {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+.article--card {
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+              box-shadow 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+
+    .article__card-arrow {
+      background: var(--brand);
+      color: #fff;
+      transform: translate(2px, -2px);
+    }
+
+    .article__card-title {
+      color: var(--brand);
+    }
+  }
+
+  // Gradient variants — softer, lifted
+  &.article--warm {
+    background: linear-gradient(165deg, #F2EDE5 0%, #EBE4D8 60%, #E3DACB 100%);
+  }
+
+  &.article--silver {
+    background: linear-gradient(165deg, #E6EAF2 0%, #DBE0EC 60%, #D0D7E4 100%);
+  }
+
+  &.article--mist {
+    background: linear-gradient(165deg, #EBEDEF 0%, #E1E3E7 60%, #D6D9DE 100%);
+  }
+}
+
+.article__card-link {
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  padding: 32px 32px 28px;
+  text-decoration: none;
+  color: inherit;
+
+  @media (max-width: $mobile) {
+    min-height: auto;
+    padding: 24px 22px 22px;
+  }
+}
+
+.article__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.article__card-date {
+  font-family: $heading-font-family;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(30, 30, 30, 0.35);
+}
+
+.article__card-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(30, 30, 30, 0.4);
+  transition: $global-transition;
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.article__card-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  transition: color $global-transition;
+
+  @media (max-width: $tablet) {
+    font-size: 22px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 20px;
+  }
+}
+
+.article__card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(30, 30, 30, 0.5);
+  max-width: 50ch;
+  margin-bottom: 0;
+
+  // Clamp to 2 lines
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article__card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.article__card-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-family: $heading-font-family;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  color: rgba(30, 30, 30, 0.4);
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 100px;
 }

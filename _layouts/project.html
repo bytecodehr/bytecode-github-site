@@ -4,13 +4,21 @@ layout: default
 
 <div class="page-hero">
   <div class="container">
-    <div class="project-head">
+    <div class="project-head reveal">
       {% if page.label %}
-        <span class="project-label">{{ page.label }}</span>
+        <span class="eyebrow eyebrow--dark">{{ page.label }}</span>
       {% endif %}
       <h1 class="project-title">{{ page.title }}</h1>
       {% if page.description %}
         <p class="project-description">{{ page.description }}</p>
+      {% endif %}
+
+      {% if page.tags.size >= 1 %}
+        <div class="project-tags">
+          {% for tag in page.tags %}
+            <span class="project-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
       {% endif %}
     </div>
   </div>
@@ -19,12 +27,12 @@ layout: default
 <div class="page-body">
   <div class="container">
     {% if page.image %}
-      <div class="project-image">
+      <div class="project-image reveal">
         <img class="lazy" data-src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}">
       </div>
     {% endif %}
 
-    <div class="project-content">
+    <div class="project-content reveal">
       {{ content }}
     </div>
   </div>
@@ -32,45 +40,39 @@ layout: default
 
 {% if page.previous.url %}
 <section class="section project-nav">
-
   <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <h2 class="section__title">Next work</h2>
+    <div class="project-nav__header">
+      <span class="eyebrow eyebrow--dark">Up Next</span>
+      <h2 class="project-nav__title">Next project</h2>
+    </div>
+
+    <div class="project-nav__shell">
+      <div class="project-nav__core">
+        <div class="project-nav__text">
+          {% if page.previous.label %}
+            <span class="project-nav__label">{{ page.previous.label }}</span>
+          {% endif %}
+          <h3 class="project-nav__name">
+            <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+          </h3>
+          <p class="project-nav__description">
+            {% if page.previous.description %}{{ page.previous.description }}{% else %}{{ page.previous.content | strip_html | truncatewords: 30 }}{% endif %}
+          </p>
+          <a href="{{ page.previous.url }}" class="project-nav__link">
+            <span>See project</span>
+            <span class="project-nav__arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+        </div>
+        {% if page.previous.image %}
+          <div class="project-nav__image">
+            <img class="lazy" data-src="{{ page.previous.image }}" alt="{{ page.previous.title }}">
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
-
-  <article class="project">
-    <div class="project__content">
-      <div class="project__info">
-        <div class="container">
-          <div class="row">
-            <div class="project__info__left col col-6 col-d-12">
-              <div class="project__meta">
-                {% if page.previous.label %}
-                  <span class="project__label">{{ page.previous.label }}</span>
-                {% endif %}
-                <h3 class="project__title"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></h3>
-                <p class="project__description">
-                  {% if page.previous.description %}{{ page.previous.description }}{% else %}{{ page.previous.content | strip_html }}{% endif %}
-                </p>
-                <a href="{{ page.previous.url }}" class="project__button">See Project <i class="fa-solid fa-arrow-right-long"></i></a>
-              </div>
-            </div>
-            {% if page.previous.image %}
-            <div class="project__info__right col col-6 col-d-12">
-              <div class="project__image">
-                <img class="lazy" data-src="{{ page.previous.image }}" alt="{{ page.previous.title }}">
-              </div>
-            </div>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-
 </section>
 {% endif %}
 

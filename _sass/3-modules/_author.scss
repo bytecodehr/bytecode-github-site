@@ -1,122 +1,175 @@
-/* Author / CTA Section */
+// ============================================================
+// How We Work — CTA card (Double-Bezel on warm bg)
+// ============================================================
 .author {
-  background: $brand-gradient;
-
-  .author__inner {
-    display: flex;
-    align-items: center;
-  }
+  background: var(--background-color);
+  padding-top: 96px;
+  padding-bottom: 96px;
 
   @media (max-width: $desktop) {
-    .author__inner .col {
-      &:last-child {
-        order: -1;
-      }
-    }
-  }
-}
-
-.author__left {
-  max-width: 560px;
-  margin-right: auto;
-
-  .author__role {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
-    padding: 6px 14px;
-    font-family: $heading-font-family;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--brand);
-    background: rgba(5, 150, 105, 0.12);
-    border: 1px solid rgba(5, 150, 105, 0.25);
-    border-radius: 100px;
-  }
-
-  .author__title {
-    margin-bottom: 20px;
-    font-size: 40px;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: #f1f5f9;
-  }
-
-  .author__description {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #94a3b8;
-    margin-bottom: 28px;
-  }
-
-  .author__button {
-    color: #fff;
-    background: var(--brand);
-
-    &:hover {
-      background: var(--brand-hover);
-    }
-  }
-
-  @media (max-width: $wide) {
-    max-width: 440px;
-
-    .author__description {
-      font-size: 16px;
-    }
-  }
-
-  @media (max-width: $desktop) {
-    max-width: 100%;
-    margin-top: 4px;
-  }
-
-  @media (max-width: $tablet) {
-    .author__title {
-      font-size: 32px;
-    }
-
-    .author__description {
-      margin-bottom: 20px;
-    }
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 
   @media (max-width: $mobile) {
-    .author__title {
-      font-size: 28px;
-    }
-
-    .author__description {
-      font-size: inherit;
-    }
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 }
 
-.author__right {
-  .author__image {
-    position: relative;
-    transform: translate(0);
-    border-radius: 16px;
-    padding-bottom: 75%;
-    overflow: hidden;
-    background: #1e293b;
-    user-select: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+// Outer shell — Double-Bezel
+.author__shell {
+  padding: 3px;
+  border-radius: 28px;
+  background: rgba(12, 15, 20, 0.04);
+  border: 1px solid rgba(12, 15, 20, 0.06);
+
+  @media (max-width: $tablet) {
+    border-radius: 22px;
+  }
+}
+
+
+// Inner core — dark gradient interior
+.author__core {
+  display: flex;
+  align-items: stretch;
+  border-radius: 26px;
+  background: $brand-gradient;
+  overflow: hidden;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
   }
 
   @media (max-width: $tablet) {
-    .author__image {
-      border-radius: 12px;
-    }
+    border-radius: 20px;
+  }
+}
+
+
+// Text side
+.author__text {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 56px;
+
+  @media (max-width: $desktop) {
+    padding: 48px 40px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 36px 28px;
+  }
+}
+
+.author__title {
+  margin-bottom: 16px;
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: #F2F0ED;
+
+  @media (max-width: $tablet) {
+    font-size: 30px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 26px;
+  }
+}
+
+.author__description {
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #8A8680;
+  max-width: 440px;
+
+  @media (max-width: $mobile) {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+}
+
+
+// CTA button — Button-in-Button
+.author__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px 14px 28px;
+  font-family: $heading-font-family;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 100px;
+  transition: $global-transition;
+
+  &:hover {
+    background: var(--brand-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.25);
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: none;
+  }
+}
+
+.author__cta-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  transition: $global-transition;
+
+  svg {
+    width: 13px;
+    height: 13px;
+    color: #fff;
+  }
+
+  .author__cta:hover & {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translate(2px, -2px);
+  }
+}
+
+
+// Image side
+.author__media {
+  flex: 1 1 45%;
+  display: flex;
+
+  @media (max-width: $desktop) {
+    order: -1;
+  }
+}
+
+.author__image {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: $desktop) {
+    min-height: 260px;
   }
 }

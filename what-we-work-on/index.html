@@ -1,58 +1,63 @@
 ---
 layout: default
 title: What We Work On
-description: I shows only the best websites and portfolios built completely with passion, simplicity & creativity!
+description: A selection of products we helped bring to life — from concept through launch.
 ---
 
 <!-- begin page hero -->
 <div class="page-hero">
   <div class="container">
-    {% if page.title %}
-      <div class="row">
-        <div class="col col-12">
-          <h1 class="page-hero__title">{{ page.title }}</h1>
-        </div>
-      </div>
-    {% endif %}
+    <div class="page-head reveal">
+      <h1 class="page-hero__title">{{ page.title }}</h1>
+      <p class="page-description">{{ page.description }}</p>
+    </div>
   </div>
 </div>
 <!-- end page hero -->
 
-<!-- begin page-section -->
-<section class="page-section projects-listing">
-  {% for project in site.projects reversed %}
-    <article class="project">
-      <div class="project__content">
-        <div class="project__info">
-          <div class="container">
-            <div class="row">
-              <div class="project__info__left col col-6 col-d-12">
-                <div class="project__meta">
-                  {% if project.label %}
-                    <span class="project__label">{{ project.label }}</span>
-                  {% endif %}
-                  <h3 class="project__title"><a href="{{ project.url }}">{{ project.title }}</a></h3>
-                  <p class="project__description">
-                    {% if project.description %}{{ project.description }}{% else %}{{ project.content | strip_html }}{% endif %}
-                  </p>
-                  <a href="{{ project.url }}" class="project__button">See Project <i class="fa-solid fa-arrow-right-long"></i></a>
-                </div>
-              </div>
-              {% if project.image %}
-              <div class="project__info__right col col-6 col-d-12">
-                <div class="project__image">
-                  <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
-                </div>
-              </div>
+<!-- begin projects listing -->
+<div class="page-body">
+  <section class="projects-listing">
+    <div class="container">
+      {% for project in site.projects reversed %}
+        <div class="project-list__shell reveal">
+          <div class="project-list__core">
+            <div class="project-list__text">
+              {% if project.label %}
+                <span class="eyebrow">{{ project.label }}</span>
               {% endif %}
+              <h3 class="project-list__title">
+                <a href="{{ project.url }}">{{ project.title }}</a>
+              </h3>
+              <p class="project-list__description">
+                {% if project.description %}{{ project.description }}{% else %}{{ project.content | strip_html | truncatewords: 30 }}{% endif %}
+              </p>
+              {% if project.tags.size >= 1 %}
+                <div class="project-list__tags">
+                  {% for tag in project.tags %}
+                    <span class="project-list__tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <a href="{{ project.url }}" class="project-list__link">
+                <span>See project</span>
+                <span class="project-list__arrow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+              </a>
             </div>
+            {% if project.image %}
+              <div class="project-list__image">
+                <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
+              </div>
+            {% endif %}
           </div>
         </div>
-      </div>
-    </article>
-  {% endfor %}
-</section>
-<!-- end page-section -->
+      {% endfor %}
+    </div>
+  </section>
+</div>
+<!-- end projects listing -->
 
 {% include section-author.html %}
 

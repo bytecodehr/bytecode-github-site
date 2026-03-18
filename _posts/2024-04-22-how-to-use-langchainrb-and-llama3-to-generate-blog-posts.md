@@ -2,6 +2,7 @@
 layout: post
 tags: llama3 langcahinrb
 title: How to use langchainrb and llama3 to generate blog posts
+description: A quick walkthrough on setting up LangchainRb with Llama 3 via Ollama to generate blog posts using retrieval-augmented generation in a Rails application.
 date: 2024-04-22
 ---
 ```

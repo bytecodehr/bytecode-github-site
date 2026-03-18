@@ -1,70 +1,60 @@
 <!-- begin header -->
-<header class="header">
-  <div class="container">
-    <div class="row">
-      <div class="header__inner col col-12">
+<header class="header" id="header">
+  <div class="header__pill">
 
-        <div class="logo">
-          {% include logo.html %}
-        </div>
-
-        <div class="hamburger">
-          <div></div>
-        </div>
-
-        <nav class="main-nav" aria-label="Main menu">
-          <div class="main-nav__box">
-            <ul class="nav__list list-reset">
-
-              {% for item in site.data.settings.menu_settings.menu_items %}
-                {% if item.submenu %}
-                <li class="nav__item dropdown">
-                  <span class="nav__link dropdown-toggle">{{ item.title }} <i class="arrow-down fa-solid fa-chevron-down"></i></span>
-                  <div class="dropdown-menu">
-                    <div class="dropdown-inner">
-                    {% for submenu-item in item.submenu %}
-                      {% assign page_var = site.pages | where: "url", submenu-item.url | first %}
-                      {% capture image_path %}{{ page_var.image }}{% endcapture %}
-                      {% capture page_description %}{{ page_var.description }}{% endcapture %}
-                      {% capture page_content %}{{ page_var.content }}{% endcapture %}
-                      <a href="{{ submenu-item.url }}" class="dropdown-item{% if page.url == submenu-item.url %} active{% endif %}">
-                        {% if page_var.image %}
-                          <img class="dropdown-item__image lazy" data-src="{{ image_path }}" alt="{{ submenu-item.title }}">
-                        {% endif %}
-                        <div class="dropdown-item__content">
-                          <div class="dropdown-item__title">{{ submenu-item.title }} <i class="fa-solid fa-arrow-right-long"></i></div>
-                          <div class="dropdown-item__text">{% if page_var.description %}{{ page_var.description }}{% else %}{{ page_content | strip_html }}{% endif %}</div>
-                        </div>
-                      </a>
-                    {% endfor %}
-                    </div>
-                  </div>
-                </li>
-                {% else %}
-                <li class="nav__item">
-                  <a href="{{ item.url | relative_url }}" class="nav__link{% if page.url == item.url %} active-link{% endif %}">{{ item.title }}</a>
-                </li>
-                {% endif %}
-              {% endfor %}
-
-            </ul>
-          </div>
-
-          <div class="nav-button">
-            <div class="nav-search-button">
-              <i class="search-button__icon fa-solid fa-magnifying-glass"></i>
-              <span class="search-button__text">Search</span>
-            </div>
-            {% if site.data.settings.cta_button.enable == true %}
-              <a href="{% if site.data.settings.cta_button.cta_button_link %}{{ site.data.settings.cta_button.cta_button_link }}{% else %}#{% endif %}" class="nav-cta-button button">{{ site.data.settings.cta_button.cta_button_text }}</a>
-            {% endif %}
-          </div>
-        </nav>
-
-      </div>
+    <div class="logo">
+      {% include logo.html %}
     </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <ul class="nav__list list-reset">
+        {% for item in site.data.settings.menu_settings.menu_items %}
+          {% unless item.url == site.data.settings.cta_button.cta_button_link %}
+          <li class="nav__item">
+            <a href="{{ item.url | relative_url }}" class="nav__link{% if page.url == item.url %} is-active{% endif %}">{{ item.title }}</a>
+          </li>
+          {% endunless %}
+        {% endfor %}
+      </ul>
+    </nav>
+
+    {% if site.data.settings.cta_button.enable %}
+    <a href="{{ site.data.settings.cta_button.cta_button_link }}" class="header__cta">
+      <span class="header__cta-text">{{ site.data.settings.cta_button.cta_button_text }}</span>
+      <span class="header__cta-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 13L13 1M13 1H4M13 1V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+    {% endif %}
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+    </button>
+
   </div>
 </header>
 <!-- end header -->
+
+<!-- begin mobile menu -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu__backdrop"></div>
+  <nav class="mobile-menu__inner" aria-label="Mobile navigation">
+    <ul class="mobile-menu__list list-reset">
+      {% for item in site.data.settings.menu_settings.menu_items %}
+      <li class="mobile-menu__item">
+        <a href="{{ item.url | relative_url }}" class="mobile-menu__link">{{ item.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% if site.data.settings.cta_button.enable %}
+    <a href="{{ site.data.settings.cta_button.cta_button_link }}" class="mobile-menu__cta">
+      {{ site.data.settings.cta_button.cta_button_text }}
+    </a>
+    {% endif %}
+  </nav>
+</div>
+<!-- end mobile menu -->
 
 {% include search.html %}
