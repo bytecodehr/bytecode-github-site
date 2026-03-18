@@ -11,14 +11,11 @@ $global-radius: 1.5rem; // 24px — premium squircle
 // Transition — custom cubic-bezier (spring-like, no linear/ease-in-out)
 $global-transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);
 
-// Brand gradient — lifted dark with emerald undertone
+// Brand gradient — subtle warm-to-white for hero area
 $brand-gradient: linear-gradient(
-  145deg,
-  #141A1E 0%,
-  #122620 30%,
-  #152E26 50%,
-  #122620 70%,
-  #141A1E 100%
+  180deg,
+  #FFFFFF 0%,
+  #FDFBF7 100%
 );
 
 // Layout breakpoints
@@ -35,12 +32,12 @@ $base-font-size: 17px;
 $base-font-style: normal;
 $base-font-variant: normal;
 $base-font-weight: 400;
-$base-font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+$base-font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
 $base-line-height: 1.65;
 
-// Headings — Clash Display (geometric, bold)
-$heading-font-weight: 600;
-$heading-font-family: 'Clash Display', 'Plus Jakarta Sans', system-ui, sans-serif;
+// Headings — Satoshi (geometric, premium)
+$heading-font-weight: 700;
+$heading-font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
 
 $font-size-h1: 42px;
 $font-size-h2: 32px;

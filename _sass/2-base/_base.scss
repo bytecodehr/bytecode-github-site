@@ -58,6 +58,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: $heading-line-height;
   letter-spacing: $heading-letter-spacing;
   color: var(--heading-font-color);
+  text-wrap: balance;
 }
 
 h1 { font-size: $font-size-h1; }
@@ -283,6 +284,27 @@ table td {
 }
 
 // ==================
+// Reduced Motion
+// ==================
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+// ==================
 // Eyebrow Badge
 // ==================
 .eyebrow {
@@ -310,10 +332,10 @@ table td {
     border-radius: 50%;
   }
 
-  // On dark backgrounds
+  // Variant (same as default since everything is light now)
   &--dark {
     color: var(--brand);
-    background: rgba(5, 150, 105, 0.12);
-    border-color: rgba(5, 150, 105, 0.2);
+    background: rgba(5, 150, 105, 0.08);
+    border-color: rgba(5, 150, 105, 0.15);
   }
 }

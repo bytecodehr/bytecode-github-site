@@ -1,9 +1,10 @@
 /* Post + Page Layout */
 
-// Dark page header banner
+// Page header banner — light
 .page-hero {
-  background: $brand-gradient;
+  background: var(--background-alt-color);
   padding: 96px 0 72px;
+  border-bottom: 1px solid var(--border-color);
 
   .page-head,
   .post-head {
@@ -14,7 +15,7 @@
   .page-title,
   .post-title,
   .page-hero__title {
-    color: var(--dark-text);
+    color: var(--heading-font-color);
     margin-bottom: 16px;
     font-size: 48px;
     line-height: 1.15;
@@ -31,7 +32,7 @@
 
   .page-description,
   .post-description {
-    color: var(--dark-text-muted);
+    color: var(--text-alt-color);
     margin-bottom: 0;
     font-size: 17px;
     line-height: 1.65;
@@ -44,14 +45,14 @@
     font-family: $heading-font-family;
     font-size: 14px;
     font-weight: 500;
-    color: var(--dark-text-muted);
+    color: var(--text-caption-color);
     letter-spacing: 0.02em;
   }
 
   .post-tags .post__tag {
-    border-color: var(--dark-border);
-    color: var(--dark-text-muted);
-    background: transparent;
+    border-color: var(--border-color);
+    color: var(--text-alt-color);
+    background: var(--surface-color);
 
     &:hover {
       border-color: var(--brand);
@@ -86,7 +87,7 @@
   .page-section__title {
     font-size: 48px;
     line-height: 1.15;
-    color: var(--dark-text);
+    color: var(--heading-font-color);
     letter-spacing: $heading-letter-spacing;
   }
 

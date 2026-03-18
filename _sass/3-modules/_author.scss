@@ -22,8 +22,8 @@
 .author__shell {
   padding: 3px;
   border-radius: 28px;
-  background: rgba(12, 15, 20, 0.04);
-  border: 1px solid rgba(12, 15, 20, 0.06);
+  background: var(--background-alt-color-2);
+  border: 1px solid var(--border-color);
 
   @media (max-width: $tablet) {
     border-radius: 22px;
@@ -31,12 +31,12 @@
 }
 
 
-// Inner core — dark gradient interior
+// Inner core — warm surface
 .author__core {
   display: flex;
   align-items: stretch;
   border-radius: 26px;
-  background: $brand-gradient;
+  background: var(--surface-color);
   overflow: hidden;
 
   @media (max-width: $desktop) {
@@ -72,7 +72,7 @@
   font-size: 38px;
   line-height: 1.12;
   letter-spacing: -0.025em;
-  color: #F2F0ED;
+  color: var(--heading-font-color);
 
   @media (max-width: $tablet) {
     font-size: 30px;
@@ -87,7 +87,7 @@
   margin-bottom: 32px;
   font-size: 16px;
   line-height: 1.7;
-  color: #8A8680;
+  color: var(--text-alt-color);
   max-width: 440px;
 
   @media (max-width: $mobile) {
@@ -114,7 +114,7 @@
   &:hover {
     background: var(--brand-hover);
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.25);
+    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.2);
   }
 
   &:active {

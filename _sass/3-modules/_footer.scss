@@ -7,26 +7,14 @@
 
 
 // ============================================================
-// CTA Banner — dark with subtle emerald glow
+// CTA Banner — light with emerald accent
 // ============================================================
 .footer__cta {
-  background: var(--dark-bg);
+  background: var(--background-alt-color);
   padding: 96px 0;
   position: relative;
   overflow: hidden;
-
-  // Subtle radial glow
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
+  border-top: 1px solid var(--border-color);
 
   @media (max-width: $mobile) {
     padding: 64px 0;
@@ -54,7 +42,7 @@
   font-size: 38px;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  color: #F2F0ED;
+  color: var(--heading-font-color);
   margin-bottom: 12px;
 
   @media (max-width: $tablet) {
@@ -69,7 +57,7 @@
 .footer__cta-desc {
   font-size: 16px;
   line-height: 1.65;
-  color: #8A8680;
+  color: var(--text-alt-color);
   margin: 0;
 }
 
@@ -92,7 +80,7 @@
   &:hover {
     background: var(--brand-hover);
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.25);
+    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.2);
   }
 
   &:active {
@@ -125,10 +113,10 @@
 
 
 // ============================================================
-// Main footer — warm beige
+// Main footer — warm cream
 // ============================================================
 .footer__main {
-  background: var(--background-alt-color);
+  background: var(--background-alt-color-2);
   padding: 64px 0 32px;
   border-top: 1px solid var(--border-color);
 }
