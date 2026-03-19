@@ -1,11 +1,11 @@
 /* Color Scheme — Editorial Luxury */
 
 @mixin scheme-light {
-  // Brand — Emerald
-  --brand: #059669;
-  --brand-hover: #047857;
-  --brand-light: #ecfdf5;
-  --brand-muted: #a7f3d0;
+  // Brand — Warm Coral / Terracotta
+  --brand: #c2553a;
+  --brand-hover: #a8432d;
+  --brand-light: #fef2ee;
+  --brand-muted: #f5c4b3;
 
   // Accent (warm complement — defined, rarely used)
   --accent: #f59e0b;
@@ -78,10 +78,10 @@
 }
 
 @mixin scheme-dark {
-  --brand: #34d399;
-  --brand-hover: #6ee7b7;
-  --brand-light: #0f2922;
-  --brand-muted: #065f46;
+  --brand: #e8725c;
+  --brand-hover: #f09983;
+  --brand-light: #2a1510;
+  --brand-muted: #6b2a1e;
 
   --accent: #fbbf24;
   --accent-light: #1c1917;

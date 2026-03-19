@@ -319,8 +319,8 @@ table td {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--brand);
-  background: rgba(5, 150, 105, 0.08);
-  border: 1px solid rgba(5, 150, 105, 0.15);
+  background: rgba(194, 85, 58, 0.08);
+  border: 1px solid rgba(194, 85, 58, 0.15);
   border-radius: 100px;
 
   &::before {
@@ -335,7 +335,7 @@ table td {
   // Variant (same as default since everything is light now)
   &--dark {
     color: var(--brand);
-    background: rgba(5, 150, 105, 0.08);
-    border-color: rgba(5, 150, 105, 0.15);
+    background: rgba(194, 85, 58, 0.08);
+    border-color: rgba(194, 85, 58, 0.15);
   }
 }

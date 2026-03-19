@@ -2,7 +2,7 @@
 # Site Settings
 title: Bytecode
 logo: # using CSS text logo now (see _includes/logo.html)
-description: A Ruby and React web consultancy helping companies develop complex web and mobile applications — from concept through launch.
+description: We build AI products with Rails — from LLM features to full applications.
 color_scheme: light
 
 
@@ -30,9 +30,9 @@ cta_button:
 # Hero Settings
 hero:
   enable: true
-  hero_intro: Hi, We're Bytecode
-  hero_title: High-grade Ruby and React web consultancy
-  hero_description: We help companies develop product ideas from concept to market. Specialized in mapping out, designing, and delivering complex web and mobile applications on time.
+  hero_intro: AI-Powered Rails Consultancy
+  hero_title: We build AI products with Ruby on Rails
+  hero_description: Ship intelligent products faster. We integrate LLMs, automation, and AI workflows into production Rails applications — from prototype to scale.
   hero_images:
     - alt: 'Hobby'
       url: '/images/hero-1.jpg'
@@ -63,9 +63,9 @@ blog:
 # Author Section Settings
 author_section:
   enable: true
-  author_section_role: Rapid Prototyping
-  author_section_title: How we work
-  author_section_description: We work in focused weekly sprints with a simplified Scrum process — no unnecessary ceremonies, just consistent delivery. Our stack is Ruby on Rails and React, backed by PostgreSQL and Redis, hosted on platforms like Heroku and Digital Ocean. We prioritize building working software early so you can test assumptions and make informed decisions before committing to large-scale development.
+  author_section_role: How We Build
+  author_section_title: AI products, Rails velocity
+  author_section_description: We start with a discovery sprint to map your AI use case, then build in focused weekly cycles. Claude handles code generation and review. Rails handles the backend. You get a working product, not a pitch deck.
   author_section_image: '/images/01.jpg'
   author_section_button_text: Learn our process
   author_section_button_link: '/how-we-work/'
@@ -82,26 +82,26 @@ tags_section:
 # Gallery Section Settings
 gallery:
   enable: true
-  gallery_title: The Tech We Use
+  gallery_title: Our Stack
   gallery_items:
     - name: Ruby on Rails
       icon: simple-icons:rubyonrails
       color: "#cc0000"
-    - name: React
-      icon: simple-icons:react
-      color: "#61dafb"
     - name: PostgreSQL
       icon: simple-icons:postgresql
       color: "#4169e1"
-    - name: Shopify
-      icon: simple-icons:shopify
-      color: "#96bf48"
-    - name: Docker
-      icon: simple-icons:docker
-      color: "#2496ed"
+    - name: Claude
+      icon: simple-icons:anthropic
+      color: "#d4a574"
     - name: Redis
       icon: simple-icons:redis
       color: "#dc382d"
+    - name: Docker
+      icon: simple-icons:docker
+      color: "#2496ed"
+    - name: n8n
+      icon: simple-icons:n8n
+      color: "#ea4b71"
 
 
 #-------------------------------

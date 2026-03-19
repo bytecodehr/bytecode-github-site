@@ -274,7 +274,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(5, 150, 105, 0.07);
+  background: rgba(194, 85, 58, 0.07);
   color: var(--brand);
   display: flex;
   align-items: center;
@@ -318,7 +318,7 @@
     left: 50%;
     width: 500px;
     height: 400px;
-    background: radial-gradient(ellipse, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(194, 85, 58, 0.06) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     pointer-events: none;
   }
@@ -381,7 +381,7 @@
   &:hover {
     background: var(--brand-hover);
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(5, 150, 105, 0.25);
+    box-shadow: 0 12px 32px rgba(194, 85, 58, 0.25);
   }
 
   &:active {
